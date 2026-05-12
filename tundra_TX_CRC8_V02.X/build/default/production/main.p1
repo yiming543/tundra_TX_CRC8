@@ -609,9 +609,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 "45
-[; ;main.c: 45: DATA_FRAME tx_data = {
-[v _tx_data `S376 ~T0 @X0 1 e ]
-[i _tx_data
+[; ;main.c: 45: DATA_FRAME tx_buf = {
+[v _tx_buf `S376 ~T0 @X0 1 e ]
+[i _tx_buf
 :U 0
 :U ..
 :U ..
@@ -902,14 +902,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 146:     Check_Input();
 [e ( _Check_Input ..  ]
 "149
-[; ;main.c: 149:     tx_data.data[0] = D2.Byte;
-[e = *U + &U . . _tx_data 0 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _tx_data 0 2 `ui `ux . . _D2 1 0 ]
+[; ;main.c: 149:     tx_buf.data[0] = D2.Byte;
+[e = *U + &U . . _tx_buf 0 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _tx_buf 0 2 `ui `ux . . _D2 1 0 ]
 "150
-[; ;main.c: 150:     tx_data.data[1] = D3.Byte;
-[e = *U + &U . . _tx_data 0 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _tx_data 0 2 `ui `ux . . _D3 1 0 ]
+[; ;main.c: 150:     tx_buf.data[1] = D3.Byte;
+[e = *U + &U . . _tx_buf 0 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _tx_buf 0 2 `ui `ux . . _D3 1 0 ]
 "156
-[; ;main.c: 156:     tx_data.crc = calculate_crc8_real(tx_data.data, 8);
-[e = . . _tx_data 0 3 ( _calculate_crc8_real (2 , -> &U . . _tx_data 0 2 `*Cuc -> -> 8 `i `uc ]
+[; ;main.c: 156:     tx_buf.crc = calculate_crc8_real(tx_buf.data, 8);
+[e = . . _tx_buf 0 3 ( _calculate_crc8_real (2 , -> &U . . _tx_buf 0 2 `*Cuc -> -> 8 `i `uc ]
 "166
 [; ;main.c: 166:     for (uint8_t i = 0; i < 11; i++) {
 {
@@ -920,8 +920,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 407 ]
 {
 "167
-[; ;main.c: 167:       PWM(tx_data.buf[i]);
-[e ( _PWM (1 *U + &U . . _tx_data 1 0 * -> _i `ux -> -> # *U &U . . _tx_data 1 0 `ui `ux ]
+[; ;main.c: 167:       PWM(tx_buf.buf[i]);
+[e ( _PWM (1 *U + &U . . _tx_buf 1 0 * -> _i `ux -> -> # *U &U . . _tx_buf 1 0 `ui `ux ]
 "168
 [; ;main.c: 168:     }
 }

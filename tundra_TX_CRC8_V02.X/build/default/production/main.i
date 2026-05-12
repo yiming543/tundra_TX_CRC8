@@ -5239,7 +5239,7 @@ extern uint8_t calculate_crc8_real(const uint8_t *data, uint8_t length);
 
 flag_D2 D2 = {.Byte = 0};
 flag_D3 D3 = {.Byte = 0};
-DATA_FRAME tx_data = {
+DATA_FRAME tx_buf = {
     .id = 0xC8,
     .length = 0x8B,
     .data = {0},
@@ -5343,17 +5343,17 @@ int main(void) {
     Check_Input();
 
 
-    tx_data.data[0] = D2.Byte;
-    tx_data.data[1] = D3.Byte;
+    tx_buf.data[0] = D2.Byte;
+    tx_buf.data[1] = D3.Byte;
 
 
 
 
 
-    tx_data.crc = calculate_crc8_real(tx_data.data, 8);
+    tx_buf.crc = calculate_crc8_real(tx_buf.data, 8);
 # 166 "main.c"
     for (uint8_t i = 0; i < 11; i++) {
-      PWM(tx_data.buf[i]);
+      PWM(tx_buf.buf[i]);
     }
 
     _delay((unsigned long)((20)*(32000000/4000.0)));

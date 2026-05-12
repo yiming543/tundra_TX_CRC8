@@ -42,7 +42,7 @@
 // Variable declaration
 flag_D2 D2 = {.Byte = 0};
 flag_D3 D3 = {.Byte = 0};
-DATA_FRAME tx_data = {
+DATA_FRAME tx_buf = {
     .id = 0xC8,     // 車燈信號
     .length = 0x8B, // 8 byte
     .data = {0},
@@ -146,14 +146,14 @@ int main(void) {
     Check_Input();
 
     // Prepare data for transmission
-    tx_data.data[0] = D2.Byte; // D0
-    tx_data.data[1] = D3.Byte; // D1
+    tx_buf.data[0] = D2.Byte; // D0
+    tx_buf.data[1] = D3.Byte; // D1
     // D4~D7 are 0 by D2
 //    tx_data.data[4] = D2.Byte; // D4
 //    tx_data.data[5] = D2.Byte; // D5
 //    tx_data.data[6] = D3.Byte; // D6
 //    tx_data.data[7] = D3.Byte; // D7
-    tx_data.crc = calculate_crc8_real(tx_data.data, data_length);
+    tx_buf.crc = calculate_crc8_real(tx_buf.data, data_length);
 
     // Transmit data via PWM
     // PWM(tx_data.id); // ID
@@ -164,7 +164,7 @@ int main(void) {
     // }
     // PWM(tx_data.crc); // CRC
     for (uint8_t i = 0; i < buf_length; i++) {
-      PWM(tx_data.buf[i]);
+      PWM(tx_buf.buf[i]);
     }
 
     __delay_ms(20); // Optional delay between transmissions
