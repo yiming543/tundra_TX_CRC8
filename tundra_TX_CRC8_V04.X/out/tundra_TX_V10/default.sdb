@@ -1,0 +1,315 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1936 ]
+[d frameptr 6 ]
+"10 c:\PROGRA~1\MICROC~1\xc8\v3.10\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 c:\PROGRA~1\MICROC~1\xc8\v3.10\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 c:\PROGRA~1\MICROC~1\xc8\v3.10\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"60 D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c
+[v _Check_Input Check_Input `(v  1 e 1 0 ]
+"120
+[v _prepare_tx_data prepare_tx_data `(v  1 e 1 0 ]
+"132
+[v _Transmit_data Transmit_data `(v  1 e 1 0 ]
+"149
+[v _main main `(i  1 e 2 0 ]
+"64 D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\epwm3.c
+[v _EPWM3_Initialize EPWM3_Initialize `(v  1 e 1 0 ]
+"50 D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"60
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"74
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+"55 D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"62 D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+"22 D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c
+[v _wait_for_pwm_cycle_complete wait_for_pwm_cycle_complete `(v  1 e 1 0 ]
+"29
+[v _pwm_set_bit pwm_set_bit `(v  1 e 1 0 ]
+"42
+[v _PWM PWM `(v  1 e 1 0 ]
+[s S54 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"430 C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.9.258/xc8\pic\include\proc/pic16f1936.h
+[u S63 . 1 `S54 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES63  1 e 1 @12 ]
+[s S96 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"554
+[u S105 . 1 `S96 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES105  1 e 1 @14 ]
+[s S345 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 TMR1GIF 1 0 :1:7 
+]
+"637
+[u S354 . 1 `S345 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES354  1 e 1 @17 ]
+"1001
+[v _TMR2 TMR2 `VEuc  1 e 1 @26 ]
+"1021
+[v _PR2 PR2 `VEuc  1 e 1 @27 ]
+"1041
+[v _T2CON T2CON `VEuc  1 e 1 @28 ]
+[s S367 . 1 `uc 1 T2CKPS 1 0 :2:0 
+`uc 1 TMR2ON 1 0 :1:2 
+`uc 1 T2OUTPS 1 0 :4:3 
+]
+"1062
+[s S371 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+`uc 1 T2CKPS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 T2OUTPS0 1 0 :1:3 
+`uc 1 T2OUTPS1 1 0 :1:4 
+`uc 1 T2OUTPS2 1 0 :1:5 
+`uc 1 T2OUTPS3 1 0 :1:6 
+]
+[u S379 . 1 `S367 1 . 1 0 `S371 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES379  1 e 1 @28 ]
+"1206
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1268
+[v _TRISB TRISB `VEuc  1 e 1 @141 ]
+"1330
+[v _TRISC TRISC `VEuc  1 e 1 @142 ]
+"1392
+[v _TRISE TRISE `VEuc  1 e 1 @144 ]
+[s S300 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 TMR0SE 1 0 :1:4 
+`uc 1 TMR0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nWPUEN 1 0 :1:7 
+]
+"1601
+[s S309 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 . 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+]
+[u S314 . 1 `S300 1 . 1 0 `S309 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES314  1 e 1 @149 ]
+"1712
+[v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
+"1771
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
+"1829
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"2171
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+"2233
+[v _LATB LATB `VEuc  1 e 1 @269 ]
+[s S75 . 1 `uc 1 LATB0 1 0 :1:0 
+`uc 1 LATB1 1 0 :1:1 
+`uc 1 LATB2 1 0 :1:2 
+`uc 1 LATB3 1 0 :1:3 
+`uc 1 LATB4 1 0 :1:4 
+`uc 1 LATB5 1 0 :1:5 
+`uc 1 LATB6 1 0 :1:6 
+`uc 1 LATB7 1 0 :1:7 
+]
+"2250
+[u S84 . 1 `S75 1 . 1 0 ]
+[v _LATBbits LATBbits `VES84  1 e 1 @269 ]
+"2295
+[v _LATC LATC `VEuc  1 e 1 @270 ]
+"2357
+[v _LATE LATE `VEuc  1 e 1 @272 ]
+"2650
+[v _BORCON BORCON `VEuc  1 e 1 @278 ]
+"2999
+[v _APFCON APFCON `VEuc  1 e 1 @285 ]
+"3055
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"3113
+[v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
+"3680
+[v _WPUB WPUB `VEuc  1 e 1 @525 ]
+"3750
+[v _WPUE WPUE `VEuc  1 e 1 @528 ]
+[s S223 . 1 `uc 1 C1TSEL0 1 0 :1:0 
+`uc 1 C1TSEL1 1 0 :1:1 
+`uc 1 C2TSEL0 1 0 :1:2 
+`uc 1 C2TSEL1 1 0 :1:3 
+`uc 1 C3TSEL0 1 0 :1:4 
+`uc 1 C3TSEL1 1 0 :1:5 
+`uc 1 C4TSEL0 1 0 :1:6 
+`uc 1 C4TSEL1 1 0 :1:7 
+]
+"5024
+[s S232 . 1 `uc 1 C1TSEL 1 0 :2:0 
+`uc 1 C2TSEL 1 0 :2:2 
+`uc 1 C3TSEL 1 0 :2:4 
+`uc 1 C4TSEL 1 0 :2:6 
+]
+[u S237 . 1 `S223 1 . 1 0 `S232 1 . 1 0 ]
+[v _CCPTMRS0bits CCPTMRS0bits `VES237  1 e 1 @670 ]
+"5130
+[v _CCPR3L CCPR3L `VEuc  1 e 1 @785 ]
+"5150
+[v _CCPR3H CCPR3H `VEuc  1 e 1 @786 ]
+"5170
+[v _CCP3CON CCP3CON `VEuc  1 e 1 @787 ]
+[s S419 . 1 `uc 1 CCP3M 1 0 :4:0 
+`uc 1 DC3B 1 0 :2:4 
+`uc 1 P3M 1 0 :2:6 
+]
+"5192
+[s S423 . 1 `uc 1 CCP3M0 1 0 :1:0 
+`uc 1 CCP3M1 1 0 :1:1 
+`uc 1 CCP3M2 1 0 :1:2 
+`uc 1 CCP3M3 1 0 :1:3 
+`uc 1 DC3B0 1 0 :1:4 
+`uc 1 DC3B1 1 0 :1:5 
+`uc 1 P3M0 1 0 :1:6 
+`uc 1 P3M1 1 0 :1:7 
+]
+[u S432 . 1 `S419 1 . 1 0 `S423 1 . 1 0 ]
+[v _CCP3CONbits CCP3CONbits `VES432  1 e 1 @787 ]
+"5252
+[v _PWM3CON PWM3CON `VEuc  1 e 1 @788 ]
+"5333
+[v _ECCP3AS ECCP3AS `VEuc  1 e 1 @789 ]
+"5502
+[v _PSTR3CON PSTR3CON `VEuc  1 e 1 @790 ]
+"8333
+[v _PLLR PLLR `VEb  1 e 0 @1238 ]
+"9059
+[v _TMR2IF TMR2IF `VEb  1 e 0 @137 ]
+[s S22 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RunLight 1 0 :1:2 
+`uc 1 DRL 1 0 :1:3 
+`uc 1 LoBeam 1 0 :1:4 
+`uc 1 HiBeam 1 0 :1:5 
+`uc 1 . 1 0 :2:6 
+]
+"51 D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c
+[s S29 . 1 `uc 1 Byte 1 0 :8:0 
+]
+[u S31 . 1 `S22 1 . 1 0 `S29 1 . 1 0 ]
+[v _D2 D2 `S31  1 e 1 0 ]
+[s S34 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 turnLight_L 1 0 :1:5 
+`uc 1 trunLight_R 1 0 :1:6 
+`uc 1 . 1 0 :1:7 
+]
+"52
+[u S41 . 1 `S34 1 . 1 0 `S29 1 . 1 0 ]
+[v _D3 D3 `S41  1 e 1 0 ]
+[s S44 . 11 `uc 1 id 1 0 `uc 1 length 1 1 `[8]uc 1 data 8 2 `uc 1 crc 1 10 ]
+"53
+[s S49 . 11 `[11]uc 1 buf 11 0 ]
+[u S51 . 11 `S44 1 . 11 0 `S49 1 . 11 0 ]
+[v _tx_buf tx_buf `S51  1 e 11 0 ]
+"149
+[v _main main `(i  1 e 2 0 ]
+{
+"161
+} 0
+"120
+[v _prepare_tx_data prepare_tx_data `(v  1 e 1 0 ]
+{
+"130
+} 0
+"132
+[v _Transmit_data Transmit_data `(v  1 e 1 0 ]
+{
+"141
+[v Transmit_data@i i `uc  1 a 1 11 ]
+"144
+} 0
+"42 D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c
+[v _PWM PWM `(v  1 e 1 0 ]
+{
+[v PWM@data data `uc  1 p 1 wreg ]
+"58
+[v PWM@j j `i  1 a 2 7 ]
+"48
+[v PWM@i i `i  1 a 2 9 ]
+"42
+[v PWM@data data `uc  1 p 1 wreg ]
+[v PWM@data data `uc  1 p 1 6 ]
+"62
+} 1
+"22
+[v _wait_for_pwm_cycle_complete wait_for_pwm_cycle_complete `(v  1 e 1 0 ]
+{
+"27
+} 0
+"29
+[v _pwm_set_bit pwm_set_bit `(v  1 e 1 0 ]
+{
+[v pwm_set_bit@bit_value bit_value `uc  1 p 1 wreg ]
+"30
+[v pwm_set_bit@duty duty `ui  1 a 2 3 ]
+"29
+[v pwm_set_bit@bit_value bit_value `uc  1 p 1 wreg ]
+"31
+[v pwm_set_bit@bit_value bit_value `uc  1 p 1 2 ]
+"40
+} 1
+"50 D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"58
+} 0
+"74
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+{
+"78
+} 0
+"62 D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+{
+"77
+} 0
+"55 D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"97
+} 0
+"60 D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"72
+} 0
+"64 D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\epwm3.c
+[v _EPWM3_Initialize EPWM3_Initialize `(v  1 e 1 0 ]
+{
+"88
+} 0
+"60 D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c
+[v _Check_Input Check_Input `(v  1 e 1 0 ]
+{
+"118
+} 0

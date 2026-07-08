@@ -1,0 +1,3005 @@
+
+
+Microchip MPLAB XC8 Assembler V3.10 build 20250813170317 
+                                                                                               Fri May 15 13:10:34 2026
+
+Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1 
+     1                           	processor	16F1936
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	idataBANK0,global,class=CODE,space=0,delta=2,noexec
+     5                           	psect	stringtext1,global,class=STRCODE,space=0,delta=2,noexec
+     6                           	psect	cinit,global,class=CODE,space=0,merge=1,delta=2
+     7                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     8                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1,noexec
+     9                           	psect	dataBANK0,global,class=BANK0,space=1,delta=1,noexec
+    10                           	psect	inittext,global,class=CODE,space=0,delta=2
+    11                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+    12                           	psect	maintext,global,class=CODE,space=0,merge=1,split=1,delta=2
+    13                           	psect	text1,local,class=CODE,space=0,merge=1,delta=2
+    14                           	psect	text2,local,class=CODE,space=0,merge=1,delta=2
+    15                           	psect	text3,local,class=CODE,space=0,merge=1,delta=2
+    16                           	psect	text4,local,class=CODE,space=0,merge=1,delta=2
+    17                           	psect	text5,local,class=CODE,space=0,merge=1,delta=2
+    18                           	psect	text6,local,class=CODE,space=0,merge=1,delta=2
+    19                           	psect	text7,local,class=CODE,space=0,merge=1,delta=2
+    20                           	psect	text8,local,class=CODE,space=0,merge=1,delta=2
+    21                           	psect	text9,local,class=CODE,space=0,merge=1,delta=2
+    22                           	psect	text10,local,class=CODE,space=0,merge=1,delta=2
+    23                           	psect	text11,local,class=CODE,space=0,merge=1,delta=2
+    24                           	psect	text12,local,class=CODE,space=0,merge=1,delta=2
+    25                           	psect	idloc,global,abs,ovrld,class=IDLOC,space=5,delta=2,noexec
+    26                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+    27                           	dabs	1,0x7E,2
+    28  0000                     
+    29                           ; Generated 22/04/2026 GMT
+    30                           ; 
+    31                           ; Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
+    32                           ; 
+    33                           ; Licensed under the Apache License, Version 2.0 (the "License");
+    34                           ; you may not use this file except in compliance with the License.
+    35                           ; You may obtain a copy of the License at
+    36                           ; 
+    37                           ;   http://www.apache.org/licenses/LICENSE-2.0
+    38                           ; 
+    39                           ; Unless required by applicable law or agreed to in writing, software
+    40                           ; distributed under the License is distributed on an "AS IS" BASIS,
+    41                           ; WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    42                           ; See the License for the specific language governing permissions and
+    43                           ; limitations under the License.
+    44                           ; 
+    45                           ; 
+    46                           ; Code-generator required, PIC16F1936 Definitions
+    47                           ; 
+    48                           ; SFR Addresses
+    49  0008                     bsr             equ	8
+    50  0005                     fsr0h           equ	5
+    51  0004                     fsr0l           equ	4
+    52  0007                     fsr1h           equ	7
+    53  0006                     fsr1l           equ	6
+    54  0000                     indf            equ	0
+    55  0000                     indf0           equ	0
+    56  0001                     indf1           equ	1
+    57  000B                     intcon          equ	11
+    58  0002                     pc              equ	2
+    59  0002                     pcl             equ	2
+    60  000A                     pclath          equ	10
+    61  0003                     status          equ	3
+    62  0009                     wreg            equ	9
+    63  0000                     INDF0           equ	0	;# 
+    64  0001                     INDF1           equ	1	;# 
+    65  0002                     PCL             equ	2	;# 
+    66  0003                     STATUS          equ	3	;# 
+    67  0004                     FSR0L           equ	4	;# 
+    68  0005                     FSR0H           equ	5	;# 
+    69  0006                     FSR1L           equ	6	;# 
+    70  0007                     FSR1H           equ	7	;# 
+    71  0008                     BSR             equ	8	;# 
+    72  0009                     WREG            equ	9	;# 
+    73  000A                     PCLATH          equ	10	;# 
+    74  000B                     INTCON          equ	11	;# 
+    75  000C                     PORTA           equ	12	;# 
+    76  000D                     PORTB           equ	13	;# 
+    77  000E                     PORTC           equ	14	;# 
+    78  0010                     PORTE           equ	16	;# 
+    79  0011                     PIR1            equ	17	;# 
+    80  0012                     PIR2            equ	18	;# 
+    81  0013                     PIR3            equ	19	;# 
+    82  0015                     TMR0            equ	21	;# 
+    83  0016                     TMR1            equ	22	;# 
+    84  0016                     TMR1L           equ	22	;# 
+    85  0017                     TMR1H           equ	23	;# 
+    86  0018                     T1CON           equ	24	;# 
+    87  0019                     T1GCON          equ	25	;# 
+    88  001A                     TMR2            equ	26	;# 
+    89  001B                     PR2             equ	27	;# 
+    90  001C                     T2CON           equ	28	;# 
+    91  001E                     CPSCON0         equ	30	;# 
+    92  001F                     CPSCON1         equ	31	;# 
+    93  008C                     TRISA           equ	140	;# 
+    94  008D                     TRISB           equ	141	;# 
+    95  008E                     TRISC           equ	142	;# 
+    96  0090                     TRISE           equ	144	;# 
+    97  0091                     PIE1            equ	145	;# 
+    98  0092                     PIE2            equ	146	;# 
+    99  0093                     PIE3            equ	147	;# 
+   100  0095                     OPTION_REG      equ	149	;# 
+   101  0096                     PCON            equ	150	;# 
+   102  0097                     WDTCON          equ	151	;# 
+   103  0098                     OSCTUNE         equ	152	;# 
+   104  0099                     OSCCON          equ	153	;# 
+   105  009A                     OSCSTAT         equ	154	;# 
+   106  009B                     ADRES           equ	155	;# 
+   107  009B                     ADRESL          equ	155	;# 
+   108  009C                     ADRESH          equ	156	;# 
+   109  009D                     ADCON0          equ	157	;# 
+   110  009E                     ADCON1          equ	158	;# 
+   111  010C                     LATA            equ	268	;# 
+   112  010D                     LATB            equ	269	;# 
+   113  010E                     LATC            equ	270	;# 
+   114  0110                     LATE            equ	272	;# 
+   115  0111                     CM1CON0         equ	273	;# 
+   116  0112                     CM1CON1         equ	274	;# 
+   117  0113                     CM2CON0         equ	275	;# 
+   118  0114                     CM2CON1         equ	276	;# 
+   119  0115                     CMOUT           equ	277	;# 
+   120  0116                     BORCON          equ	278	;# 
+   121  0117                     FVRCON          equ	279	;# 
+   122  0118                     DACCON0         equ	280	;# 
+   123  0119                     DACCON1         equ	281	;# 
+   124  011A                     SRCON0          equ	282	;# 
+   125  011B                     SRCON1          equ	283	;# 
+   126  011D                     APFCON          equ	285	;# 
+   127  018C                     ANSELA          equ	396	;# 
+   128  018D                     ANSELB          equ	397	;# 
+   129  0191                     EEADR           equ	401	;# 
+   130  0191                     EEADRL          equ	401	;# 
+   131  0192                     EEADRH          equ	402	;# 
+   132  0193                     EEDAT           equ	403	;# 
+   133  0193                     EEDATL          equ	403	;# 
+   134  0193                     EEDATA          equ	403	;# 
+   135  0194                     EEDATH          equ	404	;# 
+   136  0195                     EECON1          equ	405	;# 
+   137  0196                     EECON2          equ	406	;# 
+   138  0199                     RCREG           equ	409	;# 
+   139  019A                     TXREG           equ	410	;# 
+   140  019B                     SP1BRG          equ	411	;# 
+   141  019B                     SP1BRGL         equ	411	;# 
+   142  019B                     SPBRG           equ	411	;# 
+   143  019B                     SPBRGL          equ	411	;# 
+   144  019C                     SP1BRGH         equ	412	;# 
+   145  019C                     SPBRGH          equ	412	;# 
+   146  019D                     RCSTA           equ	413	;# 
+   147  019E                     TXSTA           equ	414	;# 
+   148  019F                     BAUDCON         equ	415	;# 
+   149  020D                     WPUB            equ	525	;# 
+   150  0210                     WPUE            equ	528	;# 
+   151  0211                     SSPBUF          equ	529	;# 
+   152  0212                     SSPADD          equ	530	;# 
+   153  0213                     SSPMSK          equ	531	;# 
+   154  0214                     SSPSTAT         equ	532	;# 
+   155  0215                     SSPCON1         equ	533	;# 
+   156  0215                     SSPCON          equ	533	;# 
+   157  0216                     SSPCON2         equ	534	;# 
+   158  0217                     SSPCON3         equ	535	;# 
+   159  0291                     CCPR1           equ	657	;# 
+   160  0291                     CCPR1L          equ	657	;# 
+   161  0292                     CCPR1H          equ	658	;# 
+   162  0293                     CCP1CON         equ	659	;# 
+   163  0294                     PWM1CON         equ	660	;# 
+   164  0295                     CCP1AS          equ	661	;# 
+   165  0295                     ECCP1AS         equ	661	;# 
+   166  0296                     PSTR1CON        equ	662	;# 
+   167  0298                     CCPR2           equ	664	;# 
+   168  0298                     CCPR2L          equ	664	;# 
+   169  0299                     CCPR2H          equ	665	;# 
+   170  029A                     CCP2CON         equ	666	;# 
+   171  029B                     PWM2CON         equ	667	;# 
+   172  029C                     CCP2AS          equ	668	;# 
+   173  029C                     ECCP2AS         equ	668	;# 
+   174  029D                     PSTR2CON        equ	669	;# 
+   175  029E                     CCPTMRS0        equ	670	;# 
+   176  029F                     CCPTMRS1        equ	671	;# 
+   177  0311                     CCPR3           equ	785	;# 
+   178  0311                     CCPR3L          equ	785	;# 
+   179  0312                     CCPR3H          equ	786	;# 
+   180  0313                     CCP3CON         equ	787	;# 
+   181  0314                     PWM3CON         equ	788	;# 
+   182  0315                     CCP3AS          equ	789	;# 
+   183  0315                     ECCP3AS         equ	789	;# 
+   184  0316                     PSTR3CON        equ	790	;# 
+   185  0318                     CCPR4           equ	792	;# 
+   186  0318                     CCPR4L          equ	792	;# 
+   187  0319                     CCPR4H          equ	793	;# 
+   188  031A                     CCP4CON         equ	794	;# 
+   189  031C                     CCPR5           equ	796	;# 
+   190  031C                     CCPR5L          equ	796	;# 
+   191  031D                     CCPR5H          equ	797	;# 
+   192  031E                     CCP5CON         equ	798	;# 
+   193  0394                     IOCBP           equ	916	;# 
+   194  0395                     IOCBN           equ	917	;# 
+   195  0396                     IOCBF           equ	918	;# 
+   196  0415                     TMR4            equ	1045	;# 
+   197  0416                     PR4             equ	1046	;# 
+   198  0417                     T4CON           equ	1047	;# 
+   199  041C                     TMR6            equ	1052	;# 
+   200  041D                     PR6             equ	1053	;# 
+   201  041E                     T6CON           equ	1054	;# 
+   202  0791                     LCDCON          equ	1937	;# 
+   203  0792                     LCDPS           equ	1938	;# 
+   204  0793                     LCDREF          equ	1939	;# 
+   205  0794                     LCDCST          equ	1940	;# 
+   206  0795                     LCDRL           equ	1941	;# 
+   207  0798                     LCDSE0          equ	1944	;# 
+   208  0799                     LCDSE1          equ	1945	;# 
+   209  07A0                     LCDDATA0        equ	1952	;# 
+   210  07A1                     LCDDATA1        equ	1953	;# 
+   211  07A3                     LCDDATA3        equ	1955	;# 
+   212  07A4                     LCDDATA4        equ	1956	;# 
+   213  07A6                     LCDDATA6        equ	1958	;# 
+   214  07A7                     LCDDATA7        equ	1959	;# 
+   215  07A9                     LCDDATA9        equ	1961	;# 
+   216  07AA                     LCDDATA10       equ	1962	;# 
+   217  0FE4                     STATUS_SHAD     equ	4068	;# 
+   218  0FE5                     WREG_SHAD       equ	4069	;# 
+   219  0FE6                     BSR_SHAD        equ	4070	;# 
+   220  0FE7                     PCLATH_SHAD     equ	4071	;# 
+   221  0FE8                     FSR0L_SHAD      equ	4072	;# 
+   222  0FE9                     FSR0H_SHAD      equ	4073	;# 
+   223  0FEA                     FSR1L_SHAD      equ	4074	;# 
+   224  0FEB                     FSR1H_SHAD      equ	4075	;# 
+   225  0FED                     STKPTR          equ	4077	;# 
+   226  0FEE                     TOSL            equ	4078	;# 
+   227  0FEF                     TOSH            equ	4079	;# 
+   228  0000                     INDF0           equ	0	;# 
+   229  0001                     INDF1           equ	1	;# 
+   230  0002                     PCL             equ	2	;# 
+   231  0003                     STATUS          equ	3	;# 
+   232  0004                     FSR0L           equ	4	;# 
+   233  0005                     FSR0H           equ	5	;# 
+   234  0006                     FSR1L           equ	6	;# 
+   235  0007                     FSR1H           equ	7	;# 
+   236  0008                     BSR             equ	8	;# 
+   237  0009                     WREG            equ	9	;# 
+   238  000A                     PCLATH          equ	10	;# 
+   239  000B                     INTCON          equ	11	;# 
+   240  000C                     PORTA           equ	12	;# 
+   241  000D                     PORTB           equ	13	;# 
+   242  000E                     PORTC           equ	14	;# 
+   243  0010                     PORTE           equ	16	;# 
+   244  0011                     PIR1            equ	17	;# 
+   245  0012                     PIR2            equ	18	;# 
+   246  0013                     PIR3            equ	19	;# 
+   247  0015                     TMR0            equ	21	;# 
+   248  0016                     TMR1            equ	22	;# 
+   249  0016                     TMR1L           equ	22	;# 
+   250  0017                     TMR1H           equ	23	;# 
+   251  0018                     T1CON           equ	24	;# 
+   252  0019                     T1GCON          equ	25	;# 
+   253  001A                     TMR2            equ	26	;# 
+   254  001B                     PR2             equ	27	;# 
+   255  001C                     T2CON           equ	28	;# 
+   256  001E                     CPSCON0         equ	30	;# 
+   257  001F                     CPSCON1         equ	31	;# 
+   258  008C                     TRISA           equ	140	;# 
+   259  008D                     TRISB           equ	141	;# 
+   260  008E                     TRISC           equ	142	;# 
+   261  0090                     TRISE           equ	144	;# 
+   262  0091                     PIE1            equ	145	;# 
+   263  0092                     PIE2            equ	146	;# 
+   264  0093                     PIE3            equ	147	;# 
+   265  0095                     OPTION_REG      equ	149	;# 
+   266  0096                     PCON            equ	150	;# 
+   267  0097                     WDTCON          equ	151	;# 
+   268  0098                     OSCTUNE         equ	152	;# 
+   269  0099                     OSCCON          equ	153	;# 
+   270  009A                     OSCSTAT         equ	154	;# 
+   271  009B                     ADRES           equ	155	;# 
+   272  009B                     ADRESL          equ	155	;# 
+   273  009C                     ADRESH          equ	156	;# 
+   274  009D                     ADCON0          equ	157	;# 
+   275  009E                     ADCON1          equ	158	;# 
+   276  010C                     LATA            equ	268	;# 
+   277  010D                     LATB            equ	269	;# 
+   278  010E                     LATC            equ	270	;# 
+   279  0110                     LATE            equ	272	;# 
+   280  0111                     CM1CON0         equ	273	;# 
+   281  0112                     CM1CON1         equ	274	;# 
+   282  0113                     CM2CON0         equ	275	;# 
+   283  0114                     CM2CON1         equ	276	;# 
+   284  0115                     CMOUT           equ	277	;# 
+   285  0116                     BORCON          equ	278	;# 
+   286  0117                     FVRCON          equ	279	;# 
+   287  0118                     DACCON0         equ	280	;# 
+   288  0119                     DACCON1         equ	281	;# 
+   289  011A                     SRCON0          equ	282	;# 
+   290  011B                     SRCON1          equ	283	;# 
+   291  011D                     APFCON          equ	285	;# 
+   292  018C                     ANSELA          equ	396	;# 
+   293  018D                     ANSELB          equ	397	;# 
+   294  0191                     EEADR           equ	401	;# 
+   295  0191                     EEADRL          equ	401	;# 
+   296  0192                     EEADRH          equ	402	;# 
+   297  0193                     EEDAT           equ	403	;# 
+   298  0193                     EEDATL          equ	403	;# 
+   299  0193                     EEDATA          equ	403	;# 
+   300  0194                     EEDATH          equ	404	;# 
+   301  0195                     EECON1          equ	405	;# 
+   302  0196                     EECON2          equ	406	;# 
+   303  0199                     RCREG           equ	409	;# 
+   304  019A                     TXREG           equ	410	;# 
+   305  019B                     SP1BRG          equ	411	;# 
+   306  019B                     SP1BRGL         equ	411	;# 
+   307  019B                     SPBRG           equ	411	;# 
+   308  019B                     SPBRGL          equ	411	;# 
+   309  019C                     SP1BRGH         equ	412	;# 
+   310  019C                     SPBRGH          equ	412	;# 
+   311  019D                     RCSTA           equ	413	;# 
+   312  019E                     TXSTA           equ	414	;# 
+   313  019F                     BAUDCON         equ	415	;# 
+   314  020D                     WPUB            equ	525	;# 
+   315  0210                     WPUE            equ	528	;# 
+   316  0211                     SSPBUF          equ	529	;# 
+   317  0212                     SSPADD          equ	530	;# 
+   318  0213                     SSPMSK          equ	531	;# 
+   319  0214                     SSPSTAT         equ	532	;# 
+   320  0215                     SSPCON1         equ	533	;# 
+   321  0215                     SSPCON          equ	533	;# 
+   322  0216                     SSPCON2         equ	534	;# 
+   323  0217                     SSPCON3         equ	535	;# 
+   324  0291                     CCPR1           equ	657	;# 
+   325  0291                     CCPR1L          equ	657	;# 
+   326  0292                     CCPR1H          equ	658	;# 
+   327  0293                     CCP1CON         equ	659	;# 
+   328  0294                     PWM1CON         equ	660	;# 
+   329  0295                     CCP1AS          equ	661	;# 
+   330  0295                     ECCP1AS         equ	661	;# 
+   331  0296                     PSTR1CON        equ	662	;# 
+   332  0298                     CCPR2           equ	664	;# 
+   333  0298                     CCPR2L          equ	664	;# 
+   334  0299                     CCPR2H          equ	665	;# 
+   335  029A                     CCP2CON         equ	666	;# 
+   336  029B                     PWM2CON         equ	667	;# 
+   337  029C                     CCP2AS          equ	668	;# 
+   338  029C                     ECCP2AS         equ	668	;# 
+   339  029D                     PSTR2CON        equ	669	;# 
+   340  029E                     CCPTMRS0        equ	670	;# 
+   341  029F                     CCPTMRS1        equ	671	;# 
+   342  0311                     CCPR3           equ	785	;# 
+   343  0311                     CCPR3L          equ	785	;# 
+   344  0312                     CCPR3H          equ	786	;# 
+   345  0313                     CCP3CON         equ	787	;# 
+   346  0314                     PWM3CON         equ	788	;# 
+   347  0315                     CCP3AS          equ	789	;# 
+   348  0315                     ECCP3AS         equ	789	;# 
+   349  0316                     PSTR3CON        equ	790	;# 
+   350  0318                     CCPR4           equ	792	;# 
+   351  0318                     CCPR4L          equ	792	;# 
+   352  0319                     CCPR4H          equ	793	;# 
+   353  031A                     CCP4CON         equ	794	;# 
+   354  031C                     CCPR5           equ	796	;# 
+   355  031C                     CCPR5L          equ	796	;# 
+   356  031D                     CCPR5H          equ	797	;# 
+   357  031E                     CCP5CON         equ	798	;# 
+   358  0394                     IOCBP           equ	916	;# 
+   359  0395                     IOCBN           equ	917	;# 
+   360  0396                     IOCBF           equ	918	;# 
+   361  0415                     TMR4            equ	1045	;# 
+   362  0416                     PR4             equ	1046	;# 
+   363  0417                     T4CON           equ	1047	;# 
+   364  041C                     TMR6            equ	1052	;# 
+   365  041D                     PR6             equ	1053	;# 
+   366  041E                     T6CON           equ	1054	;# 
+   367  0791                     LCDCON          equ	1937	;# 
+   368  0792                     LCDPS           equ	1938	;# 
+   369  0793                     LCDREF          equ	1939	;# 
+   370  0794                     LCDCST          equ	1940	;# 
+   371  0795                     LCDRL           equ	1941	;# 
+   372  0798                     LCDSE0          equ	1944	;# 
+   373  0799                     LCDSE1          equ	1945	;# 
+   374  07A0                     LCDDATA0        equ	1952	;# 
+   375  07A1                     LCDDATA1        equ	1953	;# 
+   376  07A3                     LCDDATA3        equ	1955	;# 
+   377  07A4                     LCDDATA4        equ	1956	;# 
+   378  07A6                     LCDDATA6        equ	1958	;# 
+   379  07A7                     LCDDATA7        equ	1959	;# 
+   380  07A9                     LCDDATA9        equ	1961	;# 
+   381  07AA                     LCDDATA10       equ	1962	;# 
+   382  0FE4                     STATUS_SHAD     equ	4068	;# 
+   383  0FE5                     WREG_SHAD       equ	4069	;# 
+   384  0FE6                     BSR_SHAD        equ	4070	;# 
+   385  0FE7                     PCLATH_SHAD     equ	4071	;# 
+   386  0FE8                     FSR0L_SHAD      equ	4072	;# 
+   387  0FE9                     FSR0H_SHAD      equ	4073	;# 
+   388  0FEA                     FSR1L_SHAD      equ	4074	;# 
+   389  0FEB                     FSR1H_SHAD      equ	4075	;# 
+   390  0FED                     STKPTR          equ	4077	;# 
+   391  0FEE                     TOSL            equ	4078	;# 
+   392  0FEF                     TOSH            equ	4079	;# 
+   393  0000                     INDF0           equ	0	;# 
+   394  0001                     INDF1           equ	1	;# 
+   395  0002                     PCL             equ	2	;# 
+   396  0003                     STATUS          equ	3	;# 
+   397  0004                     FSR0L           equ	4	;# 
+   398  0005                     FSR0H           equ	5	;# 
+   399  0006                     FSR1L           equ	6	;# 
+   400  0007                     FSR1H           equ	7	;# 
+   401  0008                     BSR             equ	8	;# 
+   402  0009                     WREG            equ	9	;# 
+   403  000A                     PCLATH          equ	10	;# 
+   404  000B                     INTCON          equ	11	;# 
+   405  000C                     PORTA           equ	12	;# 
+   406  000D                     PORTB           equ	13	;# 
+   407  000E                     PORTC           equ	14	;# 
+   408  0010                     PORTE           equ	16	;# 
+   409  0011                     PIR1            equ	17	;# 
+   410  0012                     PIR2            equ	18	;# 
+   411  0013                     PIR3            equ	19	;# 
+   412  0015                     TMR0            equ	21	;# 
+   413  0016                     TMR1            equ	22	;# 
+   414  0016                     TMR1L           equ	22	;# 
+   415  0017                     TMR1H           equ	23	;# 
+   416  0018                     T1CON           equ	24	;# 
+   417  0019                     T1GCON          equ	25	;# 
+   418  001A                     TMR2            equ	26	;# 
+   419  001B                     PR2             equ	27	;# 
+   420  001C                     T2CON           equ	28	;# 
+   421  001E                     CPSCON0         equ	30	;# 
+   422  001F                     CPSCON1         equ	31	;# 
+   423  008C                     TRISA           equ	140	;# 
+   424  008D                     TRISB           equ	141	;# 
+   425  008E                     TRISC           equ	142	;# 
+   426  0090                     TRISE           equ	144	;# 
+   427  0091                     PIE1            equ	145	;# 
+   428  0092                     PIE2            equ	146	;# 
+   429  0093                     PIE3            equ	147	;# 
+   430  0095                     OPTION_REG      equ	149	;# 
+   431  0096                     PCON            equ	150	;# 
+   432  0097                     WDTCON          equ	151	;# 
+   433  0098                     OSCTUNE         equ	152	;# 
+   434  0099                     OSCCON          equ	153	;# 
+   435  009A                     OSCSTAT         equ	154	;# 
+   436  009B                     ADRES           equ	155	;# 
+   437  009B                     ADRESL          equ	155	;# 
+   438  009C                     ADRESH          equ	156	;# 
+   439  009D                     ADCON0          equ	157	;# 
+   440  009E                     ADCON1          equ	158	;# 
+   441  010C                     LATA            equ	268	;# 
+   442  010D                     LATB            equ	269	;# 
+   443  010E                     LATC            equ	270	;# 
+   444  0110                     LATE            equ	272	;# 
+   445  0111                     CM1CON0         equ	273	;# 
+   446  0112                     CM1CON1         equ	274	;# 
+   447  0113                     CM2CON0         equ	275	;# 
+   448  0114                     CM2CON1         equ	276	;# 
+   449  0115                     CMOUT           equ	277	;# 
+   450  0116                     BORCON          equ	278	;# 
+   451  0117                     FVRCON          equ	279	;# 
+   452  0118                     DACCON0         equ	280	;# 
+   453  0119                     DACCON1         equ	281	;# 
+   454  011A                     SRCON0          equ	282	;# 
+   455  011B                     SRCON1          equ	283	;# 
+   456  011D                     APFCON          equ	285	;# 
+   457  018C                     ANSELA          equ	396	;# 
+   458  018D                     ANSELB          equ	397	;# 
+   459  0191                     EEADR           equ	401	;# 
+   460  0191                     EEADRL          equ	401	;# 
+   461  0192                     EEADRH          equ	402	;# 
+   462  0193                     EEDAT           equ	403	;# 
+   463  0193                     EEDATL          equ	403	;# 
+   464  0193                     EEDATA          equ	403	;# 
+   465  0194                     EEDATH          equ	404	;# 
+   466  0195                     EECON1          equ	405	;# 
+   467  0196                     EECON2          equ	406	;# 
+   468  0199                     RCREG           equ	409	;# 
+   469  019A                     TXREG           equ	410	;# 
+   470  019B                     SP1BRG          equ	411	;# 
+   471  019B                     SP1BRGL         equ	411	;# 
+   472  019B                     SPBRG           equ	411	;# 
+   473  019B                     SPBRGL          equ	411	;# 
+   474  019C                     SP1BRGH         equ	412	;# 
+   475  019C                     SPBRGH          equ	412	;# 
+   476  019D                     RCSTA           equ	413	;# 
+   477  019E                     TXSTA           equ	414	;# 
+   478  019F                     BAUDCON         equ	415	;# 
+   479  020D                     WPUB            equ	525	;# 
+   480  0210                     WPUE            equ	528	;# 
+   481  0211                     SSPBUF          equ	529	;# 
+   482  0212                     SSPADD          equ	530	;# 
+   483  0213                     SSPMSK          equ	531	;# 
+   484  0214                     SSPSTAT         equ	532	;# 
+   485  0215                     SSPCON1         equ	533	;# 
+   486  0215                     SSPCON          equ	533	;# 
+   487  0216                     SSPCON2         equ	534	;# 
+   488  0217                     SSPCON3         equ	535	;# 
+   489  0291                     CCPR1           equ	657	;# 
+   490  0291                     CCPR1L          equ	657	;# 
+   491  0292                     CCPR1H          equ	658	;# 
+   492  0293                     CCP1CON         equ	659	;# 
+   493  0294                     PWM1CON         equ	660	;# 
+   494  0295                     CCP1AS          equ	661	;# 
+   495  0295                     ECCP1AS         equ	661	;# 
+   496  0296                     PSTR1CON        equ	662	;# 
+   497  0298                     CCPR2           equ	664	;# 
+   498  0298                     CCPR2L          equ	664	;# 
+   499  0299                     CCPR2H          equ	665	;# 
+   500  029A                     CCP2CON         equ	666	;# 
+   501  029B                     PWM2CON         equ	667	;# 
+   502  029C                     CCP2AS          equ	668	;# 
+   503  029C                     ECCP2AS         equ	668	;# 
+   504  029D                     PSTR2CON        equ	669	;# 
+   505  029E                     CCPTMRS0        equ	670	;# 
+   506  029F                     CCPTMRS1        equ	671	;# 
+   507  0311                     CCPR3           equ	785	;# 
+   508  0311                     CCPR3L          equ	785	;# 
+   509  0312                     CCPR3H          equ	786	;# 
+   510  0313                     CCP3CON         equ	787	;# 
+   511  0314                     PWM3CON         equ	788	;# 
+   512  0315                     CCP3AS          equ	789	;# 
+   513  0315                     ECCP3AS         equ	789	;# 
+   514  0316                     PSTR3CON        equ	790	;# 
+   515  0318                     CCPR4           equ	792	;# 
+   516  0318                     CCPR4L          equ	792	;# 
+   517  0319                     CCPR4H          equ	793	;# 
+   518  031A                     CCP4CON         equ	794	;# 
+   519  031C                     CCPR5           equ	796	;# 
+   520  031C                     CCPR5L          equ	796	;# 
+   521  031D                     CCPR5H          equ	797	;# 
+   522  031E                     CCP5CON         equ	798	;# 
+   523  0394                     IOCBP           equ	916	;# 
+   524  0395                     IOCBN           equ	917	;# 
+   525  0396                     IOCBF           equ	918	;# 
+   526  0415                     TMR4            equ	1045	;# 
+   527  0416                     PR4             equ	1046	;# 
+   528  0417                     T4CON           equ	1047	;# 
+   529  041C                     TMR6            equ	1052	;# 
+   530  041D                     PR6             equ	1053	;# 
+   531  041E                     T6CON           equ	1054	;# 
+   532  0791                     LCDCON          equ	1937	;# 
+   533  0792                     LCDPS           equ	1938	;# 
+   534  0793                     LCDREF          equ	1939	;# 
+   535  0794                     LCDCST          equ	1940	;# 
+   536  0795                     LCDRL           equ	1941	;# 
+   537  0798                     LCDSE0          equ	1944	;# 
+   538  0799                     LCDSE1          equ	1945	;# 
+   539  07A0                     LCDDATA0        equ	1952	;# 
+   540  07A1                     LCDDATA1        equ	1953	;# 
+   541  07A3                     LCDDATA3        equ	1955	;# 
+   542  07A4                     LCDDATA4        equ	1956	;# 
+   543  07A6                     LCDDATA6        equ	1958	;# 
+   544  07A7                     LCDDATA7        equ	1959	;# 
+   545  07A9                     LCDDATA9        equ	1961	;# 
+   546  07AA                     LCDDATA10       equ	1962	;# 
+   547  0FE4                     STATUS_SHAD     equ	4068	;# 
+   548  0FE5                     WREG_SHAD       equ	4069	;# 
+   549  0FE6                     BSR_SHAD        equ	4070	;# 
+   550  0FE7                     PCLATH_SHAD     equ	4071	;# 
+   551  0FE8                     FSR0L_SHAD      equ	4072	;# 
+   552  0FE9                     FSR0H_SHAD      equ	4073	;# 
+   553  0FEA                     FSR1L_SHAD      equ	4074	;# 
+   554  0FEB                     FSR1H_SHAD      equ	4075	;# 
+   555  0FED                     STKPTR          equ	4077	;# 
+   556  0FEE                     TOSL            equ	4078	;# 
+   557  0FEF                     TOSH            equ	4079	;# 
+   558  0000                     INDF0           equ	0	;# 
+   559  0001                     INDF1           equ	1	;# 
+   560  0002                     PCL             equ	2	;# 
+   561  0003                     STATUS          equ	3	;# 
+   562  0004                     FSR0L           equ	4	;# 
+   563  0005                     FSR0H           equ	5	;# 
+   564  0006                     FSR1L           equ	6	;# 
+   565  0007                     FSR1H           equ	7	;# 
+   566  0008                     BSR             equ	8	;# 
+   567  0009                     WREG            equ	9	;# 
+   568  000A                     PCLATH          equ	10	;# 
+   569  000B                     INTCON          equ	11	;# 
+   570  000C                     PORTA           equ	12	;# 
+   571  000D                     PORTB           equ	13	;# 
+   572  000E                     PORTC           equ	14	;# 
+   573  0010                     PORTE           equ	16	;# 
+   574  0011                     PIR1            equ	17	;# 
+   575  0012                     PIR2            equ	18	;# 
+   576  0013                     PIR3            equ	19	;# 
+   577  0015                     TMR0            equ	21	;# 
+   578  0016                     TMR1            equ	22	;# 
+   579  0016                     TMR1L           equ	22	;# 
+   580  0017                     TMR1H           equ	23	;# 
+   581  0018                     T1CON           equ	24	;# 
+   582  0019                     T1GCON          equ	25	;# 
+   583  001A                     TMR2            equ	26	;# 
+   584  001B                     PR2             equ	27	;# 
+   585  001C                     T2CON           equ	28	;# 
+   586  001E                     CPSCON0         equ	30	;# 
+   587  001F                     CPSCON1         equ	31	;# 
+   588  008C                     TRISA           equ	140	;# 
+   589  008D                     TRISB           equ	141	;# 
+   590  008E                     TRISC           equ	142	;# 
+   591  0090                     TRISE           equ	144	;# 
+   592  0091                     PIE1            equ	145	;# 
+   593  0092                     PIE2            equ	146	;# 
+   594  0093                     PIE3            equ	147	;# 
+   595  0095                     OPTION_REG      equ	149	;# 
+   596  0096                     PCON            equ	150	;# 
+   597  0097                     WDTCON          equ	151	;# 
+   598  0098                     OSCTUNE         equ	152	;# 
+   599  0099                     OSCCON          equ	153	;# 
+   600  009A                     OSCSTAT         equ	154	;# 
+   601  009B                     ADRES           equ	155	;# 
+   602  009B                     ADRESL          equ	155	;# 
+   603  009C                     ADRESH          equ	156	;# 
+   604  009D                     ADCON0          equ	157	;# 
+   605  009E                     ADCON1          equ	158	;# 
+   606  010C                     LATA            equ	268	;# 
+   607  010D                     LATB            equ	269	;# 
+   608  010E                     LATC            equ	270	;# 
+   609  0110                     LATE            equ	272	;# 
+   610  0111                     CM1CON0         equ	273	;# 
+   611  0112                     CM1CON1         equ	274	;# 
+   612  0113                     CM2CON0         equ	275	;# 
+   613  0114                     CM2CON1         equ	276	;# 
+   614  0115                     CMOUT           equ	277	;# 
+   615  0116                     BORCON          equ	278	;# 
+   616  0117                     FVRCON          equ	279	;# 
+   617  0118                     DACCON0         equ	280	;# 
+   618  0119                     DACCON1         equ	281	;# 
+   619  011A                     SRCON0          equ	282	;# 
+   620  011B                     SRCON1          equ	283	;# 
+   621  011D                     APFCON          equ	285	;# 
+   622  018C                     ANSELA          equ	396	;# 
+   623  018D                     ANSELB          equ	397	;# 
+   624  0191                     EEADR           equ	401	;# 
+   625  0191                     EEADRL          equ	401	;# 
+   626  0192                     EEADRH          equ	402	;# 
+   627  0193                     EEDAT           equ	403	;# 
+   628  0193                     EEDATL          equ	403	;# 
+   629  0193                     EEDATA          equ	403	;# 
+   630  0194                     EEDATH          equ	404	;# 
+   631  0195                     EECON1          equ	405	;# 
+   632  0196                     EECON2          equ	406	;# 
+   633  0199                     RCREG           equ	409	;# 
+   634  019A                     TXREG           equ	410	;# 
+   635  019B                     SP1BRG          equ	411	;# 
+   636  019B                     SP1BRGL         equ	411	;# 
+   637  019B                     SPBRG           equ	411	;# 
+   638  019B                     SPBRGL          equ	411	;# 
+   639  019C                     SP1BRGH         equ	412	;# 
+   640  019C                     SPBRGH          equ	412	;# 
+   641  019D                     RCSTA           equ	413	;# 
+   642  019E                     TXSTA           equ	414	;# 
+   643  019F                     BAUDCON         equ	415	;# 
+   644  020D                     WPUB            equ	525	;# 
+   645  0210                     WPUE            equ	528	;# 
+   646  0211                     SSPBUF          equ	529	;# 
+   647  0212                     SSPADD          equ	530	;# 
+   648  0213                     SSPMSK          equ	531	;# 
+   649  0214                     SSPSTAT         equ	532	;# 
+   650  0215                     SSPCON1         equ	533	;# 
+   651  0215                     SSPCON          equ	533	;# 
+   652  0216                     SSPCON2         equ	534	;# 
+   653  0217                     SSPCON3         equ	535	;# 
+   654  0291                     CCPR1           equ	657	;# 
+   655  0291                     CCPR1L          equ	657	;# 
+   656  0292                     CCPR1H          equ	658	;# 
+   657  0293                     CCP1CON         equ	659	;# 
+   658  0294                     PWM1CON         equ	660	;# 
+   659  0295                     CCP1AS          equ	661	;# 
+   660  0295                     ECCP1AS         equ	661	;# 
+   661  0296                     PSTR1CON        equ	662	;# 
+   662  0298                     CCPR2           equ	664	;# 
+   663  0298                     CCPR2L          equ	664	;# 
+   664  0299                     CCPR2H          equ	665	;# 
+   665  029A                     CCP2CON         equ	666	;# 
+   666  029B                     PWM2CON         equ	667	;# 
+   667  029C                     CCP2AS          equ	668	;# 
+   668  029C                     ECCP2AS         equ	668	;# 
+   669  029D                     PSTR2CON        equ	669	;# 
+   670  029E                     CCPTMRS0        equ	670	;# 
+   671  029F                     CCPTMRS1        equ	671	;# 
+   672  0311                     CCPR3           equ	785	;# 
+   673  0311                     CCPR3L          equ	785	;# 
+   674  0312                     CCPR3H          equ	786	;# 
+   675  0313                     CCP3CON         equ	787	;# 
+   676  0314                     PWM3CON         equ	788	;# 
+   677  0315                     CCP3AS          equ	789	;# 
+   678  0315                     ECCP3AS         equ	789	;# 
+   679  0316                     PSTR3CON        equ	790	;# 
+   680  0318                     CCPR4           equ	792	;# 
+   681  0318                     CCPR4L          equ	792	;# 
+   682  0319                     CCPR4H          equ	793	;# 
+   683  031A                     CCP4CON         equ	794	;# 
+   684  031C                     CCPR5           equ	796	;# 
+   685  031C                     CCPR5L          equ	796	;# 
+   686  031D                     CCPR5H          equ	797	;# 
+   687  031E                     CCP5CON         equ	798	;# 
+   688  0394                     IOCBP           equ	916	;# 
+   689  0395                     IOCBN           equ	917	;# 
+   690  0396                     IOCBF           equ	918	;# 
+   691  0415                     TMR4            equ	1045	;# 
+   692  0416                     PR4             equ	1046	;# 
+   693  0417                     T4CON           equ	1047	;# 
+   694  041C                     TMR6            equ	1052	;# 
+   695  041D                     PR6             equ	1053	;# 
+   696  041E                     T6CON           equ	1054	;# 
+   697  0791                     LCDCON          equ	1937	;# 
+   698  0792                     LCDPS           equ	1938	;# 
+   699  0793                     LCDREF          equ	1939	;# 
+   700  0794                     LCDCST          equ	1940	;# 
+   701  0795                     LCDRL           equ	1941	;# 
+   702  0798                     LCDSE0          equ	1944	;# 
+   703  0799                     LCDSE1          equ	1945	;# 
+   704  07A0                     LCDDATA0        equ	1952	;# 
+   705  07A1                     LCDDATA1        equ	1953	;# 
+   706  07A3                     LCDDATA3        equ	1955	;# 
+   707  07A4                     LCDDATA4        equ	1956	;# 
+   708  07A6                     LCDDATA6        equ	1958	;# 
+   709  07A7                     LCDDATA7        equ	1959	;# 
+   710  07A9                     LCDDATA9        equ	1961	;# 
+   711  07AA                     LCDDATA10       equ	1962	;# 
+   712  0FE4                     STATUS_SHAD     equ	4068	;# 
+   713  0FE5                     WREG_SHAD       equ	4069	;# 
+   714  0FE6                     BSR_SHAD        equ	4070	;# 
+   715  0FE7                     PCLATH_SHAD     equ	4071	;# 
+   716  0FE8                     FSR0L_SHAD      equ	4072	;# 
+   717  0FE9                     FSR0H_SHAD      equ	4073	;# 
+   718  0FEA                     FSR1L_SHAD      equ	4074	;# 
+   719  0FEB                     FSR1H_SHAD      equ	4075	;# 
+   720  0FED                     STKPTR          equ	4077	;# 
+   721  0FEE                     TOSL            equ	4078	;# 
+   722  0FEF                     TOSH            equ	4079	;# 
+   723  0000                     INDF0           equ	0	;# 
+   724  0001                     INDF1           equ	1	;# 
+   725  0002                     PCL             equ	2	;# 
+   726  0003                     STATUS          equ	3	;# 
+   727  0004                     FSR0L           equ	4	;# 
+   728  0005                     FSR0H           equ	5	;# 
+   729  0006                     FSR1L           equ	6	;# 
+   730  0007                     FSR1H           equ	7	;# 
+   731  0008                     BSR             equ	8	;# 
+   732  0009                     WREG            equ	9	;# 
+   733  000A                     PCLATH          equ	10	;# 
+   734  000B                     INTCON          equ	11	;# 
+   735  000C                     PORTA           equ	12	;# 
+   736  000D                     PORTB           equ	13	;# 
+   737  000E                     PORTC           equ	14	;# 
+   738  0010                     PORTE           equ	16	;# 
+   739  0011                     PIR1            equ	17	;# 
+   740  0012                     PIR2            equ	18	;# 
+   741  0013                     PIR3            equ	19	;# 
+   742  0015                     TMR0            equ	21	;# 
+   743  0016                     TMR1            equ	22	;# 
+   744  0016                     TMR1L           equ	22	;# 
+   745  0017                     TMR1H           equ	23	;# 
+   746  0018                     T1CON           equ	24	;# 
+   747  0019                     T1GCON          equ	25	;# 
+   748  001A                     TMR2            equ	26	;# 
+   749  001B                     PR2             equ	27	;# 
+   750  001C                     T2CON           equ	28	;# 
+   751  001E                     CPSCON0         equ	30	;# 
+   752  001F                     CPSCON1         equ	31	;# 
+   753  008C                     TRISA           equ	140	;# 
+   754  008D                     TRISB           equ	141	;# 
+   755  008E                     TRISC           equ	142	;# 
+   756  0090                     TRISE           equ	144	;# 
+   757  0091                     PIE1            equ	145	;# 
+   758  0092                     PIE2            equ	146	;# 
+   759  0093                     PIE3            equ	147	;# 
+   760  0095                     OPTION_REG      equ	149	;# 
+   761  0096                     PCON            equ	150	;# 
+   762  0097                     WDTCON          equ	151	;# 
+   763  0098                     OSCTUNE         equ	152	;# 
+   764  0099                     OSCCON          equ	153	;# 
+   765  009A                     OSCSTAT         equ	154	;# 
+   766  009B                     ADRES           equ	155	;# 
+   767  009B                     ADRESL          equ	155	;# 
+   768  009C                     ADRESH          equ	156	;# 
+   769  009D                     ADCON0          equ	157	;# 
+   770  009E                     ADCON1          equ	158	;# 
+   771  010C                     LATA            equ	268	;# 
+   772  010D                     LATB            equ	269	;# 
+   773  010E                     LATC            equ	270	;# 
+   774  0110                     LATE            equ	272	;# 
+   775  0111                     CM1CON0         equ	273	;# 
+   776  0112                     CM1CON1         equ	274	;# 
+   777  0113                     CM2CON0         equ	275	;# 
+   778  0114                     CM2CON1         equ	276	;# 
+   779  0115                     CMOUT           equ	277	;# 
+   780  0116                     BORCON          equ	278	;# 
+   781  0117                     FVRCON          equ	279	;# 
+   782  0118                     DACCON0         equ	280	;# 
+   783  0119                     DACCON1         equ	281	;# 
+   784  011A                     SRCON0          equ	282	;# 
+   785  011B                     SRCON1          equ	283	;# 
+   786  011D                     APFCON          equ	285	;# 
+   787  018C                     ANSELA          equ	396	;# 
+   788  018D                     ANSELB          equ	397	;# 
+   789  0191                     EEADR           equ	401	;# 
+   790  0191                     EEADRL          equ	401	;# 
+   791  0192                     EEADRH          equ	402	;# 
+   792  0193                     EEDAT           equ	403	;# 
+   793  0193                     EEDATL          equ	403	;# 
+   794  0193                     EEDATA          equ	403	;# 
+   795  0194                     EEDATH          equ	404	;# 
+   796  0195                     EECON1          equ	405	;# 
+   797  0196                     EECON2          equ	406	;# 
+   798  0199                     RCREG           equ	409	;# 
+   799  019A                     TXREG           equ	410	;# 
+   800  019B                     SP1BRG          equ	411	;# 
+   801  019B                     SP1BRGL         equ	411	;# 
+   802  019B                     SPBRG           equ	411	;# 
+   803  019B                     SPBRGL          equ	411	;# 
+   804  019C                     SP1BRGH         equ	412	;# 
+   805  019C                     SPBRGH          equ	412	;# 
+   806  019D                     RCSTA           equ	413	;# 
+   807  019E                     TXSTA           equ	414	;# 
+   808  019F                     BAUDCON         equ	415	;# 
+   809  020D                     WPUB            equ	525	;# 
+   810  0210                     WPUE            equ	528	;# 
+   811  0211                     SSPBUF          equ	529	;# 
+   812  0212                     SSPADD          equ	530	;# 
+   813  0213                     SSPMSK          equ	531	;# 
+   814  0214                     SSPSTAT         equ	532	;# 
+   815  0215                     SSPCON1         equ	533	;# 
+   816  0215                     SSPCON          equ	533	;# 
+   817  0216                     SSPCON2         equ	534	;# 
+   818  0217                     SSPCON3         equ	535	;# 
+   819  0291                     CCPR1           equ	657	;# 
+   820  0291                     CCPR1L          equ	657	;# 
+   821  0292                     CCPR1H          equ	658	;# 
+   822  0293                     CCP1CON         equ	659	;# 
+   823  0294                     PWM1CON         equ	660	;# 
+   824  0295                     CCP1AS          equ	661	;# 
+   825  0295                     ECCP1AS         equ	661	;# 
+   826  0296                     PSTR1CON        equ	662	;# 
+   827  0298                     CCPR2           equ	664	;# 
+   828  0298                     CCPR2L          equ	664	;# 
+   829  0299                     CCPR2H          equ	665	;# 
+   830  029A                     CCP2CON         equ	666	;# 
+   831  029B                     PWM2CON         equ	667	;# 
+   832  029C                     CCP2AS          equ	668	;# 
+   833  029C                     ECCP2AS         equ	668	;# 
+   834  029D                     PSTR2CON        equ	669	;# 
+   835  029E                     CCPTMRS0        equ	670	;# 
+   836  029F                     CCPTMRS1        equ	671	;# 
+   837  0311                     CCPR3           equ	785	;# 
+   838  0311                     CCPR3L          equ	785	;# 
+   839  0312                     CCPR3H          equ	786	;# 
+   840  0313                     CCP3CON         equ	787	;# 
+   841  0314                     PWM3CON         equ	788	;# 
+   842  0315                     CCP3AS          equ	789	;# 
+   843  0315                     ECCP3AS         equ	789	;# 
+   844  0316                     PSTR3CON        equ	790	;# 
+   845  0318                     CCPR4           equ	792	;# 
+   846  0318                     CCPR4L          equ	792	;# 
+   847  0319                     CCPR4H          equ	793	;# 
+   848  031A                     CCP4CON         equ	794	;# 
+   849  031C                     CCPR5           equ	796	;# 
+   850  031C                     CCPR5L          equ	796	;# 
+   851  031D                     CCPR5H          equ	797	;# 
+   852  031E                     CCP5CON         equ	798	;# 
+   853  0394                     IOCBP           equ	916	;# 
+   854  0395                     IOCBN           equ	917	;# 
+   855  0396                     IOCBF           equ	918	;# 
+   856  0415                     TMR4            equ	1045	;# 
+   857  0416                     PR4             equ	1046	;# 
+   858  0417                     T4CON           equ	1047	;# 
+   859  041C                     TMR6            equ	1052	;# 
+   860  041D                     PR6             equ	1053	;# 
+   861  041E                     T6CON           equ	1054	;# 
+   862  0791                     LCDCON          equ	1937	;# 
+   863  0792                     LCDPS           equ	1938	;# 
+   864  0793                     LCDREF          equ	1939	;# 
+   865  0794                     LCDCST          equ	1940	;# 
+   866  0795                     LCDRL           equ	1941	;# 
+   867  0798                     LCDSE0          equ	1944	;# 
+   868  0799                     LCDSE1          equ	1945	;# 
+   869  07A0                     LCDDATA0        equ	1952	;# 
+   870  07A1                     LCDDATA1        equ	1953	;# 
+   871  07A3                     LCDDATA3        equ	1955	;# 
+   872  07A4                     LCDDATA4        equ	1956	;# 
+   873  07A6                     LCDDATA6        equ	1958	;# 
+   874  07A7                     LCDDATA7        equ	1959	;# 
+   875  07A9                     LCDDATA9        equ	1961	;# 
+   876  07AA                     LCDDATA10       equ	1962	;# 
+   877  0FE4                     STATUS_SHAD     equ	4068	;# 
+   878  0FE5                     WREG_SHAD       equ	4069	;# 
+   879  0FE6                     BSR_SHAD        equ	4070	;# 
+   880  0FE7                     PCLATH_SHAD     equ	4071	;# 
+   881  0FE8                     FSR0L_SHAD      equ	4072	;# 
+   882  0FE9                     FSR0H_SHAD      equ	4073	;# 
+   883  0FEA                     FSR1L_SHAD      equ	4074	;# 
+   884  0FEB                     FSR1H_SHAD      equ	4075	;# 
+   885  0FED                     STKPTR          equ	4077	;# 
+   886  0FEE                     TOSL            equ	4078	;# 
+   887  0FEF                     TOSH            equ	4079	;# 
+   888  0000                     INDF0           equ	0	;# 
+   889  0001                     INDF1           equ	1	;# 
+   890  0002                     PCL             equ	2	;# 
+   891  0003                     STATUS          equ	3	;# 
+   892  0004                     FSR0L           equ	4	;# 
+   893  0005                     FSR0H           equ	5	;# 
+   894  0006                     FSR1L           equ	6	;# 
+   895  0007                     FSR1H           equ	7	;# 
+   896  0008                     BSR             equ	8	;# 
+   897  0009                     WREG            equ	9	;# 
+   898  000A                     PCLATH          equ	10	;# 
+   899  000B                     INTCON          equ	11	;# 
+   900  000C                     PORTA           equ	12	;# 
+   901  000D                     PORTB           equ	13	;# 
+   902  000E                     PORTC           equ	14	;# 
+   903  0010                     PORTE           equ	16	;# 
+   904  0011                     PIR1            equ	17	;# 
+   905  0012                     PIR2            equ	18	;# 
+   906  0013                     PIR3            equ	19	;# 
+   907  0015                     TMR0            equ	21	;# 
+   908  0016                     TMR1            equ	22	;# 
+   909  0016                     TMR1L           equ	22	;# 
+   910  0017                     TMR1H           equ	23	;# 
+   911  0018                     T1CON           equ	24	;# 
+   912  0019                     T1GCON          equ	25	;# 
+   913  001A                     TMR2            equ	26	;# 
+   914  001B                     PR2             equ	27	;# 
+   915  001C                     T2CON           equ	28	;# 
+   916  001E                     CPSCON0         equ	30	;# 
+   917  001F                     CPSCON1         equ	31	;# 
+   918  008C                     TRISA           equ	140	;# 
+   919  008D                     TRISB           equ	141	;# 
+   920  008E                     TRISC           equ	142	;# 
+   921  0090                     TRISE           equ	144	;# 
+   922  0091                     PIE1            equ	145	;# 
+   923  0092                     PIE2            equ	146	;# 
+   924  0093                     PIE3            equ	147	;# 
+   925  0095                     OPTION_REG      equ	149	;# 
+   926  0096                     PCON            equ	150	;# 
+   927  0097                     WDTCON          equ	151	;# 
+   928  0098                     OSCTUNE         equ	152	;# 
+   929  0099                     OSCCON          equ	153	;# 
+   930  009A                     OSCSTAT         equ	154	;# 
+   931  009B                     ADRES           equ	155	;# 
+   932  009B                     ADRESL          equ	155	;# 
+   933  009C                     ADRESH          equ	156	;# 
+   934  009D                     ADCON0          equ	157	;# 
+   935  009E                     ADCON1          equ	158	;# 
+   936  010C                     LATA            equ	268	;# 
+   937  010D                     LATB            equ	269	;# 
+   938  010E                     LATC            equ	270	;# 
+   939  0110                     LATE            equ	272	;# 
+   940  0111                     CM1CON0         equ	273	;# 
+   941  0112                     CM1CON1         equ	274	;# 
+   942  0113                     CM2CON0         equ	275	;# 
+   943  0114                     CM2CON1         equ	276	;# 
+   944  0115                     CMOUT           equ	277	;# 
+   945  0116                     BORCON          equ	278	;# 
+   946  0117                     FVRCON          equ	279	;# 
+   947  0118                     DACCON0         equ	280	;# 
+   948  0119                     DACCON1         equ	281	;# 
+   949  011A                     SRCON0          equ	282	;# 
+   950  011B                     SRCON1          equ	283	;# 
+   951  011D                     APFCON          equ	285	;# 
+   952  018C                     ANSELA          equ	396	;# 
+   953  018D                     ANSELB          equ	397	;# 
+   954  0191                     EEADR           equ	401	;# 
+   955  0191                     EEADRL          equ	401	;# 
+   956  0192                     EEADRH          equ	402	;# 
+   957  0193                     EEDAT           equ	403	;# 
+   958  0193                     EEDATL          equ	403	;# 
+   959  0193                     EEDATA          equ	403	;# 
+   960  0194                     EEDATH          equ	404	;# 
+   961  0195                     EECON1          equ	405	;# 
+   962  0196                     EECON2          equ	406	;# 
+   963  0199                     RCREG           equ	409	;# 
+   964  019A                     TXREG           equ	410	;# 
+   965  019B                     SP1BRG          equ	411	;# 
+   966  019B                     SP1BRGL         equ	411	;# 
+   967  019B                     SPBRG           equ	411	;# 
+   968  019B                     SPBRGL          equ	411	;# 
+   969  019C                     SP1BRGH         equ	412	;# 
+   970  019C                     SPBRGH          equ	412	;# 
+   971  019D                     RCSTA           equ	413	;# 
+   972  019E                     TXSTA           equ	414	;# 
+   973  019F                     BAUDCON         equ	415	;# 
+   974  020D                     WPUB            equ	525	;# 
+   975  0210                     WPUE            equ	528	;# 
+   976  0211                     SSPBUF          equ	529	;# 
+   977  0212                     SSPADD          equ	530	;# 
+   978  0213                     SSPMSK          equ	531	;# 
+   979  0214                     SSPSTAT         equ	532	;# 
+   980  0215                     SSPCON1         equ	533	;# 
+   981  0215                     SSPCON          equ	533	;# 
+   982  0216                     SSPCON2         equ	534	;# 
+   983  0217                     SSPCON3         equ	535	;# 
+   984  0291                     CCPR1           equ	657	;# 
+   985  0291                     CCPR1L          equ	657	;# 
+   986  0292                     CCPR1H          equ	658	;# 
+   987  0293                     CCP1CON         equ	659	;# 
+   988  0294                     PWM1CON         equ	660	;# 
+   989  0295                     CCP1AS          equ	661	;# 
+   990  0295                     ECCP1AS         equ	661	;# 
+   991  0296                     PSTR1CON        equ	662	;# 
+   992  0298                     CCPR2           equ	664	;# 
+   993  0298                     CCPR2L          equ	664	;# 
+   994  0299                     CCPR2H          equ	665	;# 
+   995  029A                     CCP2CON         equ	666	;# 
+   996  029B                     PWM2CON         equ	667	;# 
+   997  029C                     CCP2AS          equ	668	;# 
+   998  029C                     ECCP2AS         equ	668	;# 
+   999  029D                     PSTR2CON        equ	669	;# 
+  1000  029E                     CCPTMRS0        equ	670	;# 
+  1001  029F                     CCPTMRS1        equ	671	;# 
+  1002  0311                     CCPR3           equ	785	;# 
+  1003  0311                     CCPR3L          equ	785	;# 
+  1004  0312                     CCPR3H          equ	786	;# 
+  1005  0313                     CCP3CON         equ	787	;# 
+  1006  0314                     PWM3CON         equ	788	;# 
+  1007  0315                     CCP3AS          equ	789	;# 
+  1008  0315                     ECCP3AS         equ	789	;# 
+  1009  0316                     PSTR3CON        equ	790	;# 
+  1010  0318                     CCPR4           equ	792	;# 
+  1011  0318                     CCPR4L          equ	792	;# 
+  1012  0319                     CCPR4H          equ	793	;# 
+  1013  031A                     CCP4CON         equ	794	;# 
+  1014  031C                     CCPR5           equ	796	;# 
+  1015  031C                     CCPR5L          equ	796	;# 
+  1016  031D                     CCPR5H          equ	797	;# 
+  1017  031E                     CCP5CON         equ	798	;# 
+  1018  0394                     IOCBP           equ	916	;# 
+  1019  0395                     IOCBN           equ	917	;# 
+  1020  0396                     IOCBF           equ	918	;# 
+  1021  0415                     TMR4            equ	1045	;# 
+  1022  0416                     PR4             equ	1046	;# 
+  1023  0417                     T4CON           equ	1047	;# 
+  1024  041C                     TMR6            equ	1052	;# 
+  1025  041D                     PR6             equ	1053	;# 
+  1026  041E                     T6CON           equ	1054	;# 
+  1027  0791                     LCDCON          equ	1937	;# 
+  1028  0792                     LCDPS           equ	1938	;# 
+  1029  0793                     LCDREF          equ	1939	;# 
+  1030  0794                     LCDCST          equ	1940	;# 
+  1031  0795                     LCDRL           equ	1941	;# 
+  1032  0798                     LCDSE0          equ	1944	;# 
+  1033  0799                     LCDSE1          equ	1945	;# 
+  1034  07A0                     LCDDATA0        equ	1952	;# 
+  1035  07A1                     LCDDATA1        equ	1953	;# 
+  1036  07A3                     LCDDATA3        equ	1955	;# 
+  1037  07A4                     LCDDATA4        equ	1956	;# 
+  1038  07A6                     LCDDATA6        equ	1958	;# 
+  1039  07A7                     LCDDATA7        equ	1959	;# 
+  1040  07A9                     LCDDATA9        equ	1961	;# 
+  1041  07AA                     LCDDATA10       equ	1962	;# 
+  1042  0FE4                     STATUS_SHAD     equ	4068	;# 
+  1043  0FE5                     WREG_SHAD       equ	4069	;# 
+  1044  0FE6                     BSR_SHAD        equ	4070	;# 
+  1045  0FE7                     PCLATH_SHAD     equ	4071	;# 
+  1046  0FE8                     FSR0L_SHAD      equ	4072	;# 
+  1047  0FE9                     FSR0H_SHAD      equ	4073	;# 
+  1048  0FEA                     FSR1L_SHAD      equ	4074	;# 
+  1049  0FEB                     FSR1H_SHAD      equ	4075	;# 
+  1050  0FED                     STKPTR          equ	4077	;# 
+  1051  0FEE                     TOSL            equ	4078	;# 
+  1052  0FEF                     TOSH            equ	4079	;# 
+  1053  0000                     INDF0           equ	0	;# 
+  1054  0001                     INDF1           equ	1	;# 
+  1055  0002                     PCL             equ	2	;# 
+  1056  0003                     STATUS          equ	3	;# 
+  1057  0004                     FSR0L           equ	4	;# 
+  1058  0005                     FSR0H           equ	5	;# 
+  1059  0006                     FSR1L           equ	6	;# 
+  1060  0007                     FSR1H           equ	7	;# 
+  1061  0008                     BSR             equ	8	;# 
+  1062  0009                     WREG            equ	9	;# 
+  1063  000A                     PCLATH          equ	10	;# 
+  1064  000B                     INTCON          equ	11	;# 
+  1065  000C                     PORTA           equ	12	;# 
+  1066  000D                     PORTB           equ	13	;# 
+  1067  000E                     PORTC           equ	14	;# 
+  1068  0010                     PORTE           equ	16	;# 
+  1069  0011                     PIR1            equ	17	;# 
+  1070  0012                     PIR2            equ	18	;# 
+  1071  0013                     PIR3            equ	19	;# 
+  1072  0015                     TMR0            equ	21	;# 
+  1073  0016                     TMR1            equ	22	;# 
+  1074  0016                     TMR1L           equ	22	;# 
+  1075  0017                     TMR1H           equ	23	;# 
+  1076  0018                     T1CON           equ	24	;# 
+  1077  0019                     T1GCON          equ	25	;# 
+  1078  001A                     TMR2            equ	26	;# 
+  1079  001B                     PR2             equ	27	;# 
+  1080  001C                     T2CON           equ	28	;# 
+  1081  001E                     CPSCON0         equ	30	;# 
+  1082  001F                     CPSCON1         equ	31	;# 
+  1083  008C                     TRISA           equ	140	;# 
+  1084  008D                     TRISB           equ	141	;# 
+  1085  008E                     TRISC           equ	142	;# 
+  1086  0090                     TRISE           equ	144	;# 
+  1087  0091                     PIE1            equ	145	;# 
+  1088  0092                     PIE2            equ	146	;# 
+  1089  0093                     PIE3            equ	147	;# 
+  1090  0095                     OPTION_REG      equ	149	;# 
+  1091  0096                     PCON            equ	150	;# 
+  1092  0097                     WDTCON          equ	151	;# 
+  1093  0098                     OSCTUNE         equ	152	;# 
+  1094  0099                     OSCCON          equ	153	;# 
+  1095  009A                     OSCSTAT         equ	154	;# 
+  1096  009B                     ADRES           equ	155	;# 
+  1097  009B                     ADRESL          equ	155	;# 
+  1098  009C                     ADRESH          equ	156	;# 
+  1099  009D                     ADCON0          equ	157	;# 
+  1100  009E                     ADCON1          equ	158	;# 
+  1101  010C                     LATA            equ	268	;# 
+  1102  010D                     LATB            equ	269	;# 
+  1103  010E                     LATC            equ	270	;# 
+  1104  0110                     LATE            equ	272	;# 
+  1105  0111                     CM1CON0         equ	273	;# 
+  1106  0112                     CM1CON1         equ	274	;# 
+  1107  0113                     CM2CON0         equ	275	;# 
+  1108  0114                     CM2CON1         equ	276	;# 
+  1109  0115                     CMOUT           equ	277	;# 
+  1110  0116                     BORCON          equ	278	;# 
+  1111  0117                     FVRCON          equ	279	;# 
+  1112  0118                     DACCON0         equ	280	;# 
+  1113  0119                     DACCON1         equ	281	;# 
+  1114  011A                     SRCON0          equ	282	;# 
+  1115  011B                     SRCON1          equ	283	;# 
+  1116  011D                     APFCON          equ	285	;# 
+  1117  018C                     ANSELA          equ	396	;# 
+  1118  018D                     ANSELB          equ	397	;# 
+  1119  0191                     EEADR           equ	401	;# 
+  1120  0191                     EEADRL          equ	401	;# 
+  1121  0192                     EEADRH          equ	402	;# 
+  1122  0193                     EEDAT           equ	403	;# 
+  1123  0193                     EEDATL          equ	403	;# 
+  1124  0193                     EEDATA          equ	403	;# 
+  1125  0194                     EEDATH          equ	404	;# 
+  1126  0195                     EECON1          equ	405	;# 
+  1127  0196                     EECON2          equ	406	;# 
+  1128  0199                     RCREG           equ	409	;# 
+  1129  019A                     TXREG           equ	410	;# 
+  1130  019B                     SP1BRG          equ	411	;# 
+  1131  019B                     SP1BRGL         equ	411	;# 
+  1132  019B                     SPBRG           equ	411	;# 
+  1133  019B                     SPBRGL          equ	411	;# 
+  1134  019C                     SP1BRGH         equ	412	;# 
+  1135  019C                     SPBRGH          equ	412	;# 
+  1136  019D                     RCSTA           equ	413	;# 
+  1137  019E                     TXSTA           equ	414	;# 
+  1138  019F                     BAUDCON         equ	415	;# 
+  1139  020D                     WPUB            equ	525	;# 
+  1140  0210                     WPUE            equ	528	;# 
+  1141  0211                     SSPBUF          equ	529	;# 
+  1142  0212                     SSPADD          equ	530	;# 
+  1143  0213                     SSPMSK          equ	531	;# 
+  1144  0214                     SSPSTAT         equ	532	;# 
+  1145  0215                     SSPCON1         equ	533	;# 
+  1146  0215                     SSPCON          equ	533	;# 
+  1147  0216                     SSPCON2         equ	534	;# 
+  1148  0217                     SSPCON3         equ	535	;# 
+  1149  0291                     CCPR1           equ	657	;# 
+  1150  0291                     CCPR1L          equ	657	;# 
+  1151  0292                     CCPR1H          equ	658	;# 
+  1152  0293                     CCP1CON         equ	659	;# 
+  1153  0294                     PWM1CON         equ	660	;# 
+  1154  0295                     CCP1AS          equ	661	;# 
+  1155  0295                     ECCP1AS         equ	661	;# 
+  1156  0296                     PSTR1CON        equ	662	;# 
+  1157  0298                     CCPR2           equ	664	;# 
+  1158  0298                     CCPR2L          equ	664	;# 
+  1159  0299                     CCPR2H          equ	665	;# 
+  1160  029A                     CCP2CON         equ	666	;# 
+  1161  029B                     PWM2CON         equ	667	;# 
+  1162  029C                     CCP2AS          equ	668	;# 
+  1163  029C                     ECCP2AS         equ	668	;# 
+  1164  029D                     PSTR2CON        equ	669	;# 
+  1165  029E                     CCPTMRS0        equ	670	;# 
+  1166  029F                     CCPTMRS1        equ	671	;# 
+  1167  0311                     CCPR3           equ	785	;# 
+  1168  0311                     CCPR3L          equ	785	;# 
+  1169  0312                     CCPR3H          equ	786	;# 
+  1170  0313                     CCP3CON         equ	787	;# 
+  1171  0314                     PWM3CON         equ	788	;# 
+  1172  0315                     CCP3AS          equ	789	;# 
+  1173  0315                     ECCP3AS         equ	789	;# 
+  1174  0316                     PSTR3CON        equ	790	;# 
+  1175  0318                     CCPR4           equ	792	;# 
+  1176  0318                     CCPR4L          equ	792	;# 
+  1177  0319                     CCPR4H          equ	793	;# 
+  1178  031A                     CCP4CON         equ	794	;# 
+  1179  031C                     CCPR5           equ	796	;# 
+  1180  031C                     CCPR5L          equ	796	;# 
+  1181  031D                     CCPR5H          equ	797	;# 
+  1182  031E                     CCP5CON         equ	798	;# 
+  1183  0394                     IOCBP           equ	916	;# 
+  1184  0395                     IOCBN           equ	917	;# 
+  1185  0396                     IOCBF           equ	918	;# 
+  1186  0415                     TMR4            equ	1045	;# 
+  1187  0416                     PR4             equ	1046	;# 
+  1188  0417                     T4CON           equ	1047	;# 
+  1189  041C                     TMR6            equ	1052	;# 
+  1190  041D                     PR6             equ	1053	;# 
+  1191  041E                     T6CON           equ	1054	;# 
+  1192  0791                     LCDCON          equ	1937	;# 
+  1193  0792                     LCDPS           equ	1938	;# 
+  1194  0793                     LCDREF          equ	1939	;# 
+  1195  0794                     LCDCST          equ	1940	;# 
+  1196  0795                     LCDRL           equ	1941	;# 
+  1197  0798                     LCDSE0          equ	1944	;# 
+  1198  0799                     LCDSE1          equ	1945	;# 
+  1199  07A0                     LCDDATA0        equ	1952	;# 
+  1200  07A1                     LCDDATA1        equ	1953	;# 
+  1201  07A3                     LCDDATA3        equ	1955	;# 
+  1202  07A4                     LCDDATA4        equ	1956	;# 
+  1203  07A6                     LCDDATA6        equ	1958	;# 
+  1204  07A7                     LCDDATA7        equ	1959	;# 
+  1205  07A9                     LCDDATA9        equ	1961	;# 
+  1206  07AA                     LCDDATA10       equ	1962	;# 
+  1207  0FE4                     STATUS_SHAD     equ	4068	;# 
+  1208  0FE5                     WREG_SHAD       equ	4069	;# 
+  1209  0FE6                     BSR_SHAD        equ	4070	;# 
+  1210  0FE7                     PCLATH_SHAD     equ	4071	;# 
+  1211  0FE8                     FSR0L_SHAD      equ	4072	;# 
+  1212  0FE9                     FSR0H_SHAD      equ	4073	;# 
+  1213  0FEA                     FSR1L_SHAD      equ	4074	;# 
+  1214  0FEB                     FSR1H_SHAD      equ	4075	;# 
+  1215  0FED                     STKPTR          equ	4077	;# 
+  1216  0FEE                     TOSL            equ	4078	;# 
+  1217  0FEF                     TOSH            equ	4079	;# 
+  1218                           
+  1219                           	psect	idataBANK0
+  1220  0000'                    __pidataBANK0:
+  1221                           
+  1222                           ;initializer for _tx_buf
+  1223  0000' 34C8               	retlw	200
+  1224  0001' 348B               	retlw	139
+  1225  0002' 3400               	retlw	0
+  1226  0003' 3400               	retlw	0
+  1227  0004' 3400               	retlw	0
+  1228  0005' 3400               	retlw	0
+  1229  0006' 3400               	retlw	0
+  1230  0007' 3400               	retlw	0
+  1231  0008' 3400               	retlw	0
+  1232  0009' 3400               	retlw	0
+  1233  000A' 344C               	retlw	76
+  1234                           
+  1235                           	psect	stringtext1
+  1236  0000'                    __pstringtext1:
+  1237  0000'                    calculate_crc8_real@poly_reflected:
+  1238  0000' 34C8               	retlw	200
+  1239  0001'                    __end_ofcalculate_crc8_real@poly_reflected:
+  1240  001C                     _T2CONbits      set	28
+  1241  001C                     _T2CON          set	28
+  1242  0011                     _PIR1bits       set	17
+  1243  001A                     _TMR2           set	26
+  1244  001B                     _PR2            set	27
+  1245  000E                     _PORTCbits      set	14
+  1246  000C                     _PORTAbits      set	12
+  1247  0089                     _TMR2IF         set	137
+  1248  0095                     _OPTION_REGbits set	149
+  1249  008E                     _TRISC          set	142
+  1250  008D                     _TRISB          set	141
+  1251  008C                     _TRISA          set	140
+  1252  0090                     _TRISE          set	144
+  1253  0097                     _WDTCON         set	151
+  1254  0098                     _OSCTUNE        set	152
+  1255  0099                     _OSCCON         set	153
+  1256  04D6                     _PLLR           set	1238
+  1257  011D                     _APFCON         set	285
+  1258  010E                     _LATC           set	270
+  1259  010D                     _LATB           set	269
+  1260  010C                     _LATA           set	268
+  1261  0110                     _LATE           set	272
+  1262  0116                     _BORCON         set	278
+  1263  010D                     _LATBbits       set	269
+  1264  018C                     _ANSELA         set	396
+  1265  018D                     _ANSELB         set	397
+  1266  020D                     _WPUB           set	525
+  1267  0210                     _WPUE           set	528
+  1268  029E                     _CCPTMRS0bits   set	670
+  1269  0313                     _CCP3CONbits    set	787
+  1270  0311                     _CCPR3L         set	785
+  1271  0312                     _CCPR3H         set	786
+  1272  0316                     _PSTR3CON       set	790
+  1273  0314                     _PWM3CON        set	788
+  1274  0315                     _ECCP3AS        set	789
+  1275  0313                     _CCP3CON        set	787
+  1276                           
+  1277                           	psect	cinit
+  1278  0000'                    start_initialization:	
+  1279                           ; #config settings
+  1280                           
+  1281  0000'                    __initialization:
+  1282                           
+  1283                           ; Initialize objects allocated to BANK0
+  1284  0000' 3000'              	movlw	low __pidataBANK0
+  1285  0001' 0084               	movwf	4
+  1286  0002' 3000'              	movlw	(high __pidataBANK0)| (0+128)
+  1287  0003' 0085               	movwf	5
+  1288  0004' 3000'              	movlw	low __pdataBANK0
+  1289  0005' 0086               	movwf	6
+  1290  0006' 3000'              	movlw	high __pdataBANK0
+  1291  0007' 0087               	movwf	7
+  1292  0008' 300B               	movlw	11
+  1293  0009' 3180' 2000' 3180'  	fcall	init_ram
+  1294                           
+  1295                           ; Clear objects allocated to COMMON
+  1296  000C' 0180'              	clrf	__pbssCOMMON& (0+127)
+  1297                           
+  1298                           ; Clear objects allocated to BANK0
+  1299  000D' 0180'              	clrf	__pbssBANK0& (0+127)
+  1300  000E'                    end_of_initialization:	
+  1301                           ;End of C runtime variable initialization code
+  1302                           
+  1303  000E'                    __end_of__initialization:
+  1304  000E' 0020               	movlb	0
+  1305  000F' 3180' 2800'        	ljmp	_main	;jump to C main() function
+  1306                           
+  1307                           	psect	bssCOMMON
+  1308  0000'                    __pbssCOMMON:
+  1309  0000'                    _D2:
+  1310  0000'                    	ds	1
+  1311                           
+  1312                           	psect	bssBANK0
+  1313  0000'                    __pbssBANK0:
+  1314  0000'                    _D3:
+  1315  0000'                    	ds	1
+  1316                           
+  1317                           	psect	dataBANK0
+  1318  0000'                    __pdataBANK0:
+  1319  0000'                    _tx_buf:
+  1320  0000'                    	ds	11
+  1321                           
+  1322                           	psect	inittext
+  1323  0000'                    init_ram:
+  1324  0000' 00FE               	movwf	btemp
+  1325  0001'                    initloop:
+  1326  0001' 0012               	moviw fsr0++
+  1327  0002' 001E               	movwi fsr1++
+  1328  0003' 0BFE               	decfsz	btemp,f
+  1329  0004' 2800'              	goto	initloop
+  1330  0005' 3400               	retlw	0
+  1331                           
+  1332                           	psect	cstackCOMMON
+  1333  0000'                    __pcstackCOMMON:
+  1334  0000'                    ?_calculate_crc8:
+  1335  0000'                    ?_PWM:	
+  1336                           ; 1 bytes @ 0x0
+  1337                           
+  1338  0000'                    ?_SYSTEM_Initialize:	
+  1339                           ; 1 bytes @ 0x0
+  1340                           
+  1341  0000'                    ?_PIN_MANAGER_Initialize:	
+  1342                           ; 1 bytes @ 0x0
+  1343                           
+  1344  0000'                    ?_OSCILLATOR_Initialize:	
+  1345                           ; 1 bytes @ 0x0
+  1346                           
+  1347  0000'                    ?_WDT_Initialize:	
+  1348                           ; 1 bytes @ 0x0
+  1349                           
+  1350  0000'                    ?_TMR2_Initialize:	
+  1351                           ; 1 bytes @ 0x0
+  1352                           
+  1353  0000'                    ?_Check_Input:	
+  1354                           ; 1 bytes @ 0x0
+  1355                           
+  1356  0000'                    ?_prepare_tx_data:	
+  1357                           ; 1 bytes @ 0x0
+  1358                           
+  1359  0000'                    ?_Transmit_data:	
+  1360                           ; 1 bytes @ 0x0
+  1361                           
+  1362  0000'                    ?_EPWM3_Initialize:	
+  1363                           ; 1 bytes @ 0x0
+  1364                           
+  1365  0000'                    ?_wait_for_pwm_cycle_complete:	
+  1366                           ; 1 bytes @ 0x0
+  1367                           
+  1368  0000'                    ?_pwm_set_bit:	
+  1369                           ; 1 bytes @ 0x0
+  1370                           
+  1371  0000'                    ?_main:	
+  1372                           ; 1 bytes @ 0x0
+  1373                           
+  1374  0000'                    _calculate_crc8$0:	
+  1375                           ; 2 bytes @ 0x0
+  1376                           
+  1377  0000'                    ??_calculate_crc8:	
+  1378                           ; 2 bytes @ 0x0
+  1379                           
+  1380  0000'                    ??_SYSTEM_Initialize:	
+  1381                           ; 1 bytes @ 0x0
+  1382                           
+  1383  0000'                    ??_PIN_MANAGER_Initialize:	
+  1384                           ; 1 bytes @ 0x0
+  1385                           
+  1386  0000'                    ??_OSCILLATOR_Initialize:	
+  1387                           ; 1 bytes @ 0x0
+  1388                           
+  1389  0000'                    ??_WDT_Initialize:	
+  1390                           ; 1 bytes @ 0x0
+  1391                           
+  1392  0000'                    ??_TMR2_Initialize:	
+  1393                           ; 1 bytes @ 0x0
+  1394                           
+  1395  0000'                    ??_Check_Input:	
+  1396                           ; 1 bytes @ 0x0
+  1397                           
+  1398  0000'                    ??_prepare_tx_data:	
+  1399                           ; 1 bytes @ 0x0
+  1400                           
+  1401  0000'                    ??_EPWM3_Initialize:	
+  1402                           ; 1 bytes @ 0x0
+  1403                           
+  1404  0000'                    ??_wait_for_pwm_cycle_complete:	
+  1405                           ; 1 bytes @ 0x0
+  1406                           
+  1407  0000'                    ??_pwm_set_bit:	
+  1408                           ; 1 bytes @ 0x0
+  1409                           
+  1410                           
+  1411                           ; 1 bytes @ 0x0
+  1412  0000'                    	ds	2
+  1413  0002'                    _calculate_crc8$1:
+  1414  0002'                    pwm_set_bit@bit_value:	
+  1415                           ; 1 bytes @ 0x2
+  1416                           
+  1417                           
+  1418                           ; 1 bytes @ 0x2
+  1419  0002'                    	ds	1
+  1420  0003'                    pwm_set_bit@duty:
+  1421                           
+  1422                           ; 2 bytes @ 0x3
+  1423  0003'                    	ds	2
+  1424  0005'                    ??_PWM:
+  1425                           
+  1426                           ; 1 bytes @ 0x5
+  1427  0005'                    	ds	1
+  1428  0006'                    PWM@data:
+  1429                           
+  1430                           ; 1 bytes @ 0x6
+  1431  0006'                    	ds	1
+  1432  0007'                    PWM@j:
+  1433                           
+  1434                           ; 2 bytes @ 0x7
+  1435  0007'                    	ds	2
+  1436  0009'                    PWM@i:
+  1437                           
+  1438                           ; 2 bytes @ 0x9
+  1439  0009'                    	ds	2
+  1440  000B'                    Transmit_data@i:
+  1441  000B'                    ??_Transmit_data:	
+  1442                           ; 1 bytes @ 0xB
+  1443                           
+  1444                           
+  1445                           ; 1 bytes @ 0xB
+  1446  000B'                    	ds	1
+  1447  000C'                    ??_main:
+  1448                           
+  1449                           ; 1 bytes @ 0xC
+  1450  000C'                    	ds	1
+  1451                           
+  1452                           	psect	maintext
+  1453  0000'                    __pmaintext:	
+  1454 ;;
+  1455 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+  1456 ;;
+  1457 ;; *************** function _main *****************
+  1458 ;; Defined at:
+  1459 ;;		line 149 in file "D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c"
+  1460 ;; Parameters:    Size  Location     Type
+  1461 ;;		None
+  1462 ;; Auto vars:     Size  Location     Type
+  1463 ;;		None
+  1464 ;; Return value:  Size  Location     Type
+  1465 ;;                  2   47[None  ] int 
+  1466 ;; Registers used:
+  1467 ;;		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
+  1468 ;; Tracked objects:
+  1469 ;;		On entry : B1F/0
+  1470 ;;		On exit  : 0/0
+  1471 ;;		Unchanged: 0/0
+  1472 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  1473 ;;      Params:         0       0       0       0       0       0       0       0
+  1474 ;;      Locals:         0       0       0       0       0       0       0       0
+  1475 ;;      Temps:          1       0       0       0       0       0       0       0
+  1476 ;;      Totals:         1       0       0       0       0       0       0       0
+  1477 ;;Total ram usage:        1 bytes
+  1478 ;; Hardware stack levels required when called: 3
+  1479 ;; This function calls:
+  1480 ;;		_Check_Input
+  1481 ;;		_SYSTEM_Initialize
+  1482 ;;		_Transmit_data
+  1483 ;;		_prepare_tx_data
+  1484 ;; This function is called by:
+  1485 ;;		Startup code after reset
+  1486 ;; This function uses a non-reentrant model
+  1487 ;;
+  1488                           
+  1489  0000'                    _main:	
+  1490                           ;psect for function _main
+  1491                           
+  1492  0000'                    l1007:	
+  1493                           ;incstack = 0
+  1494                           ; Regs used in _main: [allreg]
+  1495                           
+  1496                           
+  1497                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 151:   SYSTEM_Initialize();
+  1498  0000' 3180' 2000' 3180'  	fcall	_SYSTEM_Initialize
+  1499  0003'                    l1009:
+  1500                           
+  1501                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 155:     Check_Input();
+  1502  0003' 3180' 2000' 3180'  	fcall	_Check_Input
+  1503  0006'                    l1011:
+  1504                           
+  1505                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 156:     prepare_tx_data();
+  1506  0006' 3180' 2000' 3180'  	fcall	_prepare_tx_data
+  1507  0009'                    l1013:
+  1508                           
+  1509                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 157:     Transmit_data();
+  1510  0009' 3180' 2000' 3180'  	fcall	_Transmit_data
+  1511  000C'                    l1015:
+  1512                           
+  1513                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 158:     _delay((unsigned long)((20)*(320
+      +                          00000/4000.0)));
+  1514  000C' 30D0               	movlw	208
+  1515  000D' 008C'              	movwf	??_main
+  1516  000E' 30CA               	movlw	202
+  1517  000F'                    u327:
+  1518  000F' 0B89               	decfsz	9,f
+  1519  0010' 2800'              	goto	u327
+  1520  0011' 0B8C'              	decfsz	??_main,f
+  1521  0012' 2800'              	goto	u327
+  1522  0013' 2800'              	goto	l1009
+  1523  0014' 3180' 2800'        	ljmp	start
+  1524  0016'                    __end_of_main:
+  1525                           
+  1526                           	psect	text1
+  1527  0000'                    __ptext1:	
+  1528 ;; *************** function _prepare_tx_data *****************
+  1529 ;; Defined at:
+  1530 ;;		line 120 in file "D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c"
+  1531 ;; Parameters:    Size  Location     Type
+  1532 ;;		None
+  1533 ;; Auto vars:     Size  Location     Type
+  1534 ;;		None
+  1535 ;; Return value:  Size  Location     Type
+  1536 ;;                  1    wreg      void 
+  1537 ;; Registers used:
+  1538 ;;		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
+  1539 ;; Tracked objects:
+  1540 ;;		On entry : 0/0
+  1541 ;;		On exit  : 0/0
+  1542 ;;		Unchanged: 0/0
+  1543 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  1544 ;;      Params:         0       0       0       0       0       0       0       0
+  1545 ;;      Locals:         0       0       0       0       0       0       0       0
+  1546 ;;      Temps:          0       0       0       0       0       0       0       0
+  1547 ;;      Totals:         0       0       0       0       0       0       0       0
+  1548 ;;Total ram usage:        0 bytes
+  1549 ;; Hardware stack levels used: 1
+  1550 ;; Hardware stack levels required when called: 1
+  1551 ;; This function calls:
+  1552 ;;		_calculate_crc8
+  1553 ;; This function is called by:
+  1554 ;;		_main
+  1555 ;; This function uses a non-reentrant model
+  1556 ;;
+  1557                           
+  1558  0000'                    _prepare_tx_data:	
+  1559                           ;psect for function _prepare_tx_data
+  1560                           
+  1561  0000'                    l1003:	
+  1562                           ;incstack = 0
+  1563                           ; Regs used in _prepare_tx_data: [allreg]
+  1564                           
+  1565                           
+  1566                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 122:     tx_buf.data[0] = D2.Byte;
+  1567  0000' 0800'              	movf	_D2,w
+  1568  0001' 0020               	movlb	0	; select bank0
+  1569  0002' 0082'              	movwf	_tx_buf+2
+  1570                           
+  1571                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 123:     tx_buf.data[1] = D3.Byte;
+  1572  0003' 0800'              	movf	_D3,w
+  1573  0004' 0083'              	movwf	_tx_buf+3
+  1574  0005'                    l1005:
+  1575                           
+  1576                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 129:     tx_buf.crc = calculate_crc8(tx_b
+      +                          uf.data, 8);
+  1577  0005' 3000'              	movlw	low (_tx_buf+2)
+  1578  0006' 0080'              	movwf	_calculate_crc8$0
+  1579  0007' 3000'              	movlw	high (_tx_buf+2)
+  1580  0008' 0081'              	movwf	_calculate_crc8$0+1
+  1581  0009' 3008               	movlw	8
+  1582  000A' 0082'              	movwf	_calculate_crc8$1
+  1583  000B' 3180' 2000' 3180'  	fcall	_calculate_crc8
+  1584  000E' 0020               	movlb	0	; select bank0
+  1585  000F' 008A'              	movwf	_tx_buf+10
+  1586  0010'                    l38:
+  1587  0010' 0008               	return
+  1588  0011'                    __end_of_prepare_tx_data:
+  1589                           
+  1590                           	psect	text2
+  1591  0000'                    __ptext2:	
+  1592 ;; *************** function _Transmit_data *****************
+  1593 ;; Defined at:
+  1594 ;;		line 132 in file "D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c"
+  1595 ;; Parameters:    Size  Location     Type
+  1596 ;;		None
+  1597 ;; Auto vars:     Size  Location     Type
+  1598 ;;  i               1   11[COMMON] unsigned char 
+  1599 ;; Return value:  Size  Location     Type
+  1600 ;;                  1    wreg      void 
+  1601 ;; Registers used:
+  1602 ;;		wreg, fsr1l, fsr1h, status,2, status,0, pclath, cstack
+  1603 ;; Tracked objects:
+  1604 ;;		On entry : 0/0
+  1605 ;;		On exit  : 0/0
+  1606 ;;		Unchanged: 0/0
+  1607 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  1608 ;;      Params:         0       0       0       0       0       0       0       0
+  1609 ;;      Locals:         1       0       0       0       0       0       0       0
+  1610 ;;      Temps:          0       0       0       0       0       0       0       0
+  1611 ;;      Totals:         1       0       0       0       0       0       0       0
+  1612 ;;Total ram usage:        1 bytes
+  1613 ;; Hardware stack levels used: 1
+  1614 ;; Hardware stack levels required when called: 2
+  1615 ;; This function calls:
+  1616 ;;		_PWM
+  1617 ;; This function is called by:
+  1618 ;;		_main
+  1619 ;; This function uses a non-reentrant model
+  1620 ;;
+  1621                           
+  1622  0000'                    _Transmit_data:	
+  1623                           ;psect for function _Transmit_data
+  1624                           
+  1625  0000'                    l981:	
+  1626                           ;incstack = 0
+  1627                           ; Regs used in _Transmit_data: [wreg+fsr1l+fsr1h+status,2+status,0+pclath+cstack]
+  1628                           
+  1629                           
+  1630                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 141:     for (uint8_t i = 0; i < 11; i++)
+      +                           {
+  1631  0000' 018B'              	clrf	Transmit_data@i
+  1632  0001'                    l987:
+  1633                           
+  1634                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 142:       PWM(tx_buf.buf[i]);
+  1635  0001' 080B'              	movf	Transmit_data@i,w
+  1636  0002' 3E00'              	addlw	low _tx_buf
+  1637  0003' 0086               	movwf	6
+  1638  0004' 0187               	clrf	7
+  1639  0005' 3000'              	movlw	high _tx_buf
+  1640  0006' 3D87               	addwfc	7,f
+  1641  0007' 0801               	movf	1,w
+  1642  0008' 3180' 2000' 3180'  	fcall	_PWM
+  1643  000B'                    l989:
+  1644                           
+  1645                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 143:     }
+  1646  000B' 3001               	movlw	1
+  1647  000C' 078B'              	addwf	Transmit_data@i,f
+  1648  000D'                    l991:
+  1649  000D' 300B               	movlw	11
+  1650  000E' 020B'              	subwf	Transmit_data@i,w
+  1651  000F' 1C03               	skipc
+  1652  0010' 2800'              	goto	u311
+  1653  0011' 2800'              	goto	u310
+  1654  0012'                    u311:
+  1655  0012' 2800'              	goto	l987
+  1656  0013'                    u310:
+  1657  0013'                    l43:
+  1658  0013' 0008               	return
+  1659  0014'                    __end_of_Transmit_data:
+  1660                           
+  1661                           	psect	text3
+  1662  0000'                    __ptext3:	
+  1663 ;; *************** function _PWM *****************
+  1664 ;; Defined at:
+  1665 ;;		line 42 in file "D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c"
+  1666 ;; Parameters:    Size  Location     Type
+  1667 ;;  data            1    wreg     unsigned char 
+  1668 ;; Auto vars:     Size  Location     Type
+  1669 ;;  data            1    6[COMMON] unsigned char 
+  1670 ;;  j               2    7[COMMON] int 
+  1671 ;;  i               2    9[COMMON] int 
+  1672 ;; Return value:  Size  Location     Type
+  1673 ;;                  1    wreg      void 
+  1674 ;; Registers used:
+  1675 ;;		wreg, status,2, status,0, pclath, cstack
+  1676 ;; Tracked objects:
+  1677 ;;		On entry : 0/0
+  1678 ;;		On exit  : 0/0
+  1679 ;;		Unchanged: 0/0
+  1680 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  1681 ;;      Params:         0       0       0       0       0       0       0       0
+  1682 ;;      Locals:         5       0       0       0       0       0       0       0
+  1683 ;;      Temps:          1       0       0       0       0       0       0       0
+  1684 ;;      Totals:         6       0       0       0       0       0       0       0
+  1685 ;;Total ram usage:        6 bytes
+  1686 ;; Hardware stack levels used: 1
+  1687 ;; Hardware stack levels required when called: 1
+  1688 ;; This function calls:
+  1689 ;;		_pwm_set_bit
+  1690 ;;		_wait_for_pwm_cycle_complete
+  1691 ;; This function is called by:
+  1692 ;;		_Transmit_data
+  1693 ;; This function uses a non-reentrant model
+  1694 ;;
+  1695                           
+  1696  0000'                    _PWM:	
+  1697                           ;psect for function _PWM
+  1698                           
+  1699                           
+  1700                           ;incstack = 0
+  1701                           ; Regs used in _PWM: [wreg+status,2+status,0+pclath+cstack]
+  1702                           ;PWM@data stored from wreg
+  1703  0000' 0086'              	movwf	PWM@data
+  1704  0001'                    l933:
+  1705                           
+  1706                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c: 43:   wait_for_pwm_cycle_complete()
+      +                          ;
+  1707  0001' 3180' 2000' 3180'  	fcall	_wait_for_pwm_cycle_complete
+  1708  0004'                    l935:
+  1709                           
+  1710                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c: 45:   pwm_set_bit(0);
+  1711  0004' 3000               	movlw	0
+  1712  0005' 3180' 2000' 3180'  	fcall	_pwm_set_bit
+  1713  0008'                    l937:
+  1714                           
+  1715                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c: 48:   for (int i = 0; i < 8; i++) {
+  1716  0008' 0189'              	clrf	PWM@i
+  1717  0009' 018A'              	clrf	PWM@i+1
+  1718  000A'                    l943:
+  1719                           
+  1720                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c: 49:     wait_for_pwm_cycle_complete
+      +                          ();
+  1721  000A' 3180' 2000' 3180'  	fcall	_wait_for_pwm_cycle_complete
+  1722  000D'                    l945:
+  1723                           
+  1724                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c: 50:     pwm_set_bit((data >> i) & 0
+      +                          x01);
+  1725  000D' 0806'              	movf	PWM@data,w
+  1726  000E' 0085'              	movwf	??_PWM
+  1727  000F' 0A09'              	incf	PWM@i,w
+  1728  0010' 2800'              	goto	u224
+  1729  0011'                    u225:
+  1730  0011' 3685'              	lsrf	??_PWM,f
+  1731  0012'                    u224:
+  1732  0012' 0B89               	decfsz	9,f
+  1733  0013' 2800'              	goto	u225
+  1734  0014' 0805'              	movf	??_PWM,w
+  1735  0015' 3901               	andlw	1
+  1736  0016' 3180' 2000' 3180'  	fcall	_pwm_set_bit
+  1737                           
+  1738                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c: 51:   }
+  1739  0019' 3001               	movlw	1
+  1740  001A' 0789'              	addwf	PWM@i,f
+  1741  001B' 3000               	movlw	0
+  1742  001C' 3D8A'              	addwfc	PWM@i+1,f
+  1743  001D' 080A'              	movf	PWM@i+1,w
+  1744  001E' 3A80               	xorlw	128
+  1745  001F' 0085'              	movwf	??_PWM
+  1746  0020' 3080               	movlw	128
+  1747  0021' 0205'              	subwf	??_PWM,w
+  1748  0022' 1D03               	skipz
+  1749  0023' 2800'              	goto	u235
+  1750  0024' 3008               	movlw	8
+  1751  0025' 0209'              	subwf	PWM@i,w
+  1752  0026'                    u235:
+  1753  0026' 1C03               	skipc
+  1754  0027' 2800'              	goto	u231
+  1755  0028' 2800'              	goto	u230
+  1756  0029'                    u231:
+  1757  0029' 2800'              	goto	l943
+  1758  002A'                    u230:
+  1759  002A'                    l947:
+  1760                           
+  1761                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c: 54:   wait_for_pwm_cycle_complete()
+      +                          ;
+  1762  002A' 3180' 2000' 3180'  	fcall	_wait_for_pwm_cycle_complete
+  1763  002D'                    l949:
+  1764                           
+  1765                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c: 55:   pwm_set_bit(1);
+  1766  002D' 3001               	movlw	1
+  1767  002E' 3180' 2000' 3180'  	fcall	_pwm_set_bit
+  1768  0031'                    l951:
+  1769                           
+  1770                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c: 58:   for (int j = 0; j < 8; j++) {
+  1771  0031' 0187'              	clrf	PWM@j
+  1772  0032' 0188'              	clrf	PWM@j+1
+  1773  0033'                    l957:
+  1774                           
+  1775                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c: 59:     wait_for_pwm_cycle_complete
+      +                          ();
+  1776  0033' 3180' 2000' 3180'  	fcall	_wait_for_pwm_cycle_complete
+  1777  0036'                    l959:
+  1778                           
+  1779                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c: 60:     pwm_set_bit(1);
+  1780  0036' 3001               	movlw	1
+  1781  0037' 3180' 2000' 3180'  	fcall	_pwm_set_bit
+  1782                           
+  1783                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c: 61:   }
+  1784  003A' 3001               	movlw	1
+  1785  003B' 0787'              	addwf	PWM@j,f
+  1786  003C' 3000               	movlw	0
+  1787  003D' 3D88'              	addwfc	PWM@j+1,f
+  1788  003E' 0808'              	movf	PWM@j+1,w
+  1789  003F' 3A80               	xorlw	128
+  1790  0040' 0085'              	movwf	??_PWM
+  1791  0041' 3080               	movlw	128
+  1792  0042' 0205'              	subwf	??_PWM,w
+  1793  0043' 1D03               	skipz
+  1794  0044' 2800'              	goto	u245
+  1795  0045' 3008               	movlw	8
+  1796  0046' 0207'              	subwf	PWM@j,w
+  1797  0047'                    u245:
+  1798  0047' 1C03               	skipc
+  1799  0048' 2800'              	goto	u241
+  1800  0049' 2800'              	goto	u240
+  1801  004A'                    u241:
+  1802  004A' 2800'              	goto	l957
+  1803  004B'                    u240:
+  1804  004B'                    l193:
+  1805  004B' 0008               	return
+  1806  004C'                    __end_of_PWM:
+  1807                           
+  1808                           	psect	text4
+  1809  0000'                    __ptext4:	
+  1810 ;; *************** function _wait_for_pwm_cycle_complete *****************
+  1811 ;; Defined at:
+  1812 ;;		line 22 in file "D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c"
+  1813 ;; Parameters:    Size  Location     Type
+  1814 ;;		None
+  1815 ;; Auto vars:     Size  Location     Type
+  1816 ;;		None
+  1817 ;; Return value:  Size  Location     Type
+  1818 ;;                  1    wreg      void 
+  1819 ;; Registers used:
+  1820 ;;		None
+  1821 ;; Tracked objects:
+  1822 ;;		On entry : 0/0
+  1823 ;;		On exit  : 0/0
+  1824 ;;		Unchanged: 0/0
+  1825 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  1826 ;;      Params:         0       0       0       0       0       0       0       0
+  1827 ;;      Locals:         0       0       0       0       0       0       0       0
+  1828 ;;      Temps:          0       0       0       0       0       0       0       0
+  1829 ;;      Totals:         0       0       0       0       0       0       0       0
+  1830 ;;Total ram usage:        0 bytes
+  1831 ;; Hardware stack levels used: 1
+  1832 ;; This function calls:
+  1833 ;;		Nothing
+  1834 ;; This function is called by:
+  1835 ;;		_PWM
+  1836 ;; This function uses a non-reentrant model
+  1837 ;;
+  1838                           
+  1839  0000'                    _wait_for_pwm_cycle_complete:	
+  1840                           ;psect for function _wait_for_pwm_cycle_complete
+  1841                           
+  1842  0000'                    l921:	
+  1843                           ;incstack = 0
+  1844                           ; Regs used in _wait_for_pwm_cycle_complete: []
+  1845                           
+  1846  0000'                    l178:	
+  1847                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c: 24:     ;
+  1848                           
+  1849                           
+  1850                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c: 23:   while (!TMR2IF)
+  1851  0000' 0020               	movlb	0	; select bank0
+  1852  0001' 1C91               	btfss	17,1	;volatile
+  1853  0002' 2800'              	goto	u201
+  1854  0003' 2800'              	goto	u200
+  1855  0004'                    u201:
+  1856  0004' 2800'              	goto	l178
+  1857  0005'                    u200:
+  1858  0005'                    l180:
+  1859                           
+  1860                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c: 26:   TMR2IF = 0;
+  1861  0005' 1091               	bcf	17,1	;volatile
+  1862  0006'                    l181:
+  1863  0006' 0008               	return
+  1864  0007'                    __end_of_wait_for_pwm_cycle_complete:
+  1865                           
+  1866                           	psect	text5
+  1867  0000'                    __ptext5:	
+  1868 ;; *************** function _pwm_set_bit *****************
+  1869 ;; Defined at:
+  1870 ;;		line 29 in file "D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c"
+  1871 ;; Parameters:    Size  Location     Type
+  1872 ;;  bit_value       1    wreg     unsigned char 
+  1873 ;; Auto vars:     Size  Location     Type
+  1874 ;;  bit_value       1    2[COMMON] unsigned char 
+  1875 ;;  duty            2    3[COMMON] unsigned int 
+  1876 ;; Return value:  Size  Location     Type
+  1877 ;;                  1    wreg      void 
+  1878 ;; Registers used:
+  1879 ;;		wreg, status,2, status,0
+  1880 ;; Tracked objects:
+  1881 ;;		On entry : 0/0
+  1882 ;;		On exit  : 0/0
+  1883 ;;		Unchanged: 0/0
+  1884 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  1885 ;;      Params:         0       0       0       0       0       0       0       0
+  1886 ;;      Locals:         3       0       0       0       0       0       0       0
+  1887 ;;      Temps:          2       0       0       0       0       0       0       0
+  1888 ;;      Totals:         5       0       0       0       0       0       0       0
+  1889 ;;Total ram usage:        5 bytes
+  1890 ;; Hardware stack levels used: 1
+  1891 ;; This function calls:
+  1892 ;;		Nothing
+  1893 ;; This function is called by:
+  1894 ;;		_PWM
+  1895 ;; This function uses a non-reentrant model
+  1896 ;;
+  1897                           
+  1898  0000'                    _pwm_set_bit:	
+  1899                           ;psect for function _pwm_set_bit
+  1900                           
+  1901                           
+  1902                           ;incstack = 0
+  1903                           ; Regs used in _pwm_set_bit: [wreg+status,2+status,0]
+  1904                           ;pwm_set_bit@bit_value stored from wreg
+  1905  0000' 0082'              	movwf	pwm_set_bit@bit_value
+  1906  0001'                    l923:
+  1907                           
+  1908                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c: 30:   unsigned int duty;;D:\yiming\
+      +                          00work\tundra_TX_CRC8_V03.X\tundra_PWM.c: 31:   if (bit_value == 1) {
+  1909  0001' 0302'              	decf	pwm_set_bit@bit_value,w
+  1910  0002' 1D03               	btfss	3,2
+  1911  0003' 2800'              	goto	u211
+  1912  0004' 2800'              	goto	u210
+  1913  0005'                    u211:
+  1914  0005' 2800'              	goto	l927
+  1915  0006'                    u210:
+  1916  0006'                    l925:
+  1917                           
+  1918                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c: 33:     duty = 112;
+  1919  0006' 3070               	movlw	112
+  1920  0007' 0083'              	movwf	pwm_set_bit@duty
+  1921  0008' 3000               	movlw	0
+  1922  0009' 0084'              	movwf	pwm_set_bit@duty+1
+  1923                           
+  1924                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c: 34:   } else {
+  1925  000A' 2800'              	goto	l929
+  1926  000B'                    l927:
+  1927                           
+  1928                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c: 35:     duty = 225;
+  1929  000B' 30E1               	movlw	225
+  1930  000C' 0083'              	movwf	pwm_set_bit@duty
+  1931  000D' 3000               	movlw	0
+  1932  000E' 0084'              	movwf	pwm_set_bit@duty+1
+  1933  000F'                    l929:
+  1934                           
+  1935                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c: 38:   CCPR3L = (duty >> 2) & 0xff;
+  1936  000F' 0804'              	movf	pwm_set_bit@duty+1,w
+  1937  0010' 0081'              	movwf	??_pwm_set_bit+1
+  1938  0011' 0803'              	movf	pwm_set_bit@duty,w
+  1939  0012' 0080'              	movwf	??_pwm_set_bit
+  1940  0013' 3681'              	lsrf	??_pwm_set_bit+1,f
+  1941  0014' 0C80'              	rrf	??_pwm_set_bit,f
+  1942  0015' 3681'              	lsrf	??_pwm_set_bit+1,f
+  1943  0016' 0C80'              	rrf	??_pwm_set_bit,f
+  1944  0017' 0800'              	movf	??_pwm_set_bit,w
+  1945  0018' 0026               	movlb	6	; select bank6
+  1946  0019' 0091               	movwf	17	;volatile
+  1947  001A'                    l931:
+  1948                           
+  1949                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_PWM.c: 39:   CCP3CONbits.DC3B = duty & 0x0
+      +                          3;
+  1950  001A' 0803'              	movf	pwm_set_bit@duty,w
+  1951  001B' 3903               	andlw	3
+  1952  001C' 0080'              	movwf	??_pwm_set_bit
+  1953  001D' 0E80'              	swapf	??_pwm_set_bit,f
+  1954  001E' 0813               	movf	19,w	;volatile
+  1955  001F' 0600'              	xorwf	??_pwm_set_bit,w
+  1956  0020' 39CF               	andlw	-49
+  1957  0021' 0600'              	xorwf	??_pwm_set_bit,w
+  1958  0022' 0093               	movwf	19	;volatile
+  1959  0023'                    l186:
+  1960  0023' 0008               	return
+  1961  0024'                    __end_of_pwm_set_bit:
+  1962                           
+  1963                           	psect	text6
+  1964  0000'                    __ptext6:	
+  1965 ;; *************** function _SYSTEM_Initialize *****************
+  1966 ;; Defined at:
+  1967 ;;		line 50 in file "D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\mcc.c"
+  1968 ;; Parameters:    Size  Location     Type
+  1969 ;;		None
+  1970 ;; Auto vars:     Size  Location     Type
+  1971 ;;		None
+  1972 ;; Return value:  Size  Location     Type
+  1973 ;;                  1    wreg      void 
+  1974 ;; Registers used:
+  1975 ;;		wreg, status,2, status,0, pclath, cstack
+  1976 ;; Tracked objects:
+  1977 ;;		On entry : 0/0
+  1978 ;;		On exit  : 0/0
+  1979 ;;		Unchanged: 0/0
+  1980 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  1981 ;;      Params:         0       0       0       0       0       0       0       0
+  1982 ;;      Locals:         0       0       0       0       0       0       0       0
+  1983 ;;      Temps:          0       0       0       0       0       0       0       0
+  1984 ;;      Totals:         0       0       0       0       0       0       0       0
+  1985 ;;Total ram usage:        0 bytes
+  1986 ;; Hardware stack levels used: 1
+  1987 ;; Hardware stack levels required when called: 1
+  1988 ;; This function calls:
+  1989 ;;		_EPWM3_Initialize
+  1990 ;;		_OSCILLATOR_Initialize
+  1991 ;;		_PIN_MANAGER_Initialize
+  1992 ;;		_TMR2_Initialize
+  1993 ;;		_WDT_Initialize
+  1994 ;; This function is called by:
+  1995 ;;		_main
+  1996 ;; This function uses a non-reentrant model
+  1997 ;;
+  1998                           
+  1999  0000'                    _SYSTEM_Initialize:	
+  2000                           ;psect for function _SYSTEM_Initialize
+  2001                           
+  2002  0000'                    l871:	
+  2003                           ;incstack = 0
+  2004                           ; Regs used in _SYSTEM_Initialize: [wreg+status,2+status,0+pclath+cstack]
+  2005                           
+  2006                           
+  2007                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\mcc.c: 53:     PIN_MANAGER_In
+      +                          itialize();
+  2008  0000' 3180' 2000' 3180'  	fcall	_PIN_MANAGER_Initialize
+  2009                           
+  2010                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\mcc.c: 54:     OSCILLATOR_Ini
+      +                          tialize();
+  2011  0003' 3180' 2000' 3180'  	fcall	_OSCILLATOR_Initialize
+  2012                           
+  2013                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\mcc.c: 55:     WDT_Initialize
+      +                          ();
+  2014  0006' 3180' 2000' 3180'  	fcall	_WDT_Initialize
+  2015                           
+  2016                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\mcc.c: 56:     TMR2_Initializ
+      +                          e();
+  2017  0009' 3180' 2000' 3180'  	fcall	_TMR2_Initialize
+  2018  000C'                    l873:
+  2019                           
+  2020                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\mcc.c: 57:     EPWM3_Initiali
+      +                          ze();
+  2021  000C' 3180' 2000' 3180'  	fcall	_EPWM3_Initialize
+  2022  000F'                    l94:
+  2023  000F' 0008               	return
+  2024  0010'                    __end_of_SYSTEM_Initialize:
+  2025                           
+  2026                           	psect	text7
+  2027  0000'                    __ptext7:	
+  2028 ;; *************** function _WDT_Initialize *****************
+  2029 ;; Defined at:
+  2030 ;;		line 74 in file "D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\mcc.c"
+  2031 ;; Parameters:    Size  Location     Type
+  2032 ;;		None
+  2033 ;; Auto vars:     Size  Location     Type
+  2034 ;;		None
+  2035 ;; Return value:  Size  Location     Type
+  2036 ;;                  1    wreg      void 
+  2037 ;; Registers used:
+  2038 ;;		None
+  2039 ;; Tracked objects:
+  2040 ;;		On entry : 0/0
+  2041 ;;		On exit  : 0/0
+  2042 ;;		Unchanged: 0/0
+  2043 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  2044 ;;      Params:         0       0       0       0       0       0       0       0
+  2045 ;;      Locals:         0       0       0       0       0       0       0       0
+  2046 ;;      Temps:          0       0       0       0       0       0       0       0
+  2047 ;;      Totals:         0       0       0       0       0       0       0       0
+  2048 ;;Total ram usage:        0 bytes
+  2049 ;; Hardware stack levels used: 1
+  2050 ;; This function calls:
+  2051 ;;		Nothing
+  2052 ;; This function is called by:
+  2053 ;;		_SYSTEM_Initialize
+  2054 ;; This function uses a non-reentrant model
+  2055 ;;
+  2056                           
+  2057  0000'                    _WDT_Initialize:	
+  2058                           ;psect for function _WDT_Initialize
+  2059                           
+  2060  0000'                    l829:	
+  2061                           ;incstack = 0
+  2062                           ; Regs used in _WDT_Initialize: []
+  2063                           
+  2064                           
+  2065                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\mcc.c: 77:     WDTCON = 0x16;
+  2066  0000' 3016               	movlw	22
+  2067  0001' 0021               	movlb	1	; select bank1
+  2068  0002' 0097               	movwf	23	;volatile
+  2069  0003'                    l103:
+  2070  0003' 0008               	return
+  2071  0004'                    __end_of_WDT_Initialize:
+  2072                           
+  2073                           	psect	text8
+  2074  0000'                    __ptext8:	
+  2075 ;; *************** function _TMR2_Initialize *****************
+  2076 ;; Defined at:
+  2077 ;;		line 62 in file "D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\tmr2.c"
+  2078 ;; Parameters:    Size  Location     Type
+  2079 ;;		None
+  2080 ;; Auto vars:     Size  Location     Type
+  2081 ;;		None
+  2082 ;; Return value:  Size  Location     Type
+  2083 ;;                  1    wreg      void 
+  2084 ;; Registers used:
+  2085 ;;		status,2
+  2086 ;; Tracked objects:
+  2087 ;;		On entry : 0/0
+  2088 ;;		On exit  : 0/0
+  2089 ;;		Unchanged: 0/0
+  2090 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  2091 ;;      Params:         0       0       0       0       0       0       0       0
+  2092 ;;      Locals:         0       0       0       0       0       0       0       0
+  2093 ;;      Temps:          0       0       0       0       0       0       0       0
+  2094 ;;      Totals:         0       0       0       0       0       0       0       0
+  2095 ;;Total ram usage:        0 bytes
+  2096 ;; Hardware stack levels used: 1
+  2097 ;; This function calls:
+  2098 ;;		Nothing
+  2099 ;; This function is called by:
+  2100 ;;		_SYSTEM_Initialize
+  2101 ;; This function uses a non-reentrant model
+  2102 ;;
+  2103                           
+  2104  0000'                    _TMR2_Initialize:	
+  2105                           ;psect for function _TMR2_Initialize
+  2106                           
+  2107  0000'                    l831:	
+  2108                           ;incstack = 0
+  2109                           ; Regs used in _TMR2_Initialize: [status,2]
+  2110                           
+  2111                           
+  2112                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\tmr2.c: 67:     PR2 = 0x67;
+  2113  0000' 3067               	movlw	103
+  2114  0001' 0020               	movlb	0	; select bank0
+  2115  0002' 009B               	movwf	27	;volatile
+  2116  0003'                    l833:
+  2117                           
+  2118                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\tmr2.c: 70:     TMR2 = 0x00;
+  2119  0003' 019A               	clrf	26	;volatile
+  2120  0004'                    l835:
+  2121                           
+  2122                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\tmr2.c: 73:     PIR1bits.TMR2
+      +                          IF = 0;
+  2123  0004' 1091               	bcf	17,1	;volatile
+  2124  0005'                    l837:
+  2125                           
+  2126                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\tmr2.c: 76:     T2CON = 0x05;
+  2127  0005' 3005               	movlw	5
+  2128  0006' 009C               	movwf	28	;volatile
+  2129  0007'                    l150:
+  2130  0007' 0008               	return
+  2131  0008'                    __end_of_TMR2_Initialize:
+  2132                           
+  2133                           	psect	text9
+  2134  0000'                    __ptext9:	
+  2135 ;; *************** function _PIN_MANAGER_Initialize *****************
+  2136 ;; Defined at:
+  2137 ;;		line 55 in file "D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\pin_manager.c"
+  2138 ;; Parameters:    Size  Location     Type
+  2139 ;;		None
+  2140 ;; Auto vars:     Size  Location     Type
+  2141 ;;		None
+  2142 ;; Return value:  Size  Location     Type
+  2143 ;;                  1    wreg      void 
+  2144 ;; Registers used:
+  2145 ;;		status,2
+  2146 ;; Tracked objects:
+  2147 ;;		On entry : 0/0
+  2148 ;;		On exit  : 0/0
+  2149 ;;		Unchanged: 0/0
+  2150 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  2151 ;;      Params:         0       0       0       0       0       0       0       0
+  2152 ;;      Locals:         0       0       0       0       0       0       0       0
+  2153 ;;      Temps:          0       0       0       0       0       0       0       0
+  2154 ;;      Totals:         0       0       0       0       0       0       0       0
+  2155 ;;Total ram usage:        0 bytes
+  2156 ;; Hardware stack levels used: 1
+  2157 ;; This function calls:
+  2158 ;;		Nothing
+  2159 ;; This function is called by:
+  2160 ;;		_SYSTEM_Initialize
+  2161 ;; This function uses a non-reentrant model
+  2162 ;;
+  2163                           
+  2164  0000'                    _PIN_MANAGER_Initialize:	
+  2165                           ;psect for function _PIN_MANAGER_Initialize
+  2166                           
+  2167  0000'                    l813:	
+  2168                           ;incstack = 0
+  2169                           ; Regs used in _PIN_MANAGER_Initialize: [status,2]
+  2170                           
+  2171                           
+  2172                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\pin_manager.c: 60:     LATE =
+      +                           0x00;
+  2173  0000' 0022               	movlb	2	; select bank2
+  2174  0001' 0190               	clrf	16	;volatile
+  2175                           
+  2176                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\pin_manager.c: 61:     LATA =
+      +                           0x00;
+  2177  0002' 018C               	clrf	12	;volatile
+  2178                           
+  2179                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\pin_manager.c: 62:     LATB =
+      +                           0x00;
+  2180  0003' 018D               	clrf	13	;volatile
+  2181                           
+  2182                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\pin_manager.c: 63:     LATC =
+      +                           0x00;
+  2183  0004' 018E               	clrf	14	;volatile
+  2184  0005'                    l815:
+  2185                           
+  2186                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\pin_manager.c: 68:     TRISE 
+      +                          = 0x08;
+  2187  0005' 3008               	movlw	8
+  2188  0006' 0021               	movlb	1	; select bank1
+  2189  0007' 0090               	movwf	16	;volatile
+  2190  0008'                    l817:
+  2191                           
+  2192                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\pin_manager.c: 69:     TRISA 
+      +                          = 0xFF;
+  2193  0008' 30FF               	movlw	255
+  2194  0009' 008C               	movwf	12	;volatile
+  2195  000A'                    l819:
+  2196                           
+  2197                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\pin_manager.c: 70:     TRISB 
+      +                          = 0xC0;
+  2198  000A' 30C0               	movlw	192
+  2199  000B' 008D               	movwf	13	;volatile
+  2200  000C'                    l821:
+  2201                           
+  2202                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\pin_manager.c: 71:     TRISC 
+      +                          = 0xBF;
+  2203  000C' 30BF               	movlw	191
+  2204  000D' 008E               	movwf	14	;volatile
+  2205                           
+  2206                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\pin_manager.c: 76:     ANSELB
+      +                           = 0x00;
+  2207  000E' 0023               	movlb	3	; select bank3
+  2208  000F' 018D               	clrf	13	;volatile
+  2209                           
+  2210                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\pin_manager.c: 77:     ANSELA
+      +                           = 0x00;
+  2211  0010' 018C               	clrf	12	;volatile
+  2212                           
+  2213                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\pin_manager.c: 82:     WPUE =
+      +                           0x00;
+  2214  0011' 0024               	movlb	4	; select bank4
+  2215  0012' 0190               	clrf	16	;volatile
+  2216                           
+  2217                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\pin_manager.c: 83:     WPUB =
+      +                           0x00;
+  2218  0013' 018D               	clrf	13	;volatile
+  2219  0014'                    l823:
+  2220                           
+  2221                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\pin_manager.c: 84:     OPTION
+      +                          _REGbits.nWPUEN = 1;
+  2222  0014' 0021               	movlb	1	; select bank1
+  2223  0015' 1795               	bsf	21,7	;volatile
+  2224                           
+  2225                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\pin_manager.c: 90:     APFCON
+      +                           = 0x00;
+  2226  0016' 0022               	movlb	2	; select bank2
+  2227  0017' 019D               	clrf	29	;volatile
+  2228  0018'                    l134:
+  2229  0018' 0008               	return
+  2230  0019'                    __end_of_PIN_MANAGER_Initialize:
+  2231                           
+  2232                           	psect	text10
+  2233  0000'                    __ptext10:	
+  2234 ;; *************** function _OSCILLATOR_Initialize *****************
+  2235 ;; Defined at:
+  2236 ;;		line 60 in file "D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\mcc.c"
+  2237 ;; Parameters:    Size  Location     Type
+  2238 ;;		None
+  2239 ;; Auto vars:     Size  Location     Type
+  2240 ;;		None
+  2241 ;; Return value:  Size  Location     Type
+  2242 ;;                  1    wreg      void 
+  2243 ;; Registers used:
+  2244 ;;		status,2
+  2245 ;; Tracked objects:
+  2246 ;;		On entry : 0/0
+  2247 ;;		On exit  : 0/0
+  2248 ;;		Unchanged: 0/0
+  2249 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  2250 ;;      Params:         0       0       0       0       0       0       0       0
+  2251 ;;      Locals:         0       0       0       0       0       0       0       0
+  2252 ;;      Temps:          0       0       0       0       0       0       0       0
+  2253 ;;      Totals:         0       0       0       0       0       0       0       0
+  2254 ;;Total ram usage:        0 bytes
+  2255 ;; Hardware stack levels used: 1
+  2256 ;; This function calls:
+  2257 ;;		Nothing
+  2258 ;; This function is called by:
+  2259 ;;		_SYSTEM_Initialize
+  2260 ;; This function uses a non-reentrant model
+  2261 ;;
+  2262                           
+  2263  0000'                    _OSCILLATOR_Initialize:	
+  2264                           ;psect for function _OSCILLATOR_Initialize
+  2265                           
+  2266  0000'                    l825:	
+  2267                           ;incstack = 0
+  2268                           ; Regs used in _OSCILLATOR_Initialize: [status,2]
+  2269                           
+  2270                           
+  2271                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\mcc.c: 63:     OSCCON = 0x70;
+  2272  0000' 3070               	movlw	112
+  2273  0001' 0021               	movlb	1	; select bank1
+  2274  0002' 0099               	movwf	25	;volatile
+  2275  0003'                    l827:
+  2276                           
+  2277                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\mcc.c: 65:     OSCTUNE = 0x00
+      +                          ;
+  2278  0003' 0198               	clrf	24	;volatile
+  2279                           
+  2280                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\mcc.c: 67:     BORCON = 0x00;
+  2281  0004' 0022               	movlb	2	; select bank2
+  2282  0005' 0196               	clrf	22	;volatile
+  2283  0006'                    l97:	
+  2284                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\mcc.c: 70:     {;D:\yiming\00
+      +                          work\tundra_TX_CRC8_V03.X\mcc_generated_files\mcc.c: 71:     }
+  2285                           
+  2286                           
+  2287                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\mcc.c: 69:     while(PLLR == 
+      +                          0)
+  2288  0006' 0021               	movlb	1	; select bank1
+  2289  0007' 1F1A               	btfss	26,6	;volatile
+  2290  0008' 2800'              	goto	u61
+  2291  0009' 2800'              	goto	u60
+  2292  000A'                    u61:
+  2293  000A' 2800'              	goto	l97
+  2294  000B'                    u60:
+  2295  000B'                    l100:
+  2296  000B' 0008               	return
+  2297  000C'                    __end_of_OSCILLATOR_Initialize:
+  2298                           
+  2299                           	psect	text11
+  2300  0000'                    __ptext11:	
+  2301 ;; *************** function _EPWM3_Initialize *****************
+  2302 ;; Defined at:
+  2303 ;;		line 64 in file "D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\epwm3.c"
+  2304 ;; Parameters:    Size  Location     Type
+  2305 ;;		None
+  2306 ;; Auto vars:     Size  Location     Type
+  2307 ;;		None
+  2308 ;; Return value:  Size  Location     Type
+  2309 ;;                  1    wreg      void 
+  2310 ;; Registers used:
+  2311 ;;		wreg, status,2, status,0
+  2312 ;; Tracked objects:
+  2313 ;;		On entry : 0/0
+  2314 ;;		On exit  : 0/0
+  2315 ;;		Unchanged: 0/0
+  2316 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  2317 ;;      Params:         0       0       0       0       0       0       0       0
+  2318 ;;      Locals:         0       0       0       0       0       0       0       0
+  2319 ;;      Temps:          0       0       0       0       0       0       0       0
+  2320 ;;      Totals:         0       0       0       0       0       0       0       0
+  2321 ;;Total ram usage:        0 bytes
+  2322 ;; Hardware stack levels used: 1
+  2323 ;; This function calls:
+  2324 ;;		Nothing
+  2325 ;; This function is called by:
+  2326 ;;		_SYSTEM_Initialize
+  2327 ;; This function uses a non-reentrant model
+  2328 ;;
+  2329                           
+  2330  0000'                    _EPWM3_Initialize:	
+  2331                           ;psect for function _EPWM3_Initialize
+  2332                           
+  2333  0000'                    l801:	
+  2334                           ;incstack = 0
+  2335                           ; Regs used in _EPWM3_Initialize: [wreg+status,2+status,0]
+  2336                           
+  2337                           
+  2338                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\epwm3.c: 69:  CCP3CON = 0x0C;
+  2339  0000' 300C               	movlw	12
+  2340  0001' 0026               	movlb	6	; select bank6
+  2341  0002' 0093               	movwf	19	;volatile
+  2342  0003'                    l803:
+  2343                           
+  2344                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\epwm3.c: 72:  ECCP3AS = 0x00;
+  2345  0003' 0195               	clrf	21	;volatile
+  2346  0004'                    l805:
+  2347                           
+  2348                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\epwm3.c: 75:  PWM3CON = 0x80;
+  2349  0004' 3080               	movlw	128
+  2350  0005' 0094               	movwf	20	;volatile
+  2351  0006'                    l807:
+  2352                           
+  2353                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\epwm3.c: 78:  PSTR3CON = 0x01
+      +                          ;
+  2354  0006' 3001               	movlw	1
+  2355  0007' 0096               	movwf	22	;volatile
+  2356                           
+  2357                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\epwm3.c: 81:  CCPR3H = 0x00;
+  2358  0008' 0192               	clrf	18	;volatile
+  2359  0009'                    l809:
+  2360                           
+  2361                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\epwm3.c: 84:  CCPR3L = 0x1E;
+  2362  0009' 301E               	movlw	30
+  2363  000A' 0091               	movwf	17	;volatile
+  2364  000B'                    l811:
+  2365                           
+  2366                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\mcc_generated_files\epwm3.c: 87:  CCPTMRS0bits.C3
+      +                          TSEL = 0x0;
+  2367  000B' 30CF               	movlw	-49
+  2368  000C' 0025               	movlb	5	; select bank5
+  2369  000D' 059E               	andwf	30,f	;volatile
+  2370  000E'                    l68:
+  2371  000E' 0008               	return
+  2372  000F'                    __end_of_EPWM3_Initialize:
+  2373                           
+  2374                           	psect	text12
+  2375  0000'                    __ptext12:	
+  2376 ;; *************** function _Check_Input *****************
+  2377 ;; Defined at:
+  2378 ;;		line 60 in file "D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c"
+  2379 ;; Parameters:    Size  Location     Type
+  2380 ;;		None
+  2381 ;; Auto vars:     Size  Location     Type
+  2382 ;;		None
+  2383 ;; Return value:  Size  Location     Type
+  2384 ;;                  1    wreg      void 
+  2385 ;; Registers used:
+  2386 ;;		status,2
+  2387 ;; Tracked objects:
+  2388 ;;		On entry : 0/0
+  2389 ;;		On exit  : 0/0
+  2390 ;;		Unchanged: 0/0
+  2391 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  2392 ;;      Params:         0       0       0       0       0       0       0       0
+  2393 ;;      Locals:         0       0       0       0       0       0       0       0
+  2394 ;;      Temps:          0       0       0       0       0       0       0       0
+  2395 ;;      Totals:         0       0       0       0       0       0       0       0
+  2396 ;;Total ram usage:        0 bytes
+  2397 ;; Hardware stack levels used: 1
+  2398 ;; This function calls:
+  2399 ;;		Nothing
+  2400 ;; This function is called by:
+  2401 ;;		_main
+  2402 ;; This function uses a non-reentrant model
+  2403 ;;
+  2404                           
+  2405  0000'                    _Check_Input:	
+  2406                           ;psect for function _Check_Input
+  2407                           
+  2408  0000'                    l961:	
+  2409                           ;incstack = 0
+  2410                           ; Regs used in _Check_Input: [status,2]
+  2411                           
+  2412                           
+  2413                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 62:   D2.Byte = 0;
+  2414  0000' 0180'              	clrf	_D2
+  2415                           
+  2416                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 63:   D3.Byte = 0;
+  2417  0001' 0020               	movlb	0	; select bank0
+  2418  0002' 0180'              	clrf	_D3
+  2419  0003'                    l963:
+  2420                           
+  2421                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 66:   if (PORTAbits.RA0 == 0) {
+  2422  0003' 180C               	btfsc	12,0	;volatile
+  2423  0004' 2800'              	goto	u251
+  2424  0005' 2800'              	goto	u250
+  2425  0006'                    u251:
+  2426  0006' 2800'              	goto	l23
+  2427  0007'                    u250:
+  2428  0007'                    l965:
+  2429                           
+  2430                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 67:     LATBbits.LATB5 = 1;
+  2431  0007' 0022               	movlb	2	; select bank2
+  2432  0008' 168D               	bsf	13,5	;volatile
+  2433                           
+  2434                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 68:     D2.RunLight = 1;
+  2435  0009' 1500'              	bsf	_D2,2
+  2436                           
+  2437                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 69:   } else {
+  2438  000A' 2800'              	goto	l24
+  2439  000B'                    l23:
+  2440                           
+  2441                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 70:     LATBbits.LATB5 = 0;
+  2442  000B' 0022               	movlb	2	; select bank2
+  2443  000C' 128D               	bcf	13,5	;volatile
+  2444                           
+  2445                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 71:     D2.RunLight = 0;
+  2446  000D' 1100'              	bcf	_D2,2
+  2447  000E'                    l24:	
+  2448                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 72:   }
+  2449                           
+  2450                           
+  2451                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 75:   if (PORTAbits.RA1 == 0) {
+  2452  000E' 0020               	movlb	0	; select bank0
+  2453  000F' 188C               	btfsc	12,1	;volatile
+  2454  0010' 2800'              	goto	u261
+  2455  0011' 2800'              	goto	u260
+  2456  0012'                    u261:
+  2457  0012' 2800'              	goto	l25
+  2458  0013'                    u260:
+  2459  0013'                    l967:
+  2460                           
+  2461                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 76:     LATBbits.LATB4 = 1;
+  2462  0013' 0022               	movlb	2	; select bank2
+  2463  0014' 160D               	bsf	13,4	;volatile
+  2464                           
+  2465                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 77:     D2.DRL = 1;
+  2466  0015' 1580'              	bsf	_D2,3
+  2467                           
+  2468                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 78:   } else {
+  2469  0016' 2800'              	goto	l26
+  2470  0017'                    l25:
+  2471                           
+  2472                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 79:     LATBbits.LATB4 = 0;
+  2473  0017' 0022               	movlb	2	; select bank2
+  2474  0018' 120D               	bcf	13,4	;volatile
+  2475                           
+  2476                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 80:     D2.DRL = 0;
+  2477  0019' 1180'              	bcf	_D2,3
+  2478  001A'                    l26:	
+  2479                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 81:   }
+  2480                           
+  2481                           
+  2482                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 84:   if (PORTAbits.RA2 == 0) {
+  2483  001A' 0020               	movlb	0	; select bank0
+  2484  001B' 190C               	btfsc	12,2	;volatile
+  2485  001C' 2800'              	goto	u271
+  2486  001D' 2800'              	goto	u270
+  2487  001E'                    u271:
+  2488  001E' 2800'              	goto	l27
+  2489  001F'                    u270:
+  2490  001F'                    l969:
+  2491                           
+  2492                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 85:     LATBbits.LATB3 = 1;
+  2493  001F' 0022               	movlb	2	; select bank2
+  2494  0020' 158D               	bsf	13,3	;volatile
+  2495                           
+  2496                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 86:     D2.LoBeam = 1;
+  2497  0021' 1600'              	bsf	_D2,4
+  2498                           
+  2499                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 87:   } else {
+  2500  0022' 2800'              	goto	l28
+  2501  0023'                    l27:
+  2502                           
+  2503                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 88:     LATBbits.LATB3 = 0;
+  2504  0023' 0022               	movlb	2	; select bank2
+  2505  0024' 118D               	bcf	13,3	;volatile
+  2506                           
+  2507                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 89:     D2.LoBeam = 0;
+  2508  0025' 1200'              	bcf	_D2,4
+  2509  0026'                    l28:	
+  2510                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 90:   }
+  2511                           
+  2512                           
+  2513                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 93:   if (PORTAbits.RA3 == 0) {
+  2514  0026' 0020               	movlb	0	; select bank0
+  2515  0027' 198C               	btfsc	12,3	;volatile
+  2516  0028' 2800'              	goto	u281
+  2517  0029' 2800'              	goto	u280
+  2518  002A'                    u281:
+  2519  002A' 2800'              	goto	l29
+  2520  002B'                    u280:
+  2521  002B'                    l971:
+  2522                           
+  2523                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 94:     LATBbits.LATB2 = 1;
+  2524  002B' 0022               	movlb	2	; select bank2
+  2525  002C' 150D               	bsf	13,2	;volatile
+  2526                           
+  2527                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 95:     D2.HiBeam = 1;
+  2528  002D' 1680'              	bsf	_D2,5
+  2529                           
+  2530                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 96:   } else {
+  2531  002E' 2800'              	goto	l30
+  2532  002F'                    l29:
+  2533                           
+  2534                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 97:     LATBbits.LATB2 = 0;
+  2535  002F' 0022               	movlb	2	; select bank2
+  2536  0030' 110D               	bcf	13,2	;volatile
+  2537                           
+  2538                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 98:     D2.HiBeam = 0;
+  2539  0031' 1280'              	bcf	_D2,5
+  2540  0032'                    l30:	
+  2541                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 99:   }
+  2542                           
+  2543                           
+  2544                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 102:   if (PORTAbits.RA4 == 0) {
+  2545  0032' 0020               	movlb	0	; select bank0
+  2546  0033' 1A0C               	btfsc	12,4	;volatile
+  2547  0034' 2800'              	goto	u291
+  2548  0035' 2800'              	goto	u290
+  2549  0036'                    u291:
+  2550  0036' 2800'              	goto	l31
+  2551  0037'                    u290:
+  2552  0037'                    l973:
+  2553                           
+  2554                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 103:     LATBbits.LATB1 = 1;
+  2555  0037' 0022               	movlb	2	; select bank2
+  2556  0038' 148D               	bsf	13,1	;volatile
+  2557                           
+  2558                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 104:     D3.turnLight_L = 1;
+  2559  0039' 0020               	movlb	0	; select bank0
+  2560  003A' 1680'              	bsf	_D3,5
+  2561                           
+  2562                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 105:   } else {
+  2563  003B' 2800'              	goto	l32
+  2564  003C'                    l31:
+  2565                           
+  2566                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 106:     LATBbits.LATB1 = 0;
+  2567  003C' 0022               	movlb	2	; select bank2
+  2568  003D' 108D               	bcf	13,1	;volatile
+  2569                           
+  2570                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 107:     D3.turnLight_L = 0;
+  2571  003E' 0020               	movlb	0	; select bank0
+  2572  003F' 1280'              	bcf	_D3,5
+  2573  0040'                    l32:	
+  2574                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 108:   }
+  2575                           
+  2576                           
+  2577                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 111:   if (PORTCbits.RC3 == 0) {
+  2578  0040' 198E               	btfsc	14,3	;volatile
+  2579  0041' 2800'              	goto	u301
+  2580  0042' 2800'              	goto	u300
+  2581  0043'                    u301:
+  2582  0043' 2800'              	goto	l33
+  2583  0044'                    u300:
+  2584  0044'                    l975:
+  2585                           
+  2586                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 112:     LATBbits.LATB0 = 1;
+  2587  0044' 0022               	movlb	2	; select bank2
+  2588  0045' 140D               	bsf	13,0	;volatile
+  2589                           
+  2590                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 113:     D3.trunLight_R = 1;
+  2591  0046' 0020               	movlb	0	; select bank0
+  2592  0047' 1700'              	bsf	_D3,6
+  2593                           
+  2594                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 114:   } else {
+  2595  0048' 2800'              	goto	l35
+  2596  0049'                    l33:
+  2597                           
+  2598                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 115:     LATBbits.LATB0 = 0;
+  2599  0049' 0022               	movlb	2	; select bank2
+  2600  004A' 100D               	bcf	13,0	;volatile
+  2601                           
+  2602                           ;D:\yiming\00work\tundra_TX_CRC8_V03.X\main.c: 116:     D3.trunLight_R = 0;
+  2603  004B' 0020               	movlb	0	; select bank0
+  2604  004C' 1300'              	bcf	_D3,6
+  2605  004D'                    l35:
+  2606  004D' 0008               	return
+  2607  004E'                    __end_of_Check_Input:
+  2608  0002                     ___latbits      equ	2
+  2609  007E                     btemp           set	126	;btemp
+  2610  007E                     btemp0          set	126
+  2611  007F                     btemp1          set	127
+  2612  007E                     wtemp0          set	126
+  2613  007F                     wtemp0a         set	127
+  2614  007F                     ttemp0a         set	127
+  2615  0080                     ltemp0a         set	128
+  2616                           
+  2617                           	psect	idloc
+  2618                           
+  2619                           ;Config register IDLOC0 @ 0x8000
+  2620                           ;	unspecified, using default values
+  2621  8000                     	org	32768
+  2622  8000  3FFF               	dw	16383
+  2623                           
+  2624                           ;Config register IDLOC1 @ 0x8001
+  2625                           ;	unspecified, using default values
+  2626  8001                     	org	32769
+  2627  8001  3FFF               	dw	16383
+  2628                           
+  2629                           ;Config register IDLOC2 @ 0x8002
+  2630                           ;	unspecified, using default values
+  2631  8002                     	org	32770
+  2632  8002  3FFF               	dw	16383
+  2633                           
+  2634                           ;Config register IDLOC3 @ 0x8003
+  2635                           ;	unspecified, using default values
+  2636  8003                     	org	32771
+  2637  8003  3FFF               	dw	16383
+  2638                           
+  2639                           	psect	config
+  2640                           
+  2641                           ;Config register CONFIG1 @ 0x8007
+  2642                           ;	Oscillator Selection
+  2643                           ;	FOSC = INTOSC, INTOSC oscillator: I/O function on CLKIN pin
+  2644                           ;	Watchdog Timer Enable
+  2645                           ;	WDTE = OFF, WDT disabled
+  2646                           ;	Power-up Timer Enable
+  2647                           ;	PWRTE = OFF, PWRT disabled
+  2648                           ;	MCLR Pin Function Select
+  2649                           ;	MCLRE = ON, MCLR/VPP pin function is MCLR
+  2650                           ;	Flash Program Memory Code Protection
+  2651                           ;	CP = OFF, Program memory code protection is disabled
+  2652                           ;	Data Memory Code Protection
+  2653                           ;	CPD = OFF, Data memory code protection is disabled
+  2654                           ;	Brown-out Reset Enable
+  2655                           ;	BOREN = ON, Brown-out Reset enabled
+  2656                           ;	Clock Out Enable
+  2657                           ;	CLKOUTEN = OFF, CLKOUT function is disabled. I/O or oscillator function on the CLKOUT 
+      +                          pin
+  2658                           ;	Internal/External Switchover
+  2659                           ;	IESO = ON, Internal/External Switchover mode is enabled
+  2660                           ;	Fail-Safe Clock Monitor Enable
+  2661                           ;	FCMEN = ON, Fail-Safe Clock Monitor is enabled
+  2662  8007                     	org	32775
+  2663  8007  3FE4               	dw	16356
+  2664                           
+  2665                           ;Config register CONFIG2 @ 0x8008
+  2666                           ;	Flash Memory Self-Write Protection
+  2667                           ;	WRT = OFF, Write protection off
+  2668                           ;	Voltage Regulator Capacitor Enable
+  2669                           ;	VCAPEN = OFF, All VCAP pin functionality is disabled
+  2670                           ;	PLL Enable
+  2671                           ;	PLLEN = ON, 4x PLL enabled
+  2672                           ;	Stack Overflow/Underflow Reset Enable
+  2673                           ;	STVREN = ON, Stack Overflow or Underflow will cause a Reset
+  2674                           ;	Brown-out Reset Voltage Selection
+  2675                           ;	BORV = LO, Brown-out Reset Voltage (Vbor), low trip point selected.
+  2676                           ;	Low-Voltage Programming Enable
+  2677                           ;	LVP = OFF, High-voltage on MCLR/VPP must be used for programming
+  2678  8008                     	org	32776
+  2679  8008  1FFF               	dw	8191
+
+Data Sizes:
+    Strings     0
+    Constant    1
+    Data        11
+    BSS         2
+    Persistent  48
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14     13      14
+    BANK0            80      0      12
+    BANK1            80      0       0
+    BANK2            80      0       0
+    BANK3            80      0       0
+    BANK4            80      0       0
+    BANK5            80      0       0
+    BANK6            16      0       0
+
+Pointer List with Targets:
+
+    calculate_crc8$0	PTR const unsigned char  size(2) Largest target is 11
+		 -> tx_buf(BANK0[11]), tx_buf$data(BANK0[8]), 
+
+
+Critical Paths under _main in COMMON
+
+    _main->_Transmit_data
+    _Transmit_data->_PWM
+    _PWM->_pwm_set_bit
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 1     1      0     292
+                                             12 COMMON     1     1      0
+                        _Check_Input
+                  _SYSTEM_Initialize
+                      _Transmit_data
+                    _prepare_tx_data
+ ---------------------------------------------------------------------------------
+ (1) _prepare_tx_data                                      0     0      0       6
+                     _calculate_crc8
+ ---------------------------------------------------------------------------------
+ (2) _calculate_crc8                                       3     0      3       6
+ ---------------------------------------------------------------------------------
+ (1) _Transmit_data                                        1     1      0     286
+                                             11 COMMON     1     1      0
+                                _PWM
+ ---------------------------------------------------------------------------------
+ (2) _PWM                                                  6     6      0     218
+                                              5 COMMON     6     6      0
+                        _pwm_set_bit
+        _wait_for_pwm_cycle_complete
+ ---------------------------------------------------------------------------------
+ (3) _wait_for_pwm_cycle_complete                          0     0      0       0
+ ---------------------------------------------------------------------------------
+ (3) _pwm_set_bit                                          5     5      0      75
+                                              0 COMMON     5     5      0
+ ---------------------------------------------------------------------------------
+ (1) _SYSTEM_Initialize                                    0     0      0       0
+                   _EPWM3_Initialize
+              _OSCILLATOR_Initialize
+             _PIN_MANAGER_Initialize
+                    _TMR2_Initialize
+                     _WDT_Initialize
+ ---------------------------------------------------------------------------------
+ (2) _WDT_Initialize                                       0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _TMR2_Initialize                                      0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _PIN_MANAGER_Initialize                               0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _OSCILLATOR_Initialize                                0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _EPWM3_Initialize                                     0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _Check_Input                                          0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 3
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _Check_Input
+   _SYSTEM_Initialize
+     _EPWM3_Initialize
+     _OSCILLATOR_Initialize
+     _PIN_MANAGER_Initialize
+     _TMR2_Initialize
+     _WDT_Initialize
+   _Transmit_data
+     _PWM
+       _pwm_set_bit
+       _wait_for_pwm_cycle_complete
+   _prepare_tx_data
+     _calculate_crc8
+
+Address spaces:
+Name               Size   Autos  Total    Usage
+BITCOMMON           14      0       0      0.0%
+BITBANK0            80      0       0      0.0%
+BITBANK1            80      0       0      0.0%
+BITBANK2            80      0       0      0.0%
+BITBANK3            80      0       0      0.0%
+BITBANK4            80      0       0      0.0%
+BITBANK5            80      0       0      0.0%
+BITBANK6            16      0       0      0.0%
+BIGRAM             496      0       0      0.0%
+COMMON              14     13      14    100.0%
+BANK0               80      0      12     15.0%
+BANK1               80      0       0      0.0%
+BANK2               80      0       0      0.0%
+BANK3               80      0       0      0.0%
+BANK4               80      0       0      0.0%
+BANK5               80      0       0      0.0%
+BANK6               16      0       0      0.0%
+STACK                0      0       0      0.0%
+DATA                 0      0      26      0.0%
+
+
+Microchip Technology PIC Macro Assembler V3.10 build 20250813170317 
+Symbol Table                                                                                   Fri May 15 13:10:34 2026
+
+                                       _D2 0000                                         _D3 0000  
+                                       l30 0032                                         l31 003C  
+                                       l23 000B                                         l32 0040  
+                                       l24 000E                                         l33 0049  
+                                       l25 0017                                         l26 001A  
+                                       l35 004D                                         l27 0023  
+                                       l43 0013                                         l28 0026  
+                                       l29 002F                                         l38 0010  
+                                       l68 000E                                         l94 000F  
+                                       l97 0006                                         u60 000B  
+                                       u61 000A                                _pwm_set_bit 0000  
+                                      l100 000B                                        l103 0003  
+                                      l134 0018                                        l150 0007  
+                                      l180 0005                                        l181 0006  
+                                      l193 004B                                        l186 0023  
+                                      l178 0000                                        l801 0000  
+                                      l811 000B                                        l803 0003  
+                                      l805 0004                                        l821 000C  
+                                      l813 0000                                        l807 0006  
+                                      l823 0014                                        l815 0005  
+                                      l831 0000                                        l809 0009  
+                                      l825 0000                                        l817 0008  
+                                      l833 0003                                        l921 0000  
+                                      l827 0003                                        l819 000A  
+                                      l835 0004                                        l931 001A  
+                                      l923 0001                                        l837 0005  
+                                      l829 0000                                        l925 0006  
+                                      l933 0001                                        l871 0000  
+                                      l927 000B                                        l951 0031  
+                                      l943 000A                                        l935 0004  
+                                      l961 0000                                        l873 000C  
+                                      l929 000F                                        l945 000D  
+                                      l937 0008                                        l971 002B  
+                                      l963 0003                                        l947 002A  
+                                      l973 0037                                        l965 0007  
+                                      l957 0033                                        l949 002D  
+                                      l981 0000                                        l975 0044  
+                                      l967 0013                                        l959 0036  
+                                      l991 000D                                        l969 001F  
+                                      l987 0001                                        l989 000B  
+                                      u200 0005                                        u201 0004  
+                                      u210 0006                                        u211 0005  
+                                      u300 0044                                        u301 0043  
+                                      u230 002A                                        u310 0013  
+                                      u231 0029                                        u311 0012  
+                                      u240 004B                                        u224 0012  
+                                      u241 004A                                        u225 0011  
+                                      u250 0007                                        u251 0006  
+                                      u235 0026                                        u260 0013  
+                                      u261 0012                                        u245 0047  
+                                      u270 001F                                        _PR2 001B  
+                                      u271 001E                                        u327 000F  
+                                      u280 002B                                        u281 002A  
+                                      u290 0037                                        u291 0036  
+                                      _PWM 0000                            _TMR2_Initialize 0000  
+                                      wreg 0009        __end_of_wait_for_pwm_cycle_complete 0007  
+              _wait_for_pwm_cycle_complete 0000                                       ?_PWM 0000  
+                                     l1003 0000                                       l1011 0006  
+                                     l1005 0005                                       l1013 0009  
+                                     l1015 000C                                       l1007 0000  
+                                     l1009 0003                            ?_calculate_crc8 0000  
+                                     PWM@i 0009                                       PWM@j 0007  
+                                     _LATA 010C                                       _LATB 010D  
+                                     _LATC 010E                                       _LATE 0110  
+                                     _PLLR 04D6                                       _TMR2 001A  
+                                     _WPUB 020D                                       _WPUE 0210  
+                                     _main 0000                                       fsr0h 0005  
+                                     fsr1h 0007                                       fsr0l 0004  
+                                     indf1 0001                                       fsr1l 0006  
+                                     btemp 007E                                       start 0000* 
+                 __end_of_EPWM3_Initialize 000F                                      ??_PWM 0005  
+                              _Check_Input 0000              __end_of_OSCILLATOR_Initialize 000C  
+                     pwm_set_bit@bit_value 0002                                      ?_main 0000  
+                                    _T2CON 001C                          ??_prepare_tx_data 0000  
+                                    _TRISA 008C                                      _TRISB 008D  
+                                    _TRISC 008E                                      _TRISE 0090  
+                           _WDT_Initialize 0000                                      btemp0 007E  
+                                    btemp1 007F                            ??_Transmit_data 000B  
+                                    status 0003                                      wtemp0 007E  
+                          __initialization 0000                               __end_of_main 0016  
+                  __end_of_TMR2_Initialize 0008                                     ??_main 000C  
+                   __end_of_WDT_Initialize 0004                                     _CCPR3H 0312  
+                                   _CCPR3L 0311                                     _APFCON 011D  
+                                   _ANSELA 018C                                     _ANSELB 018D  
+                                   _BORCON 0116                                     _OSCCON 0099  
+                                   _TMR2IF 0089                                     _WDTCON 0097  
+                             _CCPTMRS0bits 029E                                     _tx_buf 0000  
+                                   ltemp0a 0080                            ?_WDT_Initialize 0000  
+                                   ttemp0a 007F                                     wtemp0a 007F  
+                           Transmit_data@i 000B                          _SYSTEM_Initialize 0000  
+                  __end_of__initialization 000E                         ?_SYSTEM_Initialize 0000  
+                           __pcstackCOMMON 0000                               __pidataBANK0 0000  
+                      ??_SYSTEM_Initialize 0000                               ?_pwm_set_bit 0000  
+                         ?_TMR2_Initialize 0000                             _OPTION_REGbits 0095  
+                         ??_calculate_crc8 0000                  __end_of_SYSTEM_Initialize 0010  
+                               __pbssBANK0 0000                                 __pmaintext 0000  
+                        ?_EPWM3_Initialize 0000                            _prepare_tx_data 0000  
+                       ??_EPWM3_Initialize 0000                                    _CCP3CON 0313  
+                             ?_Check_Input 0000                                    PWM@data 0006  
+                                  _ECCP3AS 0315                                    _OSCTUNE 0098  
+                                  _PWM3CON 0314                                    __ptext1 0000  
+                                  __ptext2 0000                                    __ptext3 0000  
+                                  __ptext4 0000                                    __ptext5 0000  
+                                  __ptext6 0000                                    __ptext7 0000  
+                                  __ptext8 0000                                    __ptext9 0000  
+                    _OSCILLATOR_Initialize 0000                                  _T2CONbits 001C  
+                 ??_PIN_MANAGER_Initialize 0000                       end_of_initialization 000E  
+                                  init_ram 0000                    __end_of_prepare_tx_data 0011  
+                                  initloop 0001                      __end_of_Transmit_data 0014  
+                         ??_WDT_Initialize 0000                                  _PORTAbits 000C  
+                                _PORTCbits 000E                            pwm_set_bit@duty 0003  
+                              _CCP3CONbits 0313                     ?_OSCILLATOR_Initialize 0000  
+                      start_initialization 0000                                __end_of_PWM 004C  
+             ?_wait_for_pwm_cycle_complete 0000                           ?_prepare_tx_data 0000  
+                              __pdataBANK0 0000                                __pbssCOMMON 0000  
+                                ___latbits 0002              ??_wait_for_pwm_cycle_complete 0000  
+                   _PIN_MANAGER_Initialize 0000                           _calculate_crc8$0 0000  
+                         _calculate_crc8$1 0002                                   _LATBbits 010D  
+                                 _PIR1bits 0011                                   _PSTR3CON 0316  
+                        ??_TMR2_Initialize 0000                    ??_OSCILLATOR_Initialize 0000  
+                            ??_pwm_set_bit 0000                           _EPWM3_Initialize 0000  
+                                 __ptext10 0000                                   __ptext11 0000  
+                                 __ptext12 0000                              ??_Check_Input 0000  
+                      __end_of_pwm_set_bit 0024                             _calculate_crc8 0000* 
+                  ?_PIN_MANAGER_Initialize 0000                              _Transmit_data 0000  
+__end_ofcalculate_crc8_real@poly_reflected 0001          calculate_crc8_real@poly_reflected 0000  
+                            __pstringtext1 0000                        __end_of_Check_Input 004E  
+           __end_of_PIN_MANAGER_Initialize 0019                             ?_Transmit_data 0000  

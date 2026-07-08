@@ -1,0 +1,9 @@
+# ninja log v7
+58	3422	8005250011511692	CMakeFiles/tundra_TX_V10_default_default_XC8_compile.dir/D_/yiming/00work/tundra_TX_CRC8_V03.X/mcc_generated_files/device_config.c.p1	ce0ce8837cbdb9eb
+102	3586	8005250011961003	CMakeFiles/tundra_TX_V10_default_default_XC8_compile.dir/D_/yiming/00work/tundra_TX_CRC8_V03.X/mcc_generated_files/epwm3.c.p1	cf9d69b398c1c7db
+177	3687	8005250012721723	CMakeFiles/tundra_TX_V10_default_default_XC8_compile.dir/D_/yiming/00work/tundra_TX_CRC8_V03.X/mcc_generated_files/pin_manager.c.p1	dd2707fb0a40a831
+326	3735	8005250014199041	CMakeFiles/tundra_TX_V10_default_default_XC8_compile.dir/D_/yiming/00work/tundra_TX_CRC8_V03.X/tundra_crc8.c.p1	cb68f368dacfb905
+14	3806	8005250011078417	CMakeFiles/tundra_TX_V10_default_default_XC8_compile.dir/D_/yiming/00work/tundra_TX_CRC8_V03.X/main.c.p1	2765520df5e2dcc0
+134	3853	8005250012265099	CMakeFiles/tundra_TX_V10_default_default_XC8_compile.dir/D_/yiming/00work/tundra_TX_CRC8_V03.X/mcc_generated_files/mcc.c.p1	f2d978b2753a8694
+259	3936	8005250013521051	CMakeFiles/tundra_TX_V10_default_default_XC8_compile.dir/D_/yiming/00work/tundra_TX_CRC8_V03.X/tundra_PWM.c.p1	70caf8374eaec36d
+217	3949	8005250013091959	CMakeFiles/tundra_TX_V10_default_default_XC8_compile.dir/D_/yiming/00work/tundra_TX_CRC8_V03.X/mcc_generated_files/tmr2.c.p1	592ce5e5606f5018

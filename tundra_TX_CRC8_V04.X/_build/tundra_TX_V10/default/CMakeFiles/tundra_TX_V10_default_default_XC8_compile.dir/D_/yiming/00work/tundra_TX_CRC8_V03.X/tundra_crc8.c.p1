@@ -1,0 +1,82 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"62 D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_crc8.c
+[; ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_crc8.c: 62: uint8_t calculate_crc8_real(const uint8_t *data, uint8_t length) {
+[v _calculate_crc8_real `(uc ~T0 @X0 1 ef2`*Cuc`uc ]
+{
+[e :U _calculate_crc8_real ]
+[v _data `*Cuc ~T0 @X0 1 r1 ]
+[v _length `uc ~T0 @X0 1 r2 ]
+[f ]
+"64
+[; ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_crc8.c: 64:     uint8_t crc = 0x00;
+[v _crc `uc ~T0 @X0 1 a ]
+[e = _crc -> -> 0 `i `uc ]
+"68
+[; ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_crc8.c: 68:     const uint8_t poly_reflected = 0xC8;
+[v F40 `Cuc ~T0 @X0 1 s poly_reflected ]
+[i F40
+-> -> 200 `i `uc
+]
+"70
+[; ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_crc8.c: 70:     for (uint8_t i = 0; i < length; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $U 5  ]
+[e :U 2 ]
+{
+"72
+[; ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_crc8.c: 72:         crc ^= data[i];
+[e =^ _crc -> *U + _data * -> _i `ux -> -> # *U _data `ui `ux `uc ]
+"75
+[; ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_crc8.c: 75:         for (int j = 0; j < 8; j++) {
+{
+[v _j `i ~T0 @X0 1 a ]
+[e = _j -> 0 `i ]
+[e $ < _j -> 8 `i 6  ]
+[e $U 7  ]
+[e :U 6 ]
+{
+"76
+[; ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_crc8.c: 76:             if (crc & 0x01) {
+[e $ ! != & -> _crc `i -> 1 `i -> 0 `i 9  ]
+{
+"78
+[; ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_crc8.c: 78:                 crc = (crc >> 1) ^ poly_reflected;
+[e = _crc -> ^ >> -> _crc `i -> 1 `i -> F40 `i `uc ]
+"79
+[; ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_crc8.c: 79:             } else {
+}
+[e $U 10  ]
+[e :U 9 ]
+{
+"81
+[; ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_crc8.c: 81:                 crc >>= 1;
+[e =>> _crc -> -> 1 `i `uc ]
+"82
+[; ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_crc8.c: 82:             }
+}
+[e :U 10 ]
+"83
+[; ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_crc8.c: 83:         }
+}
+[e ++ _j -> 1 `i ]
+[e $ < _j -> 8 `i 6  ]
+[e :U 7 ]
+}
+"84
+[; ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_crc8.c: 84:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 5 ]
+[e $ < -> _i `i -> _length `i 2  ]
+[e :U 3 ]
+}
+"87
+[; ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_crc8.c: 87:     return crc ^ 0x4C;
+[e ) -> ^ -> _crc `i -> 76 `i `uc ]
+[e $UE 1  ]
+"88
+[; ;D:\yiming\00work\tundra_TX_CRC8_V03.X\tundra_crc8.c: 88: }
+[e :UE 1 ]
+}
