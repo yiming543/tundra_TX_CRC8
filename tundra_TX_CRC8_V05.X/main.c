@@ -1,0 +1,54 @@
+/**
+  Generated Main Source File
+
+  Company:
+    Microchip Technology Inc.
+
+  File Name:
+    main.c
+
+  Summary:
+    This is the main file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+
+  Description:
+    This header file provides implementations for driver APIs for all modules
+  selected in the GUI. Generation Information : Product Revision  :  PIC10 /
+  PIC12 / PIC16 / PIC18 MCUs - 1.81.8 Device            :  PIC16F1936 Driver
+  Version    :  2.00
+ */
+
+// 20261105 V1.0 CS:EBC8
+// 使用tundra_CRC8 改成物件寫法.
+
+#include "board_object.h"
+#include "mcc_generated_files/mcc.h"
+#include "tundra_data.h"
+
+// Variable declaration
+BOARD_t board;
+FRAME_t tundra_data;
+
+/*
+                         Main application
+ */
+
+int main(void) {
+  // initialize the device
+  SYSTEM_Initialize();
+  board_init(&board);
+  tundra_init(&tundra_data);
+  Clear_No_Call_Warning();
+
+  while (1) {
+    // Add your application code
+    swState_update(&board);
+
+    Check_Input(&board, &tundra_data);
+    Transmit_data(&tundra_data);
+    __delay_ms(20); // Optional delay between transmissions
+  }
+  return 0;
+}
+/**
+ End of File
+ */
