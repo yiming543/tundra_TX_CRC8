@@ -1,0 +1,14 @@
+# ninja log v7
+62	5098	8160718064205437	CMakeFiles/tundra_TX_CRC8_V07_default_default_XC8_compile.dir/D_/yiming/00work/tundra_TX_CRC8_V07.X/mcc_generated_files/device_config.c.p1	7f0a3c4ce6b62c11
+131	5782	8160718064897875	CMakeFiles/tundra_TX_CRC8_V07_default_default_XC8_compile.dir/D_/yiming/00work/tundra_TX_CRC8_V07.X/mcc_generated_files/epwm3.c.p1	ff78372fd7a500f9
+211	6091	8160718065724599	CMakeFiles/tundra_TX_CRC8_V07_default_default_XC8_compile.dir/D_/yiming/00work/tundra_TX_CRC8_V07.X/mcc_generated_files/mcc.c.p1	c16dd5a30ca6cf93
+15	6283	8160718063712978	CMakeFiles/tundra_TX_CRC8_V07_default_default_XC8_compile.dir/D_/yiming/00work/tundra_TX_CRC8_V07.X/main.c.p1	fea571e45668fae0
+682	6629	8160718070408215	CMakeFiles/tundra_TX_CRC8_V07_default_default_XC8_compile.dir/D_/yiming/00work/tundra_TX_CRC8_V07.X/object_SWITCH.c.p1	5d1449499c65bede
+311	6665	8160718066715361	CMakeFiles/tundra_TX_CRC8_V07_default_default_XC8_compile.dir/D_/yiming/00work/tundra_TX_CRC8_V07.X/mcc_generated_files/pin_manager.c.p1	b25b22e0d5cea388
+405	6882	8160718067732285	CMakeFiles/tundra_TX_CRC8_V07_default_default_XC8_compile.dir/D_/yiming/00work/tundra_TX_CRC8_V07.X/mcc_generated_files/tmr2.c.p1	b3d67ee9a1ed947
+599	6898	8160718069579870	CMakeFiles/tundra_TX_CRC8_V07_default_default_XC8_compile.dir/D_/yiming/00work/tundra_TX_CRC8_V07.X/object_LED.c.p1	5958dc1fe01c1350
+804	6962	8160718071599406	CMakeFiles/tundra_TX_CRC8_V07_default_default_XC8_compile.dir/D_/yiming/00work/tundra_TX_CRC8_V07.X/tundra_crc8.c.p1	53188e6f3ed18c9b
+743	7407	8160718070995767	CMakeFiles/tundra_TX_CRC8_V07_default_default_XC8_compile.dir/D_/yiming/00work/tundra_TX_CRC8_V07.X/tundra_PWM.c.p1	55bc3434da5b9801
+24	2849	8160718639468155	CMakeFiles/tundra_TX_CRC8_V07_default_default_XC8_compile.dir/D_/yiming/00work/tundra_TX_CRC8_V07.X/main.c.p1	fea571e45668fae0
+70	2894	8160718639938481	CMakeFiles/tundra_TX_CRC8_V07_default_default_XC8_compile.dir/D_/yiming/00work/tundra_TX_CRC8_V07.X/object_BOARD.c.p1	865a5f0b04d4fb83
+2894	10586	8160718668168396	D:/yiming/00work/tundra_TX_CRC8_V07.X/out/tundra_TX_CRC8_V07/default.elf	9e593a96ba3e8a64

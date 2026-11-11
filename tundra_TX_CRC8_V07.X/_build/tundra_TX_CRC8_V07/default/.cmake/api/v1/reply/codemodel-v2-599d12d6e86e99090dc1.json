@@ -1,0 +1,70 @@
+{
+	"configurations" : 
+	[
+		{
+			"abstractTargets" : [],
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-f6f22219c74102c3da70.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.24.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "tundra_TX_CRC8_V07_default_project",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "tundra_TX_CRC8_V07_default_default_XC8_compile::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tundra_TX_CRC8_V07_default_default_XC8_compile-e68f04dec81a0387013c.json",
+					"name" : "tundra_TX_CRC8_V07_default_default_XC8_compile",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "tundra_TX_CRC8_V07_default_image_QUAO6J_T::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tundra_TX_CRC8_V07_default_image_QUAO6J_T-38ef65b931a42436a04c.json",
+					"name" : "tundra_TX_CRC8_V07_default_image_QUAO6J_T",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/yiming/00work/tundra_TX_CRC8_V07.X/_build/tundra_TX_CRC8_V07/default",
+		"source" : "D:/yiming/00work/tundra_TX_CRC8_V07.X/cmake/tundra_TX_CRC8_V07/default"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	}
+}

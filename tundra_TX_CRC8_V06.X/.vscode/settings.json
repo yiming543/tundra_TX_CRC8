@@ -1,0 +1,5 @@
+{
+    "mplab.clangd.compileCommandsDir": "${workspaceFolder}/_build/tundra_TX_CRC8_V06/default",
+    "cmake.sourceDirectory": "D:/yiming/00work/tundra_TX_CRC8_V06.X/cmake/tundra_TX_CRC8_V06/default",
+    "C_Cpp.configurationWarnings": "disabled"
+}
