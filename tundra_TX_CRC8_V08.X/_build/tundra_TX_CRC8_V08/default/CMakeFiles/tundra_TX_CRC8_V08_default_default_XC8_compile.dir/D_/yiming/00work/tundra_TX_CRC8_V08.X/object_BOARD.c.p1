@@ -1,0 +1,343 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[v F89 `(uc ~T0 @X0 0 tf ]
+[v F88 `*F89 ~T0 @X0 1 t ]
+[v F92 `(uc ~T0 @X0 0 tf ]
+[v F91 `*F92 ~T0 @X0 1 t ]
+"10 D:\yiming\00work\tundra_TX_CRC8_V08.X/SWITCH.h
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X/SWITCH.h: 10: typedef struct {
+[s S5 `C*F89 1 `C*F92 1 ]
+[n S5 . get is_on ]
+"17
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X/SWITCH.h: 17: extern SWITCH_t const sw[LED_COUNT];
+[v _sw `CS5 ~T0 @X0 -> 0 `x e ]
+"29 D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 29:   if (sw[POS].is_on() == (1U)) {
+[c E75 0 1 2 3 4 5 6 .. ]
+[n E75 . POS DRL LO_BEAM HI_BEAM TURN_LEFT TURN_RIGHT LED_COUNT  ]
+[v F67 `(v ~T0 @X0 0 tf ]
+[v F66 `*F67 ~T0 @X0 1 t ]
+[v F70 `(v ~T0 @X0 0 tf ]
+[v F69 `*F70 ~T0 @X0 1 t ]
+[v F73 `(uc ~T0 @X0 0 tf ]
+[v F72 `*F73 ~T0 @X0 1 t ]
+"12 D:\yiming\00work\tundra_TX_CRC8_V08.X/LED.h
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X/LED.h: 12: typedef struct {
+[s S4 `C*F67 1 `C*F70 1 `C*F73 1 ]
+[n S4 . on off is_on ]
+"30
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X/LED.h: 30: extern const LED_t led[LED_COUNT];
+[v _led `CS4 ~T0 @X0 -> 0 `x e ]
+[v F39 `(v ~T0 @X0 0 tf1`*uc ]
+[v F38 `*F39 ~T0 @X0 1 t ]
+[v F43 `(v ~T0 @X0 0 tf1`*uc ]
+[v F42 `*F43 ~T0 @X0 1 t ]
+"15 D:\yiming\00work\tundra_TX_CRC8_V08.X/tundra_PWM.h
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X/tundra_PWM.h: 15: typedef struct {
+[s S1 `C*F39 1 `C*F43 1 ]
+[n S1 . get set ]
+[v F49 `(uc ~T0 @X0 0 tf ]
+[v F48 `*F49 ~T0 @X0 1 t ]
+[v F52 `(v ~T0 @X0 0 tf1`uc ]
+[v F51 `*F52 ~T0 @X0 1 t ]
+"20
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X/tundra_PWM.h: 20: typedef struct {
+[s S2 `C*F49 1 `C*F52 1 ]
+[n S2 . get set ]
+"26
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X/tundra_PWM.h: 26: typedef struct {
+[s S3 `S1 1 `S2 1 ]
+[n S3 . data crc ]
+"16 D:\yiming\00work\tundra_TX_CRC8_V08.X/tundra_crc8.h
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X/tundra_crc8.h: 16: extern uint8_t calculate_crc8(const uint8_t *data, uint8_t length);
+[v _calculate_crc8 `(uc ~T0 @X0 0 ef2`*Cuc`uc ]
+"27 D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 27: void swSetLED(void) {
+[v _swSetLED `(v ~T0 @X0 1 ef ]
+{
+[e :U _swSetLED ]
+[f ]
+"29
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 29:   if (sw[POS].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E75 0 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 7  ]
+{
+"30
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 30:     led[POS].on();
+[e ( *U . *U + &U _led * -> . `E75 0 `ux -> -> # *U &U _led `ui `ux 0 ..  ]
+"31
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 31:   } else {
+}
+[e $U 8  ]
+[e :U 7 ]
+{
+"32
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 32:     led[POS].off();
+[e ( *U . *U + &U _led * -> . `E75 0 `ux -> -> # *U &U _led `ui `ux 1 ..  ]
+"33
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 33:   }
+}
+[e :U 8 ]
+"35
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 35:   if (sw[DRL].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E75 1 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 9  ]
+{
+"36
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 36:     led[DRL].on();
+[e ( *U . *U + &U _led * -> . `E75 1 `ux -> -> # *U &U _led `ui `ux 0 ..  ]
+"37
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 37:   } else {
+}
+[e $U 10  ]
+[e :U 9 ]
+{
+"38
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 38:     led[DRL].off();
+[e ( *U . *U + &U _led * -> . `E75 1 `ux -> -> # *U &U _led `ui `ux 1 ..  ]
+"39
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 39:   }
+}
+[e :U 10 ]
+"40
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 40:   if (sw[LO_BEAM].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E75 2 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 11  ]
+{
+"41
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 41:     led[LO_BEAM].on();
+[e ( *U . *U + &U _led * -> . `E75 2 `ux -> -> # *U &U _led `ui `ux 0 ..  ]
+"42
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 42:   } else {
+}
+[e $U 12  ]
+[e :U 11 ]
+{
+"43
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 43:     led[LO_BEAM].off();
+[e ( *U . *U + &U _led * -> . `E75 2 `ux -> -> # *U &U _led `ui `ux 1 ..  ]
+"44
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 44:   }
+}
+[e :U 12 ]
+"45
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 45:   if (sw[HI_BEAM].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E75 3 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 13  ]
+{
+"46
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 46:     led[HI_BEAM].on();
+[e ( *U . *U + &U _led * -> . `E75 3 `ux -> -> # *U &U _led `ui `ux 0 ..  ]
+"47
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 47:   } else {
+}
+[e $U 14  ]
+[e :U 13 ]
+{
+"48
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 48:     led[HI_BEAM].off();
+[e ( *U . *U + &U _led * -> . `E75 3 `ux -> -> # *U &U _led `ui `ux 1 ..  ]
+"49
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 49:   }
+}
+[e :U 14 ]
+"50
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 50:   if (sw[TURN_LEFT].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E75 4 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 15  ]
+{
+"51
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 51:     led[TURN_LEFT].on();
+[e ( *U . *U + &U _led * -> . `E75 4 `ux -> -> # *U &U _led `ui `ux 0 ..  ]
+"52
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 52:   } else {
+}
+[e $U 16  ]
+[e :U 15 ]
+{
+"53
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 53:     led[TURN_LEFT].off();
+[e ( *U . *U + &U _led * -> . `E75 4 `ux -> -> # *U &U _led `ui `ux 1 ..  ]
+"54
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 54:   }
+}
+[e :U 16 ]
+"55
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 55:   if (sw[TURN_RIGHT].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E75 5 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 17  ]
+{
+"56
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 56:     led[TURN_RIGHT].on();
+[e ( *U . *U + &U _led * -> . `E75 5 `ux -> -> # *U &U _led `ui `ux 0 ..  ]
+"57
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 57:   } else {
+}
+[e $U 18  ]
+[e :U 17 ]
+{
+"58
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 58:     led[TURN_RIGHT].off();
+[e ( *U . *U + &U _led * -> . `E75 5 `ux -> -> # *U &U _led `ui `ux 1 ..  ]
+"59
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 59:   }
+}
+[e :U 18 ]
+"60
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 60: }
+[e :UE 6 ]
+}
+"62
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 62: void swSetDATA(FRAME_t const *data) {
+[v _swSetDATA `(v ~T0 @X0 1 ef1`*CS3 ]
+{
+[e :U _swSetDATA ]
+[v _data `*CS3 ~T0 @X0 1 r1 ]
+[f ]
+"65
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 65:   uint8_t D2 = 0;
+[v _D2 `uc ~T0 @X0 1 a ]
+[e = _D2 -> -> 0 `i `uc ]
+"66
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 66:   uint8_t D3 = 0;
+[v _D3 `uc ~T0 @X0 1 a ]
+[e = _D3 -> -> 0 `i `uc ]
+"68
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 68:   if (sw[POS].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E75 0 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 20  ]
+{
+"69
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 69:     ((D2) |= (1U << ((2))));
+[e =| _D2 -> << -> 1 `ui -> 2 `i `uc ]
+"70
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 70:   } else {
+}
+[e $U 21  ]
+[e :U 20 ]
+{
+"71
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 71:     ((D2) &= ~(1U << ((2))));
+[e =& _D2 -> ~ << -> 1 `ui -> 2 `i `uc ]
+"72
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 72:   }
+}
+[e :U 21 ]
+"75
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 75:   if (sw[DRL].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E75 1 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 22  ]
+{
+"76
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 76:     ((D2) |= (1U << ((3))));
+[e =| _D2 -> << -> 1 `ui -> 3 `i `uc ]
+"77
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 77:   } else {
+}
+[e $U 23  ]
+[e :U 22 ]
+{
+"78
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 78:     ((D2) &= ~(1U << ((3))));
+[e =& _D2 -> ~ << -> 1 `ui -> 3 `i `uc ]
+"79
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 79:   }
+}
+[e :U 23 ]
+"82
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 82:   if (sw[LO_BEAM].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E75 2 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 24  ]
+{
+"83
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 83:     ((D2) |= (1U << ((4))));
+[e =| _D2 -> << -> 1 `ui -> 4 `i `uc ]
+"84
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 84:   } else {
+}
+[e $U 25  ]
+[e :U 24 ]
+{
+"85
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 85:     ((D2) &= ~(1U << ((4))));
+[e =& _D2 -> ~ << -> 1 `ui -> 4 `i `uc ]
+"86
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 86:   }
+}
+[e :U 25 ]
+"89
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 89:   if (sw[HI_BEAM].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E75 3 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 26  ]
+{
+"90
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 90:     ((D2) |= (1U << ((5))));
+[e =| _D2 -> << -> 1 `ui -> 5 `i `uc ]
+"91
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 91:   } else {
+}
+[e $U 27  ]
+[e :U 26 ]
+{
+"92
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 92:     ((D2) &= ~(1U << ((5))));
+[e =& _D2 -> ~ << -> 1 `ui -> 5 `i `uc ]
+"93
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 93:   }
+}
+[e :U 27 ]
+"96
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 96:   if (sw[TURN_LEFT].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E75 4 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 28  ]
+{
+"97
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 97:     ((D3) |= (1U << ((5))));
+[e =| _D3 -> << -> 1 `ui -> 5 `i `uc ]
+"98
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 98:   } else {
+}
+[e $U 29  ]
+[e :U 28 ]
+{
+"99
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 99:     ((D3) &= ~(1U << ((5))));
+[e =& _D3 -> ~ << -> 1 `ui -> 5 `i `uc ]
+"100
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 100:   }
+}
+[e :U 29 ]
+"103
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 103:   if (sw[TURN_RIGHT].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E75 5 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 30  ]
+{
+"104
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 104:     ((D3) |= (1U << ((6))));
+[e =| _D3 -> << -> 1 `ui -> 6 `i `uc ]
+"105
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 105:   } else {
+}
+[e $U 31  ]
+[e :U 30 ]
+{
+"106
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 106:     ((D3) &= ~(1U << ((6))));
+[e =& _D3 -> ~ << -> 1 `ui -> 6 `i `uc ]
+"107
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 107:   }
+}
+[e :U 31 ]
+[v F152 `uc ~T0 @X0 -> 8 `i s ]
+[i F152
+:U ..
+"109
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 109:   uint8_t tmp[8]={0};
+-> -> 0 `i `uc
+..
+]
+[v _tmp `uc ~T0 @X0 -> 8 `i a ]
+[e = _tmp F152 ]
+"110
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 110:    tmp[0] = D2;
+[e = *U + &U _tmp * -> -> -> 0 `i `ui `ux -> -> # *U &U _tmp `ui `ux _D2 ]
+"111
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 111:    tmp[1] = D3;
+[e = *U + &U _tmp * -> -> -> 1 `i `ui `ux -> -> # *U &U _tmp `ui `ux _D3 ]
+"112
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 112:    data->data.set(tmp);
+[e ( *U . . *U _data 0 1 (1 &U _tmp ]
+"113
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 113:    data->crc.set(calculate_crc8(tmp,(8U)));
+[e ( *U . . *U _data 1 1 (1 ( _calculate_crc8 (2 , -> &U _tmp `*Cuc -> -> 8 `ui `uc ]
+"114
+[; ;D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c: 114: }
+[e :UE 19 ]
+}

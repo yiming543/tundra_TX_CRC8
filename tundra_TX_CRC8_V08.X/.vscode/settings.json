@@ -1,0 +1,9 @@
+{
+    "cmake.sourceDirectory": "D:/yiming/00work/tundra_TX_CRC8_V08.X/cmake/tundra_TX_CRC8_V07/default",
+    "mplab.clangd.compileCommandsDir": "${workspaceFolder}/_build/tundra_TX_CRC8_V08/default",
+    "mplab.clangd.arguments": [
+        "--header-insertion=never"
+    ],
+    "mplab.clangd.path": "c:\\Program Files\\Microchip\\xc8\\v3.10\\bin\\xc8-clangd.exe",
+    "C_Cpp.intelliSenseEngine": "disabled"
+}
