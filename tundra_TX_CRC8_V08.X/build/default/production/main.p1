@@ -3,50 +3,47 @@ Version 4.0 HI-TECH Software Intermediate Code
 "71 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 71: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"33 ./LED.h
-[; ;./LED.h: 33: void LED_Init(void);
-[v _LED_Init `(v ~T0 @X0 0 ef ]
-"18 ./SWITCH.h
-[; ;./SWITCH.h: 18: extern void swState_update(void);
+"8 ./BOARD.h
+[; ;./BOARD.h: 8: extern void board_init(void);
+[v _board_init `(v ~T0 @X0 0 ef ]
+"9
+[; ;./BOARD.h: 9: extern void swState_update(void);
 [v _swState_update `(v ~T0 @X0 0 ef ]
-"15 ./Warning_ignored.h
-[; ;./Warning_ignored.h: 15: extern void Clear_No_Call_Warning(void) ;
-[v _Clear_No_Call_Warning `(v ~T0 @X0 0 ef ]
-"6 ./object_BOARD.h
-[; ;./object_BOARD.h: 6: extern void swSetLED(void);
+"6
+[; ;./BOARD.h: 6: extern void swSetLED(void);
 [v _swSetLED `(v ~T0 @X0 0 ef ]
-[v F3164 `(v ~T0 @X0 0 tf1`*uc ]
-[v F3163 `*F3164 ~T0 @X0 1 t ]
-[v F3168 `(v ~T0 @X0 0 tf1`*uc ]
-[v F3167 `*F3168 ~T0 @X0 1 t ]
+[v F3131 `(v ~T0 @X0 0 tf1`*uc ]
+[v F3130 `*F3131 ~T0 @X0 1 t ]
+[v F3135 `(v ~T0 @X0 0 tf1`*uc ]
+[v F3134 `*F3135 ~T0 @X0 1 t ]
 "15 ./tundra_PWM.h
 [; ;./tundra_PWM.h: 15: typedef struct {
-[s S372 `C*F3164 1 `C*F3168 1 ]
-[n S372 . get set ]
-[v F3174 `(uc ~T0 @X0 0 tf ]
-[v F3173 `*F3174 ~T0 @X0 1 t ]
-[v F3177 `(v ~T0 @X0 0 tf1`uc ]
-[v F3176 `*F3177 ~T0 @X0 1 t ]
+[s S370 `C*F3131 1 `C*F3135 1 ]
+[n S370 . get set ]
+[v F3141 `(uc ~T0 @X0 0 tf ]
+[v F3140 `*F3141 ~T0 @X0 1 t ]
+[v F3144 `(v ~T0 @X0 0 tf1`uc ]
+[v F3143 `*F3144 ~T0 @X0 1 t ]
 "20
 [; ;./tundra_PWM.h: 20: typedef struct {
-[s S373 `C*F3174 1 `C*F3177 1 ]
-[n S373 . get set ]
+[s S371 `C*F3141 1 `C*F3144 1 ]
+[n S371 . get set ]
 "26
 [; ;./tundra_PWM.h: 26: typedef struct {
-[s S374 `S372 1 `S373 1 ]
-[n S374 . data crc ]
-"7 ./object_BOARD.h
-[; ;./object_BOARD.h: 7: extern void swSetDATA(FRAME_t const *tundra);
-[v _swSetDATA `(v ~T0 @X0 0 ef1`*CS374 ]
+[s S372 `S370 1 `S371 1 ]
+[n S372 . data crc ]
+"7 ./BOARD.h
+[; ;./BOARD.h: 7: extern void swSetDATA(FRAME_t const *tundra);
+[v _swSetDATA `(v ~T0 @X0 0 ef1`*CS372 ]
 "31 ./tundra_PWM.h
 [; ;./tundra_PWM.h: 31: extern FRAME_t const tundra;
-[v _tundra `CS374 ~T0 @X0 0 e ]
+[v _tundra `CS372 ~T0 @X0 0 e ]
 "32
 [; ;./tundra_PWM.h: 32: extern void Transmit_data(void);
 [v _Transmit_data `(v ~T0 @X0 0 ef ]
-[v F235 `(v ~T0 @X0 1 tf1`ul ]
+[v F202 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
-[v __delay `JF235 ~T0 @X0 0 e ]
+[v __delay `JF202 ~T0 @X0 0 e ]
 [p i __delay ]
 "38 C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.9.258/xc8\pic\include\proc/pic16f1936.h
 [; ;C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.9.258/xc8\pic\include\proc/pic16f1936.h: 38: __asm("INDF0 equ 00h");
@@ -544,54 +541,48 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.9.258/xc8\pic\include\proc/pic16f1936.h: 7345: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
-"51 main.c
-[; ;main.c: 51: int main(void) {
+"47 main.c
+[; ;main.c: 47: int main(void) {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"53
-[; ;main.c: 53:   SYSTEM_Initialize();
+"49
+[; ;main.c: 49:   SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"56
-[; ;main.c: 56:   LED_Init();
-[e ( _LED_Init ..  ]
-"57
-[; ;main.c: 57:   swState_update();
-[e ( _swState_update ..  ]
-"58
-[; ;main.c: 58:   Clear_No_Call_Warning();
-[e ( _Clear_No_Call_Warning ..  ]
-"60
-[; ;main.c: 60:   while (1) {
-[e :U 377 ]
+"50
+[; ;main.c: 50:   board_init();
+[e ( _board_init ..  ]
+"52
+[; ;main.c: 52:   while (1) {
+[e :U 375 ]
 {
-"62
-[; ;main.c: 62:     swState_update();
+"54
+[; ;main.c: 54:     swState_update();
 [e ( _swState_update ..  ]
-"63
-[; ;main.c: 63:     swSetLED();
+"55
+[; ;main.c: 55:     swSetLED();
 [e ( _swSetLED ..  ]
-"64
-[; ;main.c: 64:     swSetDATA(&tundra);
+"56
+[; ;main.c: 56:     swSetDATA(&tundra);
 [e ( _swSetDATA (1 &U _tundra ]
-"66
-[; ;main.c: 66:     Transmit_data();
+"58
+[; ;main.c: 58:     Transmit_data();
 [e ( _Transmit_data ..  ]
-"68
-[; ;main.c: 68:     _delay((unsigned long)((20)*(32000000U/4000.0)));
+"59
+[; ;main.c: 59:     _delay((unsigned long)((20)*(32000000U/4000.0)));
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"69
-[; ;main.c: 69:   }
+"60
+[; ;main.c: 60:   }
 }
+[e :U 374 ]
+[e $U 375  ]
 [e :U 376 ]
-[e $U 377  ]
-[e :U 378 ]
-"70
-[; ;main.c: 70:   return 0;
+"61
+[; ;main.c: 61:   return 0;
 [e ) -> 0 `i ]
-[e $UE 375  ]
-"71
-[; ;main.c: 71: }
-[e :UE 375 ]
+[e $UE 373  ]
+"62
+[; ;main.c: 62: }
+[e :UE 373 ]
 }

@@ -33,8 +33,8 @@ TURN_LEFT 4
 TURN_RIGHT 5
 LED_COUNT 6
 ]
-"29 D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c
-[e E75 . `uc
+"34 D:\yiming\00work\tundra_TX_CRC8_V08.X\BOARD.c
+[e E77 . `uc
 POS 0
 DRL 1
 LO_BEAM 2
@@ -43,6 +43,12 @@ TURN_LEFT 4
 TURN_RIGHT 5
 LED_COUNT 6
 ]
+"26
+[v _board_init board_init `(v  1 e 1 0 ]
+"32
+[v _swSetLED swSetLED `(v  1 e 1 0 ]
+"67
+[v _swSetDATA swSetDATA `(v  1 e 1 0 ]
 "10 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul8_16.c
@@ -89,7 +95,7 @@ LED_COUNT 6
 [v _LED_TURN_RIGHT_IS_ON LED_TURN_RIGHT_IS_ON `(uc  1 s 1 LED_TURN_RIGHT_IS_ON ]
 "130
 [v _LED_Init LED_Init `(v  1 e 1 0 ]
-"51 D:\yiming\00work\tundra_TX_CRC8_V08.X\main.c
+"47 D:\yiming\00work\tundra_TX_CRC8_V08.X\main.c
 [v _main main `(i  1 e 2 0 ]
 "64 D:\yiming\00work\tundra_TX_CRC8_V08.X\mcc_generated_files/epwm3.c
 [v _EPWM3_Initialize EPWM3_Initialize `(v  1 e 1 0 ]
@@ -119,10 +125,6 @@ LED_COUNT 6
 [v _TMR2_LoadPeriodRegister TMR2_LoadPeriodRegister `(v  1 e 1 0 ]
 "111
 [v _TMR2_HasOverflowOccured TMR2_HasOverflowOccured `(a  1 e 1 0 ]
-"27 D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c
-[v _swSetLED swSetLED `(v  1 e 1 0 ]
-"62
-[v _swSetDATA swSetDATA `(v  1 e 1 0 ]
 "24 D:\yiming\00work\tundra_TX_CRC8_V08.X\SWITCH.c
 [v _SW_POS_GET SW_POS_GET `(uc  1 s 1 SW_POS_GET ]
 "29
@@ -169,7 +171,7 @@ LED_COUNT 6
 [v _Transmit_data Transmit_data `(v  1 e 1 0 ]
 "18 D:\yiming\00work\tundra_TX_CRC8_V08.X\Warning_ignored.c
 [v _Clear_No_Call_Warning Clear_No_Call_Warning `(v  1 e 1 0 ]
-[s S382 . 1 `uc 1 RA0 1 0 :1:0 
+[s S378 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -179,9 +181,9 @@ LED_COUNT 6
 `uc 1 RA7 1 0 :1:7 
 ]
 "430 C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.9.258/xc8\pic\include\proc/pic16f1936.h
-[u S391 . 1 `S382 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES391  1 e 1 @12 ]
-[s S403 . 1 `uc 1 RC0 1 0 :1:0 
+[u S387 . 1 `S378 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES387  1 e 1 @12 ]
+[s S399 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -191,8 +193,8 @@ LED_COUNT 6
 `uc 1 RC7 1 0 :1:7 
 ]
 "554
-[u S412 . 1 `S403 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES412  1 e 1 @14 ]
+[u S408 . 1 `S399 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES408  1 e 1 @14 ]
 [s S152 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -261,7 +263,7 @@ LED_COUNT 6
 [v _LATA LATA `VEuc  1 e 1 @268 ]
 "2233
 [v _LATB LATB `VEuc  1 e 1 @269 ]
-[s S318 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S314 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -271,8 +273,8 @@ LED_COUNT 6
 `uc 1 LATB7 1 0 :1:7 
 ]
 "2250
-[u S327 . 1 `S318 1 . 1 0 ]
-[v _LATBbits LATBbits `VES327  1 e 1 @269 ]
+[u S323 . 1 `S314 1 . 1 0 ]
+[v _LATBbits LATBbits `VES323  1 e 1 @269 ]
 "2295
 [v _LATC LATC `VEuc  1 e 1 @270 ]
 "2357
@@ -312,12 +314,12 @@ LED_COUNT 6
 [v _CCPR3H CCPR3H `VEuc  1 e 1 @786 ]
 "5170
 [v _CCP3CON CCP3CON `VEuc  1 e 1 @787 ]
-[s S702 . 1 `uc 1 CCP3M 1 0 :4:0 
+[s S605 . 1 `uc 1 CCP3M 1 0 :4:0 
 `uc 1 DC3B 1 0 :2:4 
 `uc 1 P3M 1 0 :2:6 
 ]
 "5192
-[s S706 . 1 `uc 1 CCP3M0 1 0 :1:0 
+[s S609 . 1 `uc 1 CCP3M0 1 0 :1:0 
 `uc 1 CCP3M1 1 0 :1:1 
 `uc 1 CCP3M2 1 0 :1:2 
 `uc 1 CCP3M3 1 0 :1:3 
@@ -326,8 +328,8 @@ LED_COUNT 6
 `uc 1 P3M0 1 0 :1:6 
 `uc 1 P3M1 1 0 :1:7 
 ]
-[u S715 . 1 `S702 1 . 1 0 `S706 1 . 1 0 ]
-[v _CCP3CONbits CCP3CONbits `VES715  1 e 1 @787 ]
+[u S618 . 1 `S605 1 . 1 0 `S609 1 . 1 0 ]
+[v _CCP3CONbits CCP3CONbits `VES618  1 e 1 @787 ]
 "5252
 [v _PWM3CON PWM3CON `VEuc  1 e 1 @788 ]
 "5333
@@ -340,68 +342,33 @@ LED_COUNT 6
 [v _TMR2IF TMR2IF `VEb  1 e 0 @137 ]
 "8 D:\yiming\00work\tundra_TX_CRC8_V08.X\LED.c
 [v _led_states led_states `[6]uc  1 s 6 led_states ]
-[s S345 . 6 `DC*.37(v 1 on 2 0 `DC*.37(v 1 off 2 2 `DC*.37(uc 1 is_on 2 4 ]
+[s S341 . 6 `DC*.37(v 1 on 2 0 `DC*.37(v 1 off 2 2 `DC*.37(uc 1 is_on 2 4 ]
 "121
-[v _led led `DC[6]S345  1 e 36 0 ]
+[v _led led `DC[6]S341  1 e 36 0 ]
 "20 D:\yiming\00work\tundra_TX_CRC8_V08.X\SWITCH.c
 [v _sw_states sw_states `[6]uc  1 s 6 sw_states ]
-[s S436 . 4 `DC*.37(uc 1 get 2 0 `DC*.37(uc 1 is_on 2 2 ]
+[s S432 . 4 `DC*.37(uc 1 get 2 0 `DC*.37(uc 1 is_on 2 2 ]
 "74
-[v _sw sw `DC[6]S436  1 e 24 0 ]
+[v _sw sw `DC[6]S432  1 e 24 0 ]
 "18 D:\yiming\00work\tundra_TX_CRC8_V08.X\tundra_crc8.c
 [v _crc8_table_fixed crc8_table_fixed `DC[256]uc  1 s 256 crc8_table_fixed ]
-[s S654 . 11 `uc 1 ID 1 0 `uc 1 LENGTH 1 1 `[8]uc 1 DATA 8 2 `uc 1 CRC 1 10 ]
+[s S557 . 11 `uc 1 ID 1 0 `uc 1 LENGTH 1 1 `[8]uc 1 DATA 8 2 `uc 1 CRC 1 10 ]
 "25 D:\yiming\00work\tundra_TX_CRC8_V08.X\tundra_PWM.c
-[v _frame frame `S654  1 s 11 frame ]
-[s S253 . 4 `DC*.37(v 1 get 2 0 `DC*.37(v 1 set 2 2 ]
+[v _frame frame `S557  1 s 11 frame ]
+[s S249 . 4 `DC*.37(v 1 get 2 0 `DC*.37(v 1 set 2 2 ]
 "51
-[s S272 . 4 `DC*.37(uc 1 get 2 0 `DC*.37(v 1 set 2 2 ]
-[s S279 . 8 `S253 1 data 4 0 `S272 1 crc 4 4 ]
-[v _tundra tundra `DCS279  1 e 8 0 ]
-"51 D:\yiming\00work\tundra_TX_CRC8_V08.X\main.c
+[s S268 . 4 `DC*.37(uc 1 get 2 0 `DC*.37(v 1 set 2 2 ]
+[s S275 . 8 `S249 1 data 4 0 `S268 1 crc 4 4 ]
+[v _tundra tundra `DCS275  1 e 8 0 ]
+"47 D:\yiming\00work\tundra_TX_CRC8_V08.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"71
+"62
 } 0
-"92 D:\yiming\00work\tundra_TX_CRC8_V08.X\SWITCH.c
-[v _swState_update swState_update `(v  1 e 1 0 ]
-{
-"99
-} 0
-"41
-[v _SW_TURN_LEFT_GET SW_TURN_LEFT_GET `(uc  1 s 1 SW_TURN_LEFT_GET ]
-{
-"43
-} 0
-"37
-[v _SW_HI_BEAM_GET SW_HI_BEAM_GET `(uc  1 s 1 SW_HI_BEAM_GET ]
-{
-"39
-} 0
-"33
-[v _SW_LO_BEAM_GET SW_LO_BEAM_GET `(uc  1 s 1 SW_LO_BEAM_GET ]
-{
-"35
-} 0
-"29
-[v _SW_DRL_GET SW_DRL_GET `(uc  1 s 1 SW_DRL_GET ]
-{
-"31
-} 0
-"24
-[v _SW_POS_GET SW_POS_GET `(uc  1 s 1 SW_POS_GET ]
-{
-"27
-} 0
-"45
-[v _SW_TURN_RIGHT_GET SW_TURN_RIGHT_GET `(uc  1 s 1 SW_TURN_RIGHT_GET ]
-{
-"47
-} 0
-"27 D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c
+"32 D:\yiming\00work\tundra_TX_CRC8_V08.X\BOARD.c
 [v _swSetLED swSetLED `(v  1 e 1 0 ]
 {
-"60
+"65
 } 0
 "84 D:\yiming\00work\tundra_TX_CRC8_V08.X\LED.c
 [v _TURN_LEFT_ON TURN_LEFT_ON `(v  1 s 1 TURN_LEFT_ON ]
@@ -433,21 +400,21 @@ LED_COUNT 6
 {
 "107
 } 0
-"62 D:\yiming\00work\tundra_TX_CRC8_V08.X\object_BOARD.c
+"67 D:\yiming\00work\tundra_TX_CRC8_V08.X\BOARD.c
 [v _swSetDATA swSetDATA `(v  1 e 1 0 ]
 {
-"109
-[v swSetDATA@tmp tmp `[8]uc  1 a 8 0 ]
-"65
-[v swSetDATA@D2 D2 `uc  1 a 1 9 ]
-"66
-[v swSetDATA@D3 D3 `uc  1 a 1 8 ]
-[s S253 . 4 `DC*.37(v 1 get 2 0 `DC*.37(v 1 set 2 2 ]
-"62
-[s S272 . 4 `DC*.37(uc 1 get 2 0 `DC*.37(v 1 set 2 2 ]
-[s S279 . 8 `S253 1 data 4 0 `S272 1 crc 4 4 ]
-[v swSetDATA@data data `*.25DCS279  1 p 2 5 ]
 "114
+[v swSetDATA@tmp tmp `[8]uc  1 a 8 0 ]
+"70
+[v swSetDATA@D2 D2 `uc  1 a 1 9 ]
+"71
+[v swSetDATA@D3 D3 `uc  1 a 1 8 ]
+[s S249 . 4 `DC*.37(v 1 get 2 0 `DC*.37(v 1 set 2 2 ]
+"67
+[s S268 . 4 `DC*.37(uc 1 get 2 0 `DC*.37(v 1 set 2 2 ]
+[s S275 . 8 `S249 1 data 4 0 `S268 1 crc 4 4 ]
+[v swSetDATA@data data `*.25DCS275  1 p 2 5 ]
+"119
 } 0
 "42 D:\yiming\00work\tundra_TX_CRC8_V08.X\tundra_crc8.c
 [v _calculate_crc8 calculate_crc8 `(uc  1 e 1 0 ]
@@ -506,76 +473,45 @@ LED_COUNT 6
 [v CRC_SET@data data `uc  1 p 1 4 ]
 "49
 } 0
-"98
-[v _Transmit_data Transmit_data `(v  1 e 1 0 ]
+"26 D:\yiming\00work\tundra_TX_CRC8_V08.X\BOARD.c
+[v _board_init board_init `(v  1 e 1 0 ]
 {
-"108
-[v Transmit_data@i_763 i `uc  1 a 1 11 ]
-"103
-[v Transmit_data@i i `uc  1 a 1 12 ]
+"30
+} 0
+"92 D:\yiming\00work\tundra_TX_CRC8_V08.X\SWITCH.c
+[v _swState_update swState_update `(v  1 e 1 0 ]
+{
 "99
-[v Transmit_data@buf buf `[11]uc  1 a 11 0 ]
-"111
 } 0
-"76
-[v _PWM PWM `(v  1 e 1 0 ]
+"41
+[v _SW_TURN_LEFT_GET SW_TURN_LEFT_GET `(uc  1 s 1 SW_TURN_LEFT_GET ]
 {
-[v PWM@buf buf `uc  1 p 1 wreg ]
-"92
-[v PWM@j j `uc  1 a 1 7 ]
-"82
-[v PWM@i i `uc  1 a 1 8 ]
-"76
-[v PWM@buf buf `uc  1 p 1 wreg ]
-[v PWM@buf buf `uc  1 p 1 6 ]
-"96
-} 1
-"56
-[v _wait_for_pwm_cycle_complete wait_for_pwm_cycle_complete `(v  1 e 1 0 ]
-{
-"61
+"43
 } 0
-"63
-[v _pwm_set_bit pwm_set_bit `(v  1 e 1 0 ]
+"37
+[v _SW_HI_BEAM_GET SW_HI_BEAM_GET `(uc  1 s 1 SW_HI_BEAM_GET ]
 {
-[v pwm_set_bit@bit_value bit_value `uc  1 p 1 wreg ]
-"64
-[v pwm_set_bit@duty duty `ui  1 a 2 3 ]
-"63
-[v pwm_set_bit@bit_value bit_value `uc  1 p 1 wreg ]
-"65
-[v pwm_set_bit@bit_value bit_value `uc  1 p 1 2 ]
-"74
-} 1
-"50 D:\yiming\00work\tundra_TX_CRC8_V08.X\mcc_generated_files/mcc.c
-[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
-{
-"58
+"39
 } 0
-"74
-[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+"33
+[v _SW_LO_BEAM_GET SW_LO_BEAM_GET `(uc  1 s 1 SW_LO_BEAM_GET ]
 {
-"78
+"35
 } 0
-"62 D:\yiming\00work\tundra_TX_CRC8_V08.X\mcc_generated_files/tmr2.c
-[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+"29
+[v _SW_DRL_GET SW_DRL_GET `(uc  1 s 1 SW_DRL_GET ]
 {
-"77
+"31
 } 0
-"55 D:\yiming\00work\tundra_TX_CRC8_V08.X\mcc_generated_files/pin_manager.c
-[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"24
+[v _SW_POS_GET SW_POS_GET `(uc  1 s 1 SW_POS_GET ]
 {
-"97
+"27
 } 0
-"60 D:\yiming\00work\tundra_TX_CRC8_V08.X\mcc_generated_files/mcc.c
-[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"45
+[v _SW_TURN_RIGHT_GET SW_TURN_RIGHT_GET `(uc  1 s 1 SW_TURN_RIGHT_GET ]
 {
-"72
-} 0
-"64 D:\yiming\00work\tundra_TX_CRC8_V08.X\mcc_generated_files/epwm3.c
-[v _EPWM3_Initialize EPWM3_Initialize `(v  1 e 1 0 ]
-{
-"88
+"47
 } 0
 "130 D:\yiming\00work\tundra_TX_CRC8_V08.X\LED.c
 [v _LED_Init LED_Init `(v  1 e 1 0 ]
@@ -715,4 +651,75 @@ LED_COUNT 6
 [v _CRC_GET CRC_GET `(uc  1 e 1 0 ]
 {
 "45
+} 0
+"98
+[v _Transmit_data Transmit_data `(v  1 e 1 0 ]
+{
+"108
+[v Transmit_data@i_666 i `uc  1 a 1 11 ]
+"103
+[v Transmit_data@i i `uc  1 a 1 12 ]
+"99
+[v Transmit_data@buf buf `[11]uc  1 a 11 0 ]
+"111
+} 0
+"76
+[v _PWM PWM `(v  1 e 1 0 ]
+{
+[v PWM@buf buf `uc  1 p 1 wreg ]
+"92
+[v PWM@j j `uc  1 a 1 7 ]
+"82
+[v PWM@i i `uc  1 a 1 8 ]
+"76
+[v PWM@buf buf `uc  1 p 1 wreg ]
+[v PWM@buf buf `uc  1 p 1 6 ]
+"96
+} 1
+"56
+[v _wait_for_pwm_cycle_complete wait_for_pwm_cycle_complete `(v  1 e 1 0 ]
+{
+"61
+} 0
+"63
+[v _pwm_set_bit pwm_set_bit `(v  1 e 1 0 ]
+{
+[v pwm_set_bit@bit_value bit_value `uc  1 p 1 wreg ]
+"64
+[v pwm_set_bit@duty duty `ui  1 a 2 3 ]
+"63
+[v pwm_set_bit@bit_value bit_value `uc  1 p 1 wreg ]
+"65
+[v pwm_set_bit@bit_value bit_value `uc  1 p 1 2 ]
+"74
+} 1
+"50 D:\yiming\00work\tundra_TX_CRC8_V08.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"58
+} 0
+"74
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+{
+"78
+} 0
+"62 D:\yiming\00work\tundra_TX_CRC8_V08.X\mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+{
+"77
+} 0
+"55 D:\yiming\00work\tundra_TX_CRC8_V08.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"97
+} 0
+"60 D:\yiming\00work\tundra_TX_CRC8_V08.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"72
+} 0
+"64 D:\yiming\00work\tundra_TX_CRC8_V08.X\mcc_generated_files/epwm3.c
+[v _EPWM3_Initialize EPWM3_Initialize `(v  1 e 1 0 ]
+{
+"88
 } 0

@@ -37,12 +37,12 @@
       <itemPath>SWITCH.h</itemPath>
       <itemPath>Warning_ignored.c</itemPath>
       <itemPath>Warning_ignored.h</itemPath>
-      <itemPath>object_BOARD.c</itemPath>
-      <itemPath>object_BOARD.h</itemPath>
       <itemPath>tundra_PWM.c</itemPath>
       <itemPath>tundra_PWM.h</itemPath>
       <itemPath>tundra_crc8.c</itemPath>
       <itemPath>tundra_crc8.h</itemPath>
+      <itemPath>BOARD.c</itemPath>
+      <itemPath>BOARD.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

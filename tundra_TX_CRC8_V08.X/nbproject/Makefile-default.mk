@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c mcc_generated_files/device_config.c mcc_generated_files/epwm3.c mcc_generated_files/tmr2.c main.c LED.c SWITCH.c Warning_ignored.c object_BOARD.c tundra_PWM.c tundra_crc8.c
+SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c mcc_generated_files/device_config.c mcc_generated_files/epwm3.c mcc_generated_files/tmr2.c main.c LED.c SWITCH.c Warning_ignored.c tundra_PWM.c tundra_crc8.c BOARD.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/epwm3.p1 ${OBJECTDIR}/mcc_generated_files/tmr2.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/LED.p1 ${OBJECTDIR}/SWITCH.p1 ${OBJECTDIR}/Warning_ignored.p1 ${OBJECTDIR}/object_BOARD.p1 ${OBJECTDIR}/tundra_PWM.p1 ${OBJECTDIR}/tundra_crc8.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/mcc.p1.d ${OBJECTDIR}/mcc_generated_files/pin_manager.p1.d ${OBJECTDIR}/mcc_generated_files/device_config.p1.d ${OBJECTDIR}/mcc_generated_files/epwm3.p1.d ${OBJECTDIR}/mcc_generated_files/tmr2.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/LED.p1.d ${OBJECTDIR}/SWITCH.p1.d ${OBJECTDIR}/Warning_ignored.p1.d ${OBJECTDIR}/object_BOARD.p1.d ${OBJECTDIR}/tundra_PWM.p1.d ${OBJECTDIR}/tundra_crc8.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/epwm3.p1 ${OBJECTDIR}/mcc_generated_files/tmr2.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/LED.p1 ${OBJECTDIR}/SWITCH.p1 ${OBJECTDIR}/Warning_ignored.p1 ${OBJECTDIR}/tundra_PWM.p1 ${OBJECTDIR}/tundra_crc8.p1 ${OBJECTDIR}/BOARD.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/mcc.p1.d ${OBJECTDIR}/mcc_generated_files/pin_manager.p1.d ${OBJECTDIR}/mcc_generated_files/device_config.p1.d ${OBJECTDIR}/mcc_generated_files/epwm3.p1.d ${OBJECTDIR}/mcc_generated_files/tmr2.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/LED.p1.d ${OBJECTDIR}/SWITCH.p1.d ${OBJECTDIR}/Warning_ignored.p1.d ${OBJECTDIR}/tundra_PWM.p1.d ${OBJECTDIR}/tundra_crc8.p1.d ${OBJECTDIR}/BOARD.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/epwm3.p1 ${OBJECTDIR}/mcc_generated_files/tmr2.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/LED.p1 ${OBJECTDIR}/SWITCH.p1 ${OBJECTDIR}/Warning_ignored.p1 ${OBJECTDIR}/object_BOARD.p1 ${OBJECTDIR}/tundra_PWM.p1 ${OBJECTDIR}/tundra_crc8.p1
+OBJECTFILES=${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/epwm3.p1 ${OBJECTDIR}/mcc_generated_files/tmr2.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/LED.p1 ${OBJECTDIR}/SWITCH.p1 ${OBJECTDIR}/Warning_ignored.p1 ${OBJECTDIR}/tundra_PWM.p1 ${OBJECTDIR}/tundra_crc8.p1 ${OBJECTDIR}/BOARD.p1
 
 # Source Files
-SOURCEFILES=mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c mcc_generated_files/device_config.c mcc_generated_files/epwm3.c mcc_generated_files/tmr2.c main.c LED.c SWITCH.c Warning_ignored.c object_BOARD.c tundra_PWM.c tundra_crc8.c
+SOURCEFILES=mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c mcc_generated_files/device_config.c mcc_generated_files/epwm3.c mcc_generated_files/tmr2.c main.c LED.c SWITCH.c Warning_ignored.c tundra_PWM.c tundra_crc8.c BOARD.c
 
 
 
@@ -166,14 +166,6 @@ ${OBJECTDIR}/Warning_ignored.p1: Warning_ignored.c  nbproject/Makefile-${CND_CON
 	@-${MV} ${OBJECTDIR}/Warning_ignored.d ${OBJECTDIR}/Warning_ignored.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Warning_ignored.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/object_BOARD.p1: object_BOARD.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/object_BOARD.p1.d 
-	@${RM} ${OBJECTDIR}/object_BOARD.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/object_BOARD.p1 object_BOARD.c 
-	@-${MV} ${OBJECTDIR}/object_BOARD.d ${OBJECTDIR}/object_BOARD.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/object_BOARD.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/tundra_PWM.p1: tundra_PWM.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/tundra_PWM.p1.d 
@@ -189,6 +181,14 @@ ${OBJECTDIR}/tundra_crc8.p1: tundra_crc8.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/tundra_crc8.p1 tundra_crc8.c 
 	@-${MV} ${OBJECTDIR}/tundra_crc8.d ${OBJECTDIR}/tundra_crc8.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/tundra_crc8.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/BOARD.p1: BOARD.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/BOARD.p1.d 
+	@${RM} ${OBJECTDIR}/BOARD.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/BOARD.p1 BOARD.c 
+	@-${MV} ${OBJECTDIR}/BOARD.d ${OBJECTDIR}/BOARD.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/BOARD.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
 ${OBJECTDIR}/mcc_generated_files/mcc.p1: mcc_generated_files/mcc.c  nbproject/Makefile-${CND_CONF}.mk 
@@ -263,14 +263,6 @@ ${OBJECTDIR}/Warning_ignored.p1: Warning_ignored.c  nbproject/Makefile-${CND_CON
 	@-${MV} ${OBJECTDIR}/Warning_ignored.d ${OBJECTDIR}/Warning_ignored.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Warning_ignored.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/object_BOARD.p1: object_BOARD.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/object_BOARD.p1.d 
-	@${RM} ${OBJECTDIR}/object_BOARD.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/object_BOARD.p1 object_BOARD.c 
-	@-${MV} ${OBJECTDIR}/object_BOARD.d ${OBJECTDIR}/object_BOARD.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/object_BOARD.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/tundra_PWM.p1: tundra_PWM.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/tundra_PWM.p1.d 
@@ -286,6 +278,14 @@ ${OBJECTDIR}/tundra_crc8.p1: tundra_crc8.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/tundra_crc8.p1 tundra_crc8.c 
 	@-${MV} ${OBJECTDIR}/tundra_crc8.d ${OBJECTDIR}/tundra_crc8.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/tundra_crc8.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/BOARD.p1: BOARD.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/BOARD.p1.d 
+	@${RM} ${OBJECTDIR}/BOARD.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/BOARD.p1 BOARD.c 
+	@-${MV} ${OBJECTDIR}/BOARD.d ${OBJECTDIR}/BOARD.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/BOARD.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

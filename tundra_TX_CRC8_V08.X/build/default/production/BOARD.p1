@@ -1,0 +1,371 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"33 ./LED.h
+[; ;./LED.h: 33: void LED_Init(void);
+[v _LED_Init `(v ~T0 @X0 0 ef ]
+"15 ./Warning_ignored.h
+[; ;./Warning_ignored.h: 15: extern void Clear_No_Call_Warning(void) ;
+[v _Clear_No_Call_Warning `(v ~T0 @X0 0 ef ]
+"18 ./SWITCH.h
+[; ;./SWITCH.h: 18: extern void swState_update(void);
+[v _swState_update `(v ~T0 @X0 0 ef ]
+[v F91 `(uc ~T0 @X0 0 tf ]
+[v F90 `*F91 ~T0 @X0 1 t ]
+[v F94 `(uc ~T0 @X0 0 tf ]
+[v F93 `*F94 ~T0 @X0 1 t ]
+"10
+[; ;./SWITCH.h: 10: typedef struct {
+[s S5 `C*F91 1 `C*F94 1 ]
+[n S5 . get is_on ]
+"17
+[; ;./SWITCH.h: 17: extern SWITCH_t const sw[LED_COUNT];
+[v _sw `CS5 ~T0 @X0 -> 0 `x e ]
+"34 BOARD.c
+[; ;BOARD.c: 34:   if (sw[POS].is_on() == (1U)) {
+[c E77 0 1 2 3 4 5 6 .. ]
+[n E77 . POS DRL LO_BEAM HI_BEAM TURN_LEFT TURN_RIGHT LED_COUNT  ]
+[v F69 `(v ~T0 @X0 0 tf ]
+[v F68 `*F69 ~T0 @X0 1 t ]
+[v F72 `(v ~T0 @X0 0 tf ]
+[v F71 `*F72 ~T0 @X0 1 t ]
+[v F75 `(uc ~T0 @X0 0 tf ]
+[v F74 `*F75 ~T0 @X0 1 t ]
+"12 ./LED.h
+[; ;./LED.h: 12: typedef struct {
+[s S4 `C*F69 1 `C*F72 1 `C*F75 1 ]
+[n S4 . on off is_on ]
+"30
+[; ;./LED.h: 30: extern const LED_t led[LED_COUNT];
+[v _led `CS4 ~T0 @X0 -> 0 `x e ]
+[v F39 `(v ~T0 @X0 0 tf1`*uc ]
+[v F38 `*F39 ~T0 @X0 1 t ]
+[v F43 `(v ~T0 @X0 0 tf1`*uc ]
+[v F42 `*F43 ~T0 @X0 1 t ]
+"15 ./tundra_PWM.h
+[; ;./tundra_PWM.h: 15: typedef struct {
+[s S1 `C*F39 1 `C*F43 1 ]
+[n S1 . get set ]
+[v F49 `(uc ~T0 @X0 0 tf ]
+[v F48 `*F49 ~T0 @X0 1 t ]
+[v F52 `(v ~T0 @X0 0 tf1`uc ]
+[v F51 `*F52 ~T0 @X0 1 t ]
+"20
+[; ;./tundra_PWM.h: 20: typedef struct {
+[s S2 `C*F49 1 `C*F52 1 ]
+[n S2 . get set ]
+"26
+[; ;./tundra_PWM.h: 26: typedef struct {
+[s S3 `S1 1 `S2 1 ]
+[n S3 . data crc ]
+"16 ./tundra_crc8.h
+[; ;./tundra_crc8.h: 16: extern uint8_t calculate_crc8(const uint8_t *data, uint8_t length);
+[v _calculate_crc8 `(uc ~T0 @X0 0 ef2`*Cuc`uc ]
+"26 BOARD.c
+[; ;BOARD.c: 26: void board_init(void) {
+[v _board_init `(v ~T0 @X0 1 ef ]
+{
+[e :U _board_init ]
+[f ]
+"27
+[; ;BOARD.c: 27:   LED_Init();
+[e ( _LED_Init ..  ]
+"28
+[; ;BOARD.c: 28:   Clear_No_Call_Warning();
+[e ( _Clear_No_Call_Warning ..  ]
+"29
+[; ;BOARD.c: 29:   swState_update();
+[e ( _swState_update ..  ]
+"30
+[; ;BOARD.c: 30: }
+[e :UE 6 ]
+}
+"32
+[; ;BOARD.c: 32: void swSetLED(void) {
+[v _swSetLED `(v ~T0 @X0 1 ef ]
+{
+[e :U _swSetLED ]
+[f ]
+"34
+[; ;BOARD.c: 34:   if (sw[POS].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E77 0 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 8  ]
+{
+"35
+[; ;BOARD.c: 35:     led[POS].on();
+[e ( *U . *U + &U _led * -> . `E77 0 `ux -> -> # *U &U _led `ui `ux 0 ..  ]
+"36
+[; ;BOARD.c: 36:   } else {
+}
+[e $U 9  ]
+[e :U 8 ]
+{
+"37
+[; ;BOARD.c: 37:     led[POS].off();
+[e ( *U . *U + &U _led * -> . `E77 0 `ux -> -> # *U &U _led `ui `ux 1 ..  ]
+"38
+[; ;BOARD.c: 38:   }
+}
+[e :U 9 ]
+"40
+[; ;BOARD.c: 40:   if (sw[DRL].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E77 1 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 10  ]
+{
+"41
+[; ;BOARD.c: 41:     led[DRL].on();
+[e ( *U . *U + &U _led * -> . `E77 1 `ux -> -> # *U &U _led `ui `ux 0 ..  ]
+"42
+[; ;BOARD.c: 42:   } else {
+}
+[e $U 11  ]
+[e :U 10 ]
+{
+"43
+[; ;BOARD.c: 43:     led[DRL].off();
+[e ( *U . *U + &U _led * -> . `E77 1 `ux -> -> # *U &U _led `ui `ux 1 ..  ]
+"44
+[; ;BOARD.c: 44:   }
+}
+[e :U 11 ]
+"45
+[; ;BOARD.c: 45:   if (sw[LO_BEAM].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E77 2 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 12  ]
+{
+"46
+[; ;BOARD.c: 46:     led[LO_BEAM].on();
+[e ( *U . *U + &U _led * -> . `E77 2 `ux -> -> # *U &U _led `ui `ux 0 ..  ]
+"47
+[; ;BOARD.c: 47:   } else {
+}
+[e $U 13  ]
+[e :U 12 ]
+{
+"48
+[; ;BOARD.c: 48:     led[LO_BEAM].off();
+[e ( *U . *U + &U _led * -> . `E77 2 `ux -> -> # *U &U _led `ui `ux 1 ..  ]
+"49
+[; ;BOARD.c: 49:   }
+}
+[e :U 13 ]
+"50
+[; ;BOARD.c: 50:   if (sw[HI_BEAM].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E77 3 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 14  ]
+{
+"51
+[; ;BOARD.c: 51:     led[HI_BEAM].on();
+[e ( *U . *U + &U _led * -> . `E77 3 `ux -> -> # *U &U _led `ui `ux 0 ..  ]
+"52
+[; ;BOARD.c: 52:   } else {
+}
+[e $U 15  ]
+[e :U 14 ]
+{
+"53
+[; ;BOARD.c: 53:     led[HI_BEAM].off();
+[e ( *U . *U + &U _led * -> . `E77 3 `ux -> -> # *U &U _led `ui `ux 1 ..  ]
+"54
+[; ;BOARD.c: 54:   }
+}
+[e :U 15 ]
+"55
+[; ;BOARD.c: 55:   if (sw[TURN_LEFT].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E77 4 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 16  ]
+{
+"56
+[; ;BOARD.c: 56:     led[TURN_LEFT].on();
+[e ( *U . *U + &U _led * -> . `E77 4 `ux -> -> # *U &U _led `ui `ux 0 ..  ]
+"57
+[; ;BOARD.c: 57:   } else {
+}
+[e $U 17  ]
+[e :U 16 ]
+{
+"58
+[; ;BOARD.c: 58:     led[TURN_LEFT].off();
+[e ( *U . *U + &U _led * -> . `E77 4 `ux -> -> # *U &U _led `ui `ux 1 ..  ]
+"59
+[; ;BOARD.c: 59:   }
+}
+[e :U 17 ]
+"60
+[; ;BOARD.c: 60:   if (sw[TURN_RIGHT].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E77 5 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 18  ]
+{
+"61
+[; ;BOARD.c: 61:     led[TURN_RIGHT].on();
+[e ( *U . *U + &U _led * -> . `E77 5 `ux -> -> # *U &U _led `ui `ux 0 ..  ]
+"62
+[; ;BOARD.c: 62:   } else {
+}
+[e $U 19  ]
+[e :U 18 ]
+{
+"63
+[; ;BOARD.c: 63:     led[TURN_RIGHT].off();
+[e ( *U . *U + &U _led * -> . `E77 5 `ux -> -> # *U &U _led `ui `ux 1 ..  ]
+"64
+[; ;BOARD.c: 64:   }
+}
+[e :U 19 ]
+"65
+[; ;BOARD.c: 65: }
+[e :UE 7 ]
+}
+"67
+[; ;BOARD.c: 67: void swSetDATA(FRAME_t const *data) {
+[v _swSetDATA `(v ~T0 @X0 1 ef1`*CS3 ]
+{
+[e :U _swSetDATA ]
+[v _data `*CS3 ~T0 @X0 1 r1 ]
+[f ]
+"70
+[; ;BOARD.c: 70:   uint8_t D2 = 0;
+[v _D2 `uc ~T0 @X0 1 a ]
+[e = _D2 -> -> 0 `i `uc ]
+"71
+[; ;BOARD.c: 71:   uint8_t D3 = 0;
+[v _D3 `uc ~T0 @X0 1 a ]
+[e = _D3 -> -> 0 `i `uc ]
+"73
+[; ;BOARD.c: 73:   if (sw[POS].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E77 0 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 21  ]
+{
+"74
+[; ;BOARD.c: 74:     ((D2) |= (1U << ((2))));
+[e =| _D2 -> << -> 1 `ui -> 2 `i `uc ]
+"75
+[; ;BOARD.c: 75:   } else {
+}
+[e $U 22  ]
+[e :U 21 ]
+{
+"76
+[; ;BOARD.c: 76:     ((D2) &= ~(1U << ((2))));
+[e =& _D2 -> ~ << -> 1 `ui -> 2 `i `uc ]
+"77
+[; ;BOARD.c: 77:   }
+}
+[e :U 22 ]
+"80
+[; ;BOARD.c: 80:   if (sw[DRL].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E77 1 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 23  ]
+{
+"81
+[; ;BOARD.c: 81:     ((D2) |= (1U << ((3))));
+[e =| _D2 -> << -> 1 `ui -> 3 `i `uc ]
+"82
+[; ;BOARD.c: 82:   } else {
+}
+[e $U 24  ]
+[e :U 23 ]
+{
+"83
+[; ;BOARD.c: 83:     ((D2) &= ~(1U << ((3))));
+[e =& _D2 -> ~ << -> 1 `ui -> 3 `i `uc ]
+"84
+[; ;BOARD.c: 84:   }
+}
+[e :U 24 ]
+"87
+[; ;BOARD.c: 87:   if (sw[LO_BEAM].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E77 2 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 25  ]
+{
+"88
+[; ;BOARD.c: 88:     ((D2) |= (1U << ((4))));
+[e =| _D2 -> << -> 1 `ui -> 4 `i `uc ]
+"89
+[; ;BOARD.c: 89:   } else {
+}
+[e $U 26  ]
+[e :U 25 ]
+{
+"90
+[; ;BOARD.c: 90:     ((D2) &= ~(1U << ((4))));
+[e =& _D2 -> ~ << -> 1 `ui -> 4 `i `uc ]
+"91
+[; ;BOARD.c: 91:   }
+}
+[e :U 26 ]
+"94
+[; ;BOARD.c: 94:   if (sw[HI_BEAM].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E77 3 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 27  ]
+{
+"95
+[; ;BOARD.c: 95:     ((D2) |= (1U << ((5))));
+[e =| _D2 -> << -> 1 `ui -> 5 `i `uc ]
+"96
+[; ;BOARD.c: 96:   } else {
+}
+[e $U 28  ]
+[e :U 27 ]
+{
+"97
+[; ;BOARD.c: 97:     ((D2) &= ~(1U << ((5))));
+[e =& _D2 -> ~ << -> 1 `ui -> 5 `i `uc ]
+"98
+[; ;BOARD.c: 98:   }
+}
+[e :U 28 ]
+"101
+[; ;BOARD.c: 101:   if (sw[TURN_LEFT].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E77 4 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 29  ]
+{
+"102
+[; ;BOARD.c: 102:     ((D3) |= (1U << ((5))));
+[e =| _D3 -> << -> 1 `ui -> 5 `i `uc ]
+"103
+[; ;BOARD.c: 103:   } else {
+}
+[e $U 30  ]
+[e :U 29 ]
+{
+"104
+[; ;BOARD.c: 104:     ((D3) &= ~(1U << ((5))));
+[e =& _D3 -> ~ << -> 1 `ui -> 5 `i `uc ]
+"105
+[; ;BOARD.c: 105:   }
+}
+[e :U 30 ]
+"108
+[; ;BOARD.c: 108:   if (sw[TURN_RIGHT].is_on() == (1U)) {
+[e $ ! == -> ( *U . *U + &U _sw * -> . `E77 5 `ux -> -> # *U &U _sw `ui `ux 1 ..  `ui -> 1 `ui 31  ]
+{
+"109
+[; ;BOARD.c: 109:     ((D3) |= (1U << ((6))));
+[e =| _D3 -> << -> 1 `ui -> 6 `i `uc ]
+"110
+[; ;BOARD.c: 110:   } else {
+}
+[e $U 32  ]
+[e :U 31 ]
+{
+"111
+[; ;BOARD.c: 111:     ((D3) &= ~(1U << ((6))));
+[e =& _D3 -> ~ << -> 1 `ui -> 6 `i `uc ]
+"112
+[; ;BOARD.c: 112:   }
+}
+[e :U 32 ]
+[v F156 `uc ~T0 @X0 -> 8 `i s ]
+[i F156
+:U ..
+"114
+[; ;BOARD.c: 114:   uint8_t tmp[8]={0};
+-> -> 0 `i `uc
+..
+]
+[v _tmp `uc ~T0 @X0 -> 8 `i a ]
+[e = _tmp F156 ]
+"115
+[; ;BOARD.c: 115:    tmp[0] = D2;
+[e = *U + &U _tmp * -> -> -> 0 `i `ui `ux -> -> # *U &U _tmp `ui `ux _D2 ]
+"116
+[; ;BOARD.c: 116:    tmp[1] = D3;
+[e = *U + &U _tmp * -> -> -> 1 `i `ui `ux -> -> # *U &U _tmp `ui `ux _D3 ]
+"117
+[; ;BOARD.c: 117:    data->data.set(tmp);
+[e ( *U . . *U _data 0 1 (1 &U _tmp ]
+"118
+[; ;BOARD.c: 118:    data->crc.set(calculate_crc8(tmp,(8U)));
+[e ( *U . . *U _data 1 1 (1 ( _calculate_crc8 (2 , -> &U _tmp `*Cuc -> -> 8 `ui `uc ]
+"119
+[; ;BOARD.c: 119: }
+[e :UE 20 ]
+}

@@ -30,17 +30,13 @@
 //        +--SW
 //        +--tundra_PWM--+--tundra_crc8
 
-// 20261113 V08 CS:8515
+// 20261113 V08 CS:0DDF
 // 再優化物件結構和用法
 // 保護變數不被隨意讀取或更改。
 
-#include "LED.h"
-#include "SWITCH.h"
-#include "Warning_ignored.h"
-#include "mcc_generated_files/mcc.h"
-#include "object_BOARD.h"
-#include "tundra_PWM.h"
 
+#include "mcc_generated_files/mcc.h"
+#include "BOARD.h"
 
 // 全域變數
 
@@ -51,11 +47,7 @@
 int main(void) {
   // initialize the device
   SYSTEM_Initialize();
-  // obj_init();
-  // Clear_No_Call_Warning();
-  LED_Init();
-  swState_update();
-  Clear_No_Call_Warning();
+  board_init();
 
   while (1) {
     // Add your application code
@@ -64,7 +56,6 @@ int main(void) {
     swSetDATA(&tundra);
 
     Transmit_data();
-
     __delay_ms(20); // Optional delay between transmissions
   }
   return 0;
