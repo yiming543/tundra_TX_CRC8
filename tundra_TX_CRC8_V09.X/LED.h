@@ -4,9 +4,9 @@
 #include <stdint.h>
 
 // 範例
-// led[POS].on();
-// led[POS].off();
-// led[POS].is_on();
+// led.pos.on();
+// led.pos.off();
+// led.pos.is_on();
 
 // 1. 定義單一 LED 公開介面（全部使用 const 指標，不佔用 RAM，也無 state 暴露風險）
 typedef struct {

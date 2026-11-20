@@ -1,0 +1,4 @@
+D:/yiming/00work/tundra_TX_CRC8_V09.X/_build/tundra_TX_CRC8_V09/default/CMakeFiles/tundra_TX_CRC8_V09_default_default_XC8_compile.dir
+D:/yiming/00work/tundra_TX_CRC8_V09.X/_build/tundra_TX_CRC8_V09/default/CMakeFiles/tundra_TX_CRC8_V09_default_image_AbvLXjwW.dir
+D:/yiming/00work/tundra_TX_CRC8_V09.X/_build/tundra_TX_CRC8_V09/default/CMakeFiles/edit_cache.dir
+D:/yiming/00work/tundra_TX_CRC8_V09.X/_build/tundra_TX_CRC8_V09/default/CMakeFiles/rebuild_cache.dir

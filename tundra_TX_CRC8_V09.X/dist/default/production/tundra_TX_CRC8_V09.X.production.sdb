@@ -3,26 +3,6 @@
 [d edition pro ]
 [d chip 16F1936 ]
 [d frameptr 6 ]
-"13 D:\yiming\00work\tundra_TX_CRC8_V09.X\LED.c
-[e E55 . `uc
-POS 0
-DRL 1
-LO_BEAM 2
-HI_BEAM 3
-TURN_LEFT 4
-TURN_RIGHT 5
-LED_COUNT 6
-]
-"40 D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c
-[e E2829 . `uc
-POS 0
-DRL 1
-LO_BEAM 2
-HI_BEAM 3
-TURN_LEFT 4
-TURN_RIGHT 5
-LED_COUNT 6
-]
 "26 D:\yiming\00work\tundra_TX_CRC8_V09.X\BOARD.c
 [v _board_init board_init `(v  1 e 1 0 ]
 "32
@@ -37,45 +17,45 @@ LED_COUNT 6
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"12 D:\yiming\00work\tundra_TX_CRC8_V09.X\LED.c
+"27 D:\yiming\00work\tundra_TX_CRC8_V09.X\LED.c
 [v _POS_ON POS_ON `(v  1 s 1 POS_ON ]
-"19
+"34
 [v _POS_OFF POS_OFF `(v  1 s 1 POS_OFF ]
-"26
+"41
 [v _LED_POS_IS_ON LED_POS_IS_ON `(uc  1 s 1 LED_POS_IS_ON ]
-"30
+"45
 [v _DRL_ON DRL_ON `(v  1 s 1 DRL_ON ]
-"37
+"52
 [v _DRL_OFF DRL_OFF `(v  1 s 1 DRL_OFF ]
-"44
+"59
 [v _LED_DRL_IS_ON LED_DRL_IS_ON `(uc  1 s 1 LED_DRL_IS_ON ]
-"48
+"63
 [v _LO_BEAM_ON LO_BEAM_ON `(v  1 s 1 LO_BEAM_ON ]
-"55
+"70
 [v _LO_BEAM_OFF LO_BEAM_OFF `(v  1 s 1 LO_BEAM_OFF ]
-"62
+"77
 [v _LED_LO_BEAM_IS_ON LED_LO_BEAM_IS_ON `(uc  1 s 1 LED_LO_BEAM_IS_ON ]
-"66
+"81
 [v _HI_BEAM_ON HI_BEAM_ON `(v  1 s 1 HI_BEAM_ON ]
-"73
+"88
 [v _HI_BEAM_OFF HI_BEAM_OFF `(v  1 s 1 HI_BEAM_OFF ]
-"80
+"95
 [v _LED_HI_BEAM_IS_ON LED_HI_BEAM_IS_ON `(uc  1 s 1 LED_HI_BEAM_IS_ON ]
-"84
+"99
 [v _TURN_LEFT_ON TURN_LEFT_ON `(v  1 s 1 TURN_LEFT_ON ]
-"91
+"106
 [v _TURN_LEFT_OFF TURN_LEFT_OFF `(v  1 s 1 TURN_LEFT_OFF ]
-"98
+"113
 [v _LED_TURN_LEFT_IS_ON LED_TURN_LEFT_IS_ON `(uc  1 s 1 LED_TURN_LEFT_IS_ON ]
-"102
+"117
 [v _TURN_RIGHT_ON TURN_RIGHT_ON `(v  1 s 1 TURN_RIGHT_ON ]
-"109
+"124
 [v _TURN_RIGHT_OFF TURN_RIGHT_OFF `(v  1 s 1 TURN_RIGHT_OFF ]
-"116
+"131
 [v _LED_TURN_RIGHT_IS_ON LED_TURN_RIGHT_IS_ON `(uc  1 s 1 LED_TURN_RIGHT_IS_ON ]
-"130
+"145
 [v _LED_Init LED_Init `(v  1 e 1 0 ]
-"52 D:\yiming\00work\tundra_TX_CRC8_V09.X\main.c
+"53 D:\yiming\00work\tundra_TX_CRC8_V09.X\main.c
 [v _main main `(i  1 e 2 0 ]
 "64 D:\yiming\00work\tundra_TX_CRC8_V09.X\mcc_generated_files/epwm3.c
 [v _EPWM3_Initialize EPWM3_Initialize `(v  1 e 1 0 ]
@@ -105,31 +85,31 @@ LED_COUNT 6
 [v _TMR2_LoadPeriodRegister TMR2_LoadPeriodRegister `(v  1 e 1 0 ]
 "111
 [v _TMR2_HasOverflowOccured TMR2_HasOverflowOccured `(a  1 e 1 0 ]
-"14 D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c
+"26 D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c
 [v _SW_POS_GET SW_POS_GET `(uc  1 s 1 SW_POS_GET ]
-"19
+"30
 [v _SW_DRL_GET SW_DRL_GET `(uc  1 s 1 SW_DRL_GET ]
-"23
+"34
 [v _SW_LO_BEAM_GET SW_LO_BEAM_GET `(uc  1 s 1 SW_LO_BEAM_GET ]
-"27
+"38
 [v _SW_HI_BEAM_GET SW_HI_BEAM_GET `(uc  1 s 1 SW_HI_BEAM_GET ]
-"31
+"42
 [v _SW_TURN_LEFT_GET SW_TURN_LEFT_GET `(uc  1 s 1 SW_TURN_LEFT_GET ]
-"35
+"46
 [v _SW_TURN_RIGHT_GET SW_TURN_RIGHT_GET `(uc  1 s 1 SW_TURN_RIGHT_GET ]
-"39
+"50
 [v _SW_POS_IS_ON SW_POS_IS_ON `(uc  1 s 1 SW_POS_IS_ON ]
-"43
+"54
 [v _SW_DRL_IS_ON SW_DRL_IS_ON `(uc  1 s 1 SW_DRL_IS_ON ]
-"47
+"58
 [v _SW_LO_BEAM_IS_ON SW_LO_BEAM_IS_ON `(uc  1 s 1 SW_LO_BEAM_IS_ON ]
-"51
+"62
 [v _SW_HI_BEAM_IS_ON SW_HI_BEAM_IS_ON `(uc  1 s 1 SW_HI_BEAM_IS_ON ]
-"55
+"66
 [v _SW_TURN_LEFT_IS_ON SW_TURN_LEFT_IS_ON `(uc  1 s 1 SW_TURN_LEFT_IS_ON ]
-"59
+"70
 [v _SW_TURN_RIGHT_IS_ON SW_TURN_RIGHT_IS_ON `(uc  1 s 1 SW_TURN_RIGHT_IS_ON ]
-"82
+"84
 [v _swState_update swState_update `(v  1 e 1 0 ]
 "42 D:\yiming\00work\tundra_TX_CRC8_V09.X\tundra_crc8.c
 [v _calculate_crc8 calculate_crc8 `(uc  1 e 1 0 ]
@@ -151,7 +131,7 @@ LED_COUNT 6
 [v _Transmit_data Transmit_data `(v  1 e 1 0 ]
 "18 D:\yiming\00work\tundra_TX_CRC8_V09.X\Warning_ignored.c
 [v _Clear_No_Call_Warning Clear_No_Call_Warning `(v  1 e 1 0 ]
-[s S429 . 1 `uc 1 RA0 1 0 :1:0 
+[s S447 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -161,9 +141,9 @@ LED_COUNT 6
 `uc 1 RA7 1 0 :1:7 
 ]
 "430 C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.9.258/xc8\pic\include\proc/pic16f1936.h
-[u S438 . 1 `S429 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES438  1 e 1 @12 ]
-[s S450 . 1 `uc 1 RC0 1 0 :1:0 
+[u S456 . 1 `S447 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES456  1 e 1 @12 ]
+[s S468 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -173,8 +153,8 @@ LED_COUNT 6
 `uc 1 RC7 1 0 :1:7 
 ]
 "554
-[u S459 . 1 `S450 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES459  1 e 1 @14 ]
+[u S477 . 1 `S468 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES477  1 e 1 @14 ]
 [s S152 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -243,7 +223,7 @@ LED_COUNT 6
 [v _LATA LATA `VEuc  1 e 1 @268 ]
 "2233
 [v _LATB LATB `VEuc  1 e 1 @269 ]
-[s S314 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S313 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -253,8 +233,8 @@ LED_COUNT 6
 `uc 1 LATB7 1 0 :1:7 
 ]
 "2250
-[u S323 . 1 `S314 1 . 1 0 ]
-[v _LATBbits LATBbits `VES323  1 e 1 @269 ]
+[u S322 . 1 `S313 1 . 1 0 ]
+[v _LATBbits LATBbits `VES322  1 e 1 @269 ]
 "2295
 [v _LATC LATC `VEuc  1 e 1 @270 ]
 "2357
@@ -294,12 +274,12 @@ LED_COUNT 6
 [v _CCPR3H CCPR3H `VEuc  1 e 1 @786 ]
 "5170
 [v _CCP3CON CCP3CON `VEuc  1 e 1 @787 ]
-[s S700 . 1 `uc 1 CCP3M 1 0 :4:0 
+[s S710 . 1 `uc 1 CCP3M 1 0 :4:0 
 `uc 1 DC3B 1 0 :2:4 
 `uc 1 P3M 1 0 :2:6 
 ]
 "5192
-[s S704 . 1 `uc 1 CCP3M0 1 0 :1:0 
+[s S714 . 1 `uc 1 CCP3M0 1 0 :1:0 
 `uc 1 CCP3M1 1 0 :1:1 
 `uc 1 CCP3M2 1 0 :1:2 
 `uc 1 CCP3M3 1 0 :1:3 
@@ -308,8 +288,8 @@ LED_COUNT 6
 `uc 1 P3M0 1 0 :1:6 
 `uc 1 P3M1 1 0 :1:7 
 ]
-[u S713 . 1 `S700 1 . 1 0 `S704 1 . 1 0 ]
-[v _CCP3CONbits CCP3CONbits `VES713  1 e 1 @787 ]
+[u S723 . 1 `S710 1 . 1 0 `S714 1 . 1 0 ]
+[v _CCP3CONbits CCP3CONbits `VES723  1 e 1 @787 ]
 "5252
 [v _PWM3CON PWM3CON `VEuc  1 e 1 @788 ]
 "5333
@@ -320,67 +300,68 @@ LED_COUNT 6
 [v _PLLR PLLR `VEb  1 e 0 @1238 ]
 "9059
 [v _TMR2IF TMR2IF `VEb  1 e 0 @137 ]
-"8 D:\yiming\00work\tundra_TX_CRC8_V09.X\LED.c
-[v _led_states led_states `[6]uc  1 s 6 led_states ]
-[s S341 . 6 `DC*.37(v 1 on 2 0 `DC*.37(v 1 off 2 2 `DC*.37(uc 1 is_on 2 4 ]
-"121
-[s S345 . 36 `S341 1 pos 6 0 `S341 1 drl 6 6 `S341 1 loBeam 6 12 `S341 1 hiBeam 6 18 `S341 1 turnLeft 6 24 `S341 1 turnRight 6 30 ]
-[v _led led `DCS345  1 e 36 0 ]
-"10 D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c
-[v _sw_states sw_states `[6]uc  1 s 6 sw_states ]
-[s S483 . 4 `DC*.37(uc 1 get 2 0 `DC*.37(uc 1 is_on 2 2 ]
-"64
-[s S486 . 24 `S483 1 pos 4 0 `S483 1 drl 4 4 `S483 1 loBeam 4 8 `S483 1 hiBeam 4 12 `S483 1 turnLeft 4 16 `S483 1 turnRight 4 20 ]
-[v _sw sw `DCS486  1 e 24 0 ]
+[s S306 . 6 `uc 1 pos 1 0 `uc 1 drl 1 1 `uc 1 loBeam 1 2 `uc 1 hiBeam 1 3 `uc 1 turnLeft 1 4 `uc 1 turnRight 1 5 ]
+"17 D:\yiming\00work\tundra_TX_CRC8_V09.X\LED.c
+[v _led_states led_states `S306  1 s 6 led_states ]
+[s S340 . 6 `DC*.37(v 1 on 2 0 `DC*.37(v 1 off 2 2 `DC*.37(uc 1 is_on 2 4 ]
+"136
+[s S344 . 36 `S340 1 pos 6 0 `S340 1 drl 6 6 `S340 1 loBeam 6 12 `S340 1 hiBeam 6 18 `S340 1 turnLeft 6 24 `S340 1 turnRight 6 30 ]
+[v _led led `DCS344  1 e 36 0 ]
+"16 D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c
+[v _sw_states sw_states `S306  1 s 6 sw_states ]
+[s S493 . 4 `DC*.37(uc 1 get 2 0 `DC*.37(uc 1 is_on 2 2 ]
+"75
+[s S496 . 24 `S493 1 pos 4 0 `S493 1 drl 4 4 `S493 1 loBeam 4 8 `S493 1 hiBeam 4 12 `S493 1 turnLeft 4 16 `S493 1 turnRight 4 20 ]
+[v _sw sw `DCS496  1 e 24 0 ]
 "18 D:\yiming\00work\tundra_TX_CRC8_V09.X\tundra_crc8.c
 [v _crc8_table_fixed crc8_table_fixed `DC[256]uc  1 s 256 crc8_table_fixed ]
-[s S652 . 11 `uc 1 ID 1 0 `uc 1 LENGTH 1 1 `[8]uc 1 DATA 8 2 `uc 1 CRC 1 10 ]
+[s S662 . 11 `uc 1 ID 1 0 `uc 1 LENGTH 1 1 `[8]uc 1 DATA 8 2 `uc 1 CRC 1 10 ]
 "25 D:\yiming\00work\tundra_TX_CRC8_V09.X\tundra_PWM.c
-[v _frame frame `S652  1 s 11 frame ]
+[v _frame frame `S662  1 s 11 frame ]
 [s S249 . 4 `DC*.37(v 1 get 2 0 `DC*.37(v 1 set 2 2 ]
 "51
 [s S268 . 4 `DC*.37(uc 1 get 2 0 `DC*.37(v 1 set 2 2 ]
 [s S275 . 8 `S249 1 data 4 0 `S268 1 crc 4 4 ]
 [v _tundra tundra `DCS275  1 e 8 0 ]
-"52 D:\yiming\00work\tundra_TX_CRC8_V09.X\main.c
+"53 D:\yiming\00work\tundra_TX_CRC8_V09.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"67
+"68
 } 0
 "32 D:\yiming\00work\tundra_TX_CRC8_V09.X\BOARD.c
 [v _swSetLED swSetLED `(v  1 e 1 0 ]
 {
 "65
 } 0
-"84 D:\yiming\00work\tundra_TX_CRC8_V09.X\LED.c
+"99 D:\yiming\00work\tundra_TX_CRC8_V09.X\LED.c
 [v _TURN_LEFT_ON TURN_LEFT_ON `(v  1 s 1 TURN_LEFT_ON ]
 {
-"89
+"104
 } 0
-"66
+"81
 [v _HI_BEAM_ON HI_BEAM_ON `(v  1 s 1 HI_BEAM_ON ]
 {
-"71
+"86
 } 0
-"48
+"63
 [v _LO_BEAM_ON LO_BEAM_ON `(v  1 s 1 LO_BEAM_ON ]
 {
-"53
+"68
 } 0
-"30
+"45
 [v _DRL_ON DRL_ON `(v  1 s 1 DRL_ON ]
 {
-"35
+"50
 } 0
-"12
+"27
 [v _POS_ON POS_ON `(v  1 s 1 POS_ON ]
 {
-"17
+"32
 } 0
-"102
+"117
 [v _TURN_RIGHT_ON TURN_RIGHT_ON `(v  1 s 1 TURN_RIGHT_ON ]
 {
-"107
+"122
 } 0
 "67 D:\yiming\00work\tundra_TX_CRC8_V09.X\BOARD.c
 [v _swSetDATA swSetDATA `(v  1 e 1 0 ]
@@ -410,35 +391,35 @@ LED_COUNT 6
 [v calculate_crc8@length length `uc  1 p 1 1 ]
 "52
 } 0
-"55 D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c
+"66 D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c
 [v _SW_TURN_LEFT_IS_ON SW_TURN_LEFT_IS_ON `(uc  1 s 1 SW_TURN_LEFT_IS_ON ]
 {
-"57
+"68
 } 0
-"51
+"62
 [v _SW_HI_BEAM_IS_ON SW_HI_BEAM_IS_ON `(uc  1 s 1 SW_HI_BEAM_IS_ON ]
 {
-"53
+"64
 } 0
-"47
+"58
 [v _SW_LO_BEAM_IS_ON SW_LO_BEAM_IS_ON `(uc  1 s 1 SW_LO_BEAM_IS_ON ]
 {
-"49
+"60
 } 0
-"43
+"54
 [v _SW_DRL_IS_ON SW_DRL_IS_ON `(uc  1 s 1 SW_DRL_IS_ON ]
 {
-"45
+"56
 } 0
-"39
+"50
 [v _SW_POS_IS_ON SW_POS_IS_ON `(uc  1 s 1 SW_POS_IS_ON ]
 {
-"41
+"52
 } 0
-"59
+"70
 [v _SW_TURN_RIGHT_IS_ON SW_TURN_RIGHT_IS_ON `(uc  1 s 1 SW_TURN_RIGHT_IS_ON ]
 {
-"61
+"72
 } 0
 "37 D:\yiming\00work\tundra_TX_CRC8_V09.X\tundra_PWM.c
 [v _DATA_SET DATA_SET `(v  1 e 1 0 ]
@@ -460,75 +441,75 @@ LED_COUNT 6
 {
 "30
 } 0
-"82 D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c
+"84 D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c
 [v _swState_update swState_update `(v  1 e 1 0 ]
 {
-"89
+"91
 } 0
-"31
+"42
 [v _SW_TURN_LEFT_GET SW_TURN_LEFT_GET `(uc  1 s 1 SW_TURN_LEFT_GET ]
 {
-"33
+"44
 } 0
-"27
+"38
 [v _SW_HI_BEAM_GET SW_HI_BEAM_GET `(uc  1 s 1 SW_HI_BEAM_GET ]
 {
-"29
+"40
 } 0
-"23
+"34
 [v _SW_LO_BEAM_GET SW_LO_BEAM_GET `(uc  1 s 1 SW_LO_BEAM_GET ]
 {
-"25
+"36
 } 0
-"19
+"30
 [v _SW_DRL_GET SW_DRL_GET `(uc  1 s 1 SW_DRL_GET ]
 {
-"21
+"32
 } 0
-"14
+"26
 [v _SW_POS_GET SW_POS_GET `(uc  1 s 1 SW_POS_GET ]
 {
-"17
+"28
 } 0
-"35
+"46
 [v _SW_TURN_RIGHT_GET SW_TURN_RIGHT_GET `(uc  1 s 1 SW_TURN_RIGHT_GET ]
 {
-"37
+"48
 } 0
-"130 D:\yiming\00work\tundra_TX_CRC8_V09.X\LED.c
+"145 D:\yiming\00work\tundra_TX_CRC8_V09.X\LED.c
 [v _LED_Init LED_Init `(v  1 e 1 0 ]
 {
-"137
+"158
 } 0
-"91
+"106
 [v _TURN_LEFT_OFF TURN_LEFT_OFF `(v  1 s 1 TURN_LEFT_OFF ]
 {
-"96
+"111
 } 0
-"73
+"88
 [v _HI_BEAM_OFF HI_BEAM_OFF `(v  1 s 1 HI_BEAM_OFF ]
 {
-"78
+"93
 } 0
-"55
+"70
 [v _LO_BEAM_OFF LO_BEAM_OFF `(v  1 s 1 LO_BEAM_OFF ]
 {
-"60
+"75
 } 0
-"37
+"52
 [v _DRL_OFF DRL_OFF `(v  1 s 1 DRL_OFF ]
 {
-"42
+"57
 } 0
-"19
+"34
 [v _POS_OFF POS_OFF `(v  1 s 1 POS_OFF ]
 {
-"24
+"39
 } 0
-"109
+"124
 [v _TURN_RIGHT_OFF TURN_RIGHT_OFF `(v  1 s 1 TURN_RIGHT_OFF ]
 {
-"114
+"129
 } 0
 "18 D:\yiming\00work\tundra_TX_CRC8_V09.X\Warning_ignored.c
 [v _Clear_No_Call_Warning Clear_No_Call_Warning `(v  1 e 1 0 ]
@@ -584,35 +565,35 @@ LED_COUNT 6
 {
 "101
 } 0
-"98 D:\yiming\00work\tundra_TX_CRC8_V09.X\LED.c
+"113 D:\yiming\00work\tundra_TX_CRC8_V09.X\LED.c
 [v _LED_TURN_LEFT_IS_ON LED_TURN_LEFT_IS_ON `(uc  1 s 1 LED_TURN_LEFT_IS_ON ]
 {
-"100
+"115
 } 0
-"80
+"95
 [v _LED_HI_BEAM_IS_ON LED_HI_BEAM_IS_ON `(uc  1 s 1 LED_HI_BEAM_IS_ON ]
 {
-"82
+"97
 } 0
-"62
+"77
 [v _LED_LO_BEAM_IS_ON LED_LO_BEAM_IS_ON `(uc  1 s 1 LED_LO_BEAM_IS_ON ]
 {
-"64
+"79
 } 0
-"44
+"59
 [v _LED_DRL_IS_ON LED_DRL_IS_ON `(uc  1 s 1 LED_DRL_IS_ON ]
 {
-"46
+"61
 } 0
-"26
+"41
 [v _LED_POS_IS_ON LED_POS_IS_ON `(uc  1 s 1 LED_POS_IS_ON ]
 {
-"28
+"43
 } 0
-"116
+"131
 [v _LED_TURN_RIGHT_IS_ON LED_TURN_RIGHT_IS_ON `(uc  1 s 1 LED_TURN_RIGHT_IS_ON ]
 {
-"118
+"133
 } 0
 "90 D:\yiming\00work\tundra_TX_CRC8_V09.X\mcc_generated_files/epwm3.c
 [v _EPWM3_LoadDutyValue EPWM3_LoadDutyValue `(v  1 e 1 0 ]
@@ -638,7 +619,7 @@ LED_COUNT 6
 [v _Transmit_data Transmit_data `(v  1 e 1 0 ]
 {
 "108
-[v Transmit_data@i_761 i `uc  1 a 1 11 ]
+[v Transmit_data@i_771 i `uc  1 a 1 11 ]
 "103
 [v Transmit_data@i i `uc  1 a 1 12 ]
 "99

@@ -5048,117 +5048,132 @@ void PIN_MANAGER_IOC(void);
 
 
 
+typedef struct {
+  uint8_t pos;
+  uint8_t drl;
+  uint8_t loBeam;
+  uint8_t hiBeam;
+  uint8_t turnLeft;
+  uint8_t turnRight;
+} ledStates_t;
 
-static uint8_t led_states[LED_COUNT] = {
-    (0U), (0U), (0U), (0U), (0U), (0U)};
+
+static ledStates_t led_states = {
+    .pos = (0U),
+    .drl = (0U),
+    .loBeam = (0U),
+    .hiBeam = (0U),
+    .turnLeft = (0U),
+    .turnRight = (0U),
+};
 
 
 static void POS_ON(void) {
-  if (led_states[POS] == (0U)) {
+  if (led_states.pos == (0U)) {
     do { LATBbits.LATB5 = 1; } while(0);
-    led_states[POS] = (1U);
+    led_states.pos = (1U);
   }
 }
 
 static void POS_OFF(void) {
-  if (led_states[POS] != (0U)) {
+  if (led_states.pos != (0U)) {
     do { LATBbits.LATB5 = 0; } while(0);
-    led_states[POS] = (0U);
+    led_states.pos = (0U);
   }
 }
 
 static uint8_t LED_POS_IS_ON(void) {
-  return led_states[POS];
+  return led_states.pos;
 }
 
 static void DRL_ON(void) {
-  if (led_states[DRL] == (0U)) {
+  if (led_states.drl == (0U)) {
     do { LATBbits.LATB4 = 1; } while(0);
-    led_states[DRL] = (1U);
+    led_states.drl = (1U);
   }
 }
 
 static void DRL_OFF(void) {
-  if (led_states[DRL] != (0U)) {
+  if (led_states.drl != (0U)) {
     do { LATBbits.LATB4 = 0; } while(0);
-    led_states[DRL] = (0U);
+    led_states.drl = (0U);
   }
 }
 
 static uint8_t LED_DRL_IS_ON(void) {
-  return led_states[DRL];
+  return led_states.drl;
 }
 
 static void LO_BEAM_ON(void) {
-  if (led_states[LO_BEAM] == (0U)) {
+  if (led_states.loBeam == (0U)) {
     do { LATBbits.LATB3 = 1; } while(0);
-    led_states[LO_BEAM] = (1U);
+    led_states.loBeam = (1U);
   }
 }
 
 static void LO_BEAM_OFF(void) {
-  if (led_states[LO_BEAM] != (0U)) {
+  if (led_states.loBeam != (0U)) {
     do { LATBbits.LATB3 = 0; } while(0);
-    led_states[LO_BEAM] = (0U);
+    led_states.loBeam = (0U);
   }
 }
 
 static uint8_t LED_LO_BEAM_IS_ON(void) {
-  return led_states[LO_BEAM];
+  return led_states.loBeam;
 }
 
 static void HI_BEAM_ON(void) {
-  if (led_states[HI_BEAM] == (0U)) {
+  if (led_states.hiBeam == (0U)) {
     do { LATBbits.LATB2 = 1; } while(0);
-    led_states[HI_BEAM] = (1U);
+    led_states.hiBeam = (1U);
   }
 }
 
 static void HI_BEAM_OFF(void) {
-  if (led_states[HI_BEAM] != (0U)) {
+  if (led_states.hiBeam != (0U)) {
     do { LATBbits.LATB2 = 0; } while(0);
-    led_states[HI_BEAM] = (0U);
+    led_states.hiBeam = (0U);
   }
 }
 
 static uint8_t LED_HI_BEAM_IS_ON(void) {
-  return led_states[HI_BEAM];
+  return led_states.hiBeam;
 }
 
 static void TURN_LEFT_ON(void) {
-  if (led_states[TURN_LEFT] == (0U)) {
+  if (led_states.turnLeft == (0U)) {
     do { LATBbits.LATB1 = 1; } while(0);
-    led_states[TURN_LEFT] = (1U);
+    led_states.turnLeft = (1U);
   }
 }
 
 static void TURN_LEFT_OFF(void) {
-  if (led_states[TURN_LEFT] != (0U)) {
+  if (led_states.turnLeft != (0U)) {
     do { LATBbits.LATB1 = 0; } while(0);
-    led_states[TURN_LEFT] = (0U);
+    led_states.turnLeft = (0U);
   }
 }
 
 static uint8_t LED_TURN_LEFT_IS_ON(void) {
-  return led_states[TURN_LEFT];
+  return led_states.turnLeft;
 }
 
 static void TURN_RIGHT_ON(void) {
-  if (led_states[TURN_RIGHT] == (0U)) {
+  if (led_states.turnRight == (0U)) {
     do { LATBbits.LATB0 = 1; } while(0);
-    led_states[TURN_RIGHT] = (1U);
+    led_states.turnRight = (1U);
   }
 }
 
 static void TURN_RIGHT_OFF(void) {
-  if (led_states[TURN_RIGHT] != (0U)) {
+  if (led_states.turnRight != (0U)) {
     do { LATBbits.LATB0 = 0; } while(0);
-    led_states[TURN_RIGHT] = (0U);
+    led_states.turnRight = (0U);
   }
 }
 
 static uint8_t LED_TURN_RIGHT_IS_ON(void) {
-  return led_states[TURN_RIGHT];
+  return led_states.turnRight;
 }
 
 
@@ -5178,4 +5193,10 @@ void LED_Init(void) {
   led.hiBeam.off();
   led.turnLeft.off();
   led.turnRight.off();
+  led.pos.is_on();
+  led.drl.is_on();
+  led.loBeam.is_on();
+  led.hiBeam.is_on();
+  led.turnLeft.is_on();
+  led.turnRight.is_on();
 }

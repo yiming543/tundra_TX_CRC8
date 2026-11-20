@@ -1,4 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"7 SWITCH.c
+[; ;SWITCH.c: 7: typedef struct {
+[s S370 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S370 . pos drl loBeam hiBeam turnLeft turnRight ]
 "419 C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.9.258/xc8\pic\include\proc/pic16f1936.h
 [; ;C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.9.258/xc8\pic\include\proc/pic16f1936.h: 419:     struct {
 [s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -21,10 +25,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "554
 [; ;C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.9.258/xc8\pic\include\proc/pic16f1936.h: 554: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x00E)));
 [v _PORTCbits `VS39 ~T0 @X0 0 e@14 ]
-"40 SWITCH.c
-[; ;SWITCH.c: 40:   return sw_states[POS];
-[c E2829 0 1 2 3 4 5 6 .. ]
-[n E2829 . POS DRL LO_BEAM HI_BEAM TURN_LEFT TURN_RIGHT LED_COUNT  ]
 [v F39 `(uc ~T0 @X0 0 tf ]
 [v F38 `*F39 ~T0 @X0 1 t ]
 [v F42 `(uc ~T0 @X0 0 tf ]
@@ -532,10 +532,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7345
 [; ;C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.9.258/xc8\pic\include\proc/pic16f1936.h: 7345: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"10 SWITCH.c
-[; ;SWITCH.c: 10: static uint8_t sw_states[LED_COUNT] = {
-[v _sw_states `uc ~T0 @X0 -> 6 `i s ]
+"16 SWITCH.c
+[; ;SWITCH.c: 16: static swStates_t sw_states = {
+[v _sw_states `S370 ~T0 @X0 1 s ]
 [i _sw_states
+:U ..
 :U ..
 -> -> 0 `ui `uc
 -> -> 0 `ui `uc
@@ -544,177 +545,178 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `ui `uc
 -> -> 0 `ui `uc
 ..
+..
 ]
-"14
-[; ;SWITCH.c: 14: static uint8_t SW_POS_GET(void) {
+"26
+[; ;SWITCH.c: 26: static uint8_t SW_POS_GET(void) {
 [v _SW_POS_GET `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_POS_GET ]
 [f ]
-"16
-[; ;SWITCH.c: 16:   return (uint8_t)(!!(PORTAbits.RA0 == (0U)));
+"27
+[; ;SWITCH.c: 27:   return (uint8_t)(!!(PORTAbits.RA0 == (0U)));
 [e ) -> -> ! ! == -> . . _PORTAbits 0 0 `ui -> 0 `ui `i `uc ]
-[e $UE 372  ]
-"17
-[; ;SWITCH.c: 17: }
-[e :UE 372 ]
+[e $UE 371  ]
+"28
+[; ;SWITCH.c: 28: }
+[e :UE 371 ]
 }
-"19
-[; ;SWITCH.c: 19: static uint8_t SW_DRL_GET(void) {
+"30
+[; ;SWITCH.c: 30: static uint8_t SW_DRL_GET(void) {
 [v _SW_DRL_GET `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_DRL_GET ]
 [f ]
-"20
-[; ;SWITCH.c: 20:   return (uint8_t)(!!(PORTAbits.RA1 == (0U)));
+"31
+[; ;SWITCH.c: 31:   return (uint8_t)(!!(PORTAbits.RA1 == (0U)));
 [e ) -> -> ! ! == -> . . _PORTAbits 0 1 `ui -> 0 `ui `i `uc ]
-[e $UE 373  ]
-"21
-[; ;SWITCH.c: 21: }
-[e :UE 373 ]
+[e $UE 372  ]
+"32
+[; ;SWITCH.c: 32: }
+[e :UE 372 ]
 }
-"23
-[; ;SWITCH.c: 23: static uint8_t SW_LO_BEAM_GET(void) {
+"34
+[; ;SWITCH.c: 34: static uint8_t SW_LO_BEAM_GET(void) {
 [v _SW_LO_BEAM_GET `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_LO_BEAM_GET ]
 [f ]
-"24
-[; ;SWITCH.c: 24:   return (uint8_t)(!!(PORTAbits.RA2 == (0U)));
+"35
+[; ;SWITCH.c: 35:   return (uint8_t)(!!(PORTAbits.RA2 == (0U)));
 [e ) -> -> ! ! == -> . . _PORTAbits 0 2 `ui -> 0 `ui `i `uc ]
-[e $UE 374  ]
-"25
-[; ;SWITCH.c: 25: }
-[e :UE 374 ]
+[e $UE 373  ]
+"36
+[; ;SWITCH.c: 36: }
+[e :UE 373 ]
 }
-"27
-[; ;SWITCH.c: 27: static uint8_t SW_HI_BEAM_GET(void) {
+"38
+[; ;SWITCH.c: 38: static uint8_t SW_HI_BEAM_GET(void) {
 [v _SW_HI_BEAM_GET `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_HI_BEAM_GET ]
 [f ]
-"28
-[; ;SWITCH.c: 28:   return (uint8_t)(!!(PORTAbits.RA3 == (0U)));
+"39
+[; ;SWITCH.c: 39:   return (uint8_t)(!!(PORTAbits.RA3 == (0U)));
 [e ) -> -> ! ! == -> . . _PORTAbits 0 3 `ui -> 0 `ui `i `uc ]
-[e $UE 375  ]
-"29
-[; ;SWITCH.c: 29: }
-[e :UE 375 ]
+[e $UE 374  ]
+"40
+[; ;SWITCH.c: 40: }
+[e :UE 374 ]
 }
-"31
-[; ;SWITCH.c: 31: static uint8_t SW_TURN_LEFT_GET(void) {
+"42
+[; ;SWITCH.c: 42: static uint8_t SW_TURN_LEFT_GET(void) {
 [v _SW_TURN_LEFT_GET `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_TURN_LEFT_GET ]
 [f ]
-"32
-[; ;SWITCH.c: 32:   return (uint8_t)(!!(PORTAbits.RA4 == (0U)));
+"43
+[; ;SWITCH.c: 43:   return (uint8_t)(!!(PORTAbits.RA4 == (0U)));
 [e ) -> -> ! ! == -> . . _PORTAbits 0 4 `ui -> 0 `ui `i `uc ]
-[e $UE 376  ]
-"33
-[; ;SWITCH.c: 33: }
-[e :UE 376 ]
+[e $UE 375  ]
+"44
+[; ;SWITCH.c: 44: }
+[e :UE 375 ]
 }
-"35
-[; ;SWITCH.c: 35: static uint8_t SW_TURN_RIGHT_GET(void) {
+"46
+[; ;SWITCH.c: 46: static uint8_t SW_TURN_RIGHT_GET(void) {
 [v _SW_TURN_RIGHT_GET `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_TURN_RIGHT_GET ]
 [f ]
-"36
-[; ;SWITCH.c: 36:   return (uint8_t)(!!(PORTCbits.RC3 == (0U)));
+"47
+[; ;SWITCH.c: 47:   return (uint8_t)(!!(PORTCbits.RC3 == (0U)));
 [e ) -> -> ! ! == -> . . _PORTCbits 0 3 `ui -> 0 `ui `i `uc ]
-[e $UE 377  ]
-"37
-[; ;SWITCH.c: 37: }
-[e :UE 377 ]
+[e $UE 376  ]
+"48
+[; ;SWITCH.c: 48: }
+[e :UE 376 ]
 }
-"39
-[; ;SWITCH.c: 39: static uint8_t SW_POS_IS_ON(void) {
+"50
+[; ;SWITCH.c: 50: static uint8_t SW_POS_IS_ON(void) {
 [v _SW_POS_IS_ON `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_POS_IS_ON ]
 [f ]
-"40
-[; ;SWITCH.c: 40:   return sw_states[POS];
-[e ) *U + &U _sw_states * -> . `E2829 0 `ux -> -> # *U &U _sw_states `ui `ux ]
-[e $UE 378  ]
-"41
-[; ;SWITCH.c: 41: }
-[e :UE 378 ]
+"51
+[; ;SWITCH.c: 51:   return sw_states.pos;
+[e ) . _sw_states 0 ]
+[e $UE 377  ]
+"52
+[; ;SWITCH.c: 52: }
+[e :UE 377 ]
 }
-"43
-[; ;SWITCH.c: 43: static uint8_t SW_DRL_IS_ON(void) {
+"54
+[; ;SWITCH.c: 54: static uint8_t SW_DRL_IS_ON(void) {
 [v _SW_DRL_IS_ON `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_DRL_IS_ON ]
 [f ]
-"44
-[; ;SWITCH.c: 44:   return sw_states[DRL];
-[e ) *U + &U _sw_states * -> . `E2829 1 `ux -> -> # *U &U _sw_states `ui `ux ]
-[e $UE 379  ]
-"45
-[; ;SWITCH.c: 45: }
-[e :UE 379 ]
+"55
+[; ;SWITCH.c: 55:   return sw_states.drl;
+[e ) . _sw_states 1 ]
+[e $UE 378  ]
+"56
+[; ;SWITCH.c: 56: }
+[e :UE 378 ]
 }
-"47
-[; ;SWITCH.c: 47: static uint8_t SW_LO_BEAM_IS_ON(void) {
+"58
+[; ;SWITCH.c: 58: static uint8_t SW_LO_BEAM_IS_ON(void) {
 [v _SW_LO_BEAM_IS_ON `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_LO_BEAM_IS_ON ]
 [f ]
-"48
-[; ;SWITCH.c: 48:   return sw_states[LO_BEAM];
-[e ) *U + &U _sw_states * -> . `E2829 2 `ux -> -> # *U &U _sw_states `ui `ux ]
-[e $UE 380  ]
-"49
-[; ;SWITCH.c: 49: }
-[e :UE 380 ]
+"59
+[; ;SWITCH.c: 59:   return sw_states.loBeam;
+[e ) . _sw_states 2 ]
+[e $UE 379  ]
+"60
+[; ;SWITCH.c: 60: }
+[e :UE 379 ]
 }
-"51
-[; ;SWITCH.c: 51: static uint8_t SW_HI_BEAM_IS_ON(void) {
+"62
+[; ;SWITCH.c: 62: static uint8_t SW_HI_BEAM_IS_ON(void) {
 [v _SW_HI_BEAM_IS_ON `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_HI_BEAM_IS_ON ]
 [f ]
-"52
-[; ;SWITCH.c: 52:   return sw_states[HI_BEAM];
-[e ) *U + &U _sw_states * -> . `E2829 3 `ux -> -> # *U &U _sw_states `ui `ux ]
-[e $UE 381  ]
-"53
-[; ;SWITCH.c: 53: }
-[e :UE 381 ]
+"63
+[; ;SWITCH.c: 63:   return sw_states.hiBeam;
+[e ) . _sw_states 3 ]
+[e $UE 380  ]
+"64
+[; ;SWITCH.c: 64: }
+[e :UE 380 ]
 }
-"55
-[; ;SWITCH.c: 55: static uint8_t SW_TURN_LEFT_IS_ON(void) {
+"66
+[; ;SWITCH.c: 66: static uint8_t SW_TURN_LEFT_IS_ON(void) {
 [v _SW_TURN_LEFT_IS_ON `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_TURN_LEFT_IS_ON ]
 [f ]
-"56
-[; ;SWITCH.c: 56:   return sw_states[TURN_LEFT];
-[e ) *U + &U _sw_states * -> . `E2829 4 `ux -> -> # *U &U _sw_states `ui `ux ]
-[e $UE 382  ]
-"57
-[; ;SWITCH.c: 57: }
-[e :UE 382 ]
+"67
+[; ;SWITCH.c: 67:   return sw_states.turnLeft;
+[e ) . _sw_states 4 ]
+[e $UE 381  ]
+"68
+[; ;SWITCH.c: 68: }
+[e :UE 381 ]
 }
-"59
-[; ;SWITCH.c: 59: static uint8_t SW_TURN_RIGHT_IS_ON(void) {
+"70
+[; ;SWITCH.c: 70: static uint8_t SW_TURN_RIGHT_IS_ON(void) {
 [v _SW_TURN_RIGHT_IS_ON `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_TURN_RIGHT_IS_ON ]
 [f ]
-"60
-[; ;SWITCH.c: 60:   return sw_states[TURN_RIGHT];
-[e ) *U + &U _sw_states * -> . `E2829 5 `ux -> -> # *U &U _sw_states `ui `ux ]
-[e $UE 383  ]
-"61
-[; ;SWITCH.c: 61: }
-[e :UE 383 ]
+"71
+[; ;SWITCH.c: 71:   return sw_states.turnRight;
+[e ) . _sw_states 5 ]
+[e $UE 382  ]
+"72
+[; ;SWITCH.c: 72: }
+[e :UE 382 ]
 }
-"64
-[; ;SWITCH.c: 64: const SWITCHs_t sw = {
+"75
+[; ;SWITCH.c: 75: const SWITCHs_t sw = {
 [v _sw `CS2 ~T0 @X0 1 e ]
 [i _sw
 :U ..
@@ -758,31 +760,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-"82
-[; ;SWITCH.c: 82: void swState_update(void) {
+"84
+[; ;SWITCH.c: 84: void swState_update(void) {
 [v _swState_update `(v ~T0 @X0 1 ef ]
 {
 [e :U _swState_update ]
 [f ]
-"83
-[; ;SWITCH.c: 83:   sw_states[POS] = sw.pos.get();
-[e = *U + &U _sw_states * -> . `E2829 0 `ux -> -> # *U &U _sw_states `ui `ux ( *U . . _sw 0 0 ..  ]
-"84
-[; ;SWITCH.c: 84:   sw_states[DRL] = sw.drl.get();
-[e = *U + &U _sw_states * -> . `E2829 1 `ux -> -> # *U &U _sw_states `ui `ux ( *U . . _sw 1 0 ..  ]
 "85
-[; ;SWITCH.c: 85:   sw_states[LO_BEAM] = sw.loBeam.get();
-[e = *U + &U _sw_states * -> . `E2829 2 `ux -> -> # *U &U _sw_states `ui `ux ( *U . . _sw 2 0 ..  ]
+[; ;SWITCH.c: 85:   sw_states.pos = sw.pos.get();
+[e = . _sw_states 0 ( *U . . _sw 0 0 ..  ]
 "86
-[; ;SWITCH.c: 86:   sw_states[HI_BEAM] = sw.hiBeam.get();
-[e = *U + &U _sw_states * -> . `E2829 3 `ux -> -> # *U &U _sw_states `ui `ux ( *U . . _sw 3 0 ..  ]
+[; ;SWITCH.c: 86:   sw_states.drl = sw.drl.get();
+[e = . _sw_states 1 ( *U . . _sw 1 0 ..  ]
 "87
-[; ;SWITCH.c: 87:   sw_states[TURN_LEFT] = sw.turnLeft.get();
-[e = *U + &U _sw_states * -> . `E2829 4 `ux -> -> # *U &U _sw_states `ui `ux ( *U . . _sw 4 0 ..  ]
+[; ;SWITCH.c: 87:   sw_states.loBeam = sw.loBeam.get();
+[e = . _sw_states 2 ( *U . . _sw 2 0 ..  ]
 "88
-[; ;SWITCH.c: 88:   sw_states[TURN_RIGHT] = sw.turnRight.get();
-[e = *U + &U _sw_states * -> . `E2829 5 `ux -> -> # *U &U _sw_states `ui `ux ( *U . . _sw 5 0 ..  ]
+[; ;SWITCH.c: 88:   sw_states.hiBeam = sw.hiBeam.get();
+[e = . _sw_states 3 ( *U . . _sw 3 0 ..  ]
 "89
-[; ;SWITCH.c: 89: }
-[e :UE 384 ]
+[; ;SWITCH.c: 89:   sw_states.turnLeft = sw.turnLeft.get();
+[e = . _sw_states 4 ( *U . . _sw 4 0 ..  ]
+"90
+[; ;SWITCH.c: 90:   sw_states.turnRight = sw.turnRight.get();
+[e = . _sw_states 5 ( *U . . _sw 5 0 ..  ]
+"91
+[; ;SWITCH.c: 91: }
+[e :UE 383 ]
 }

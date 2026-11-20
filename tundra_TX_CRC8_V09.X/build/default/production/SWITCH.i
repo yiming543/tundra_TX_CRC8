@@ -5028,52 +5028,30 @@ void PIN_MANAGER_Initialize (void);
 # 281 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 3 "SWITCH.c" 2
-# 1 "./LED.h" 1
-# 12 "./LED.h"
-typedef struct {
-  void (*const on)(void);
-  void (*const off)(void);
-  uint8_t (*const is_on)(void);
-} LED_t;
+
+
+
 
 typedef struct {
-  LED_t pos;
-  LED_t drl;
-  LED_t loBeam;
-  LED_t hiBeam;
-  LED_t turnLeft;
-  LED_t turnRight;
-} LEDs_t;
+  uint8_t pos;
+  uint8_t drl;
+  uint8_t loBeam;
+  uint8_t hiBeam;
+  uint8_t turnLeft;
+  uint8_t turnRight;
+} swStates_t;
 
-typedef enum {
-  POS = 0,
-  DRL,
-  LO_BEAM,
-  HI_BEAM,
-  TURN_LEFT,
-  TURN_RIGHT,
-  LED_COUNT,
-} Led_t;
-
-
-
-extern const LEDs_t led;
-
-
-void LED_Init(void);
-# 4 "SWITCH.c" 2
-
-
-
-
-
-
-static uint8_t sw_states[LED_COUNT] = {
-    (0U), (0U), (0U), (0U), (0U), (0U)};
+static swStates_t sw_states = {
+    .pos = (0U),
+    .drl = (0U),
+    .loBeam = (0U),
+    .hiBeam = (0U),
+    .turnLeft = (0U),
+    .turnRight = (0U),
+};
 
 
 static uint8_t SW_POS_GET(void) {
-
   return (uint8_t)(!!(PORTAbits.RA0 == (0U)));
 }
 
@@ -5098,27 +5076,27 @@ static uint8_t SW_TURN_RIGHT_GET(void) {
 }
 
 static uint8_t SW_POS_IS_ON(void) {
-  return sw_states[POS];
+  return sw_states.pos;
 }
 
 static uint8_t SW_DRL_IS_ON(void) {
-  return sw_states[DRL];
+  return sw_states.drl;
 }
 
 static uint8_t SW_LO_BEAM_IS_ON(void) {
-  return sw_states[LO_BEAM];
+  return sw_states.loBeam;
 }
 
 static uint8_t SW_HI_BEAM_IS_ON(void) {
-  return sw_states[HI_BEAM];
+  return sw_states.hiBeam;
 }
 
 static uint8_t SW_TURN_LEFT_IS_ON(void) {
-  return sw_states[TURN_LEFT];
+  return sw_states.turnLeft;
 }
 
 static uint8_t SW_TURN_RIGHT_IS_ON(void) {
-  return sw_states[TURN_RIGHT];
+  return sw_states.turnRight;
 }
 
 
@@ -5129,12 +5107,13 @@ const SWITCHs_t sw = {
     .hiBeam = {.get = SW_HI_BEAM_GET, .is_on = SW_HI_BEAM_IS_ON},
     .turnLeft = {.get = SW_TURN_LEFT_GET, .is_on = SW_TURN_LEFT_IS_ON},
     .turnRight = {.get = SW_TURN_RIGHT_GET, .is_on = SW_TURN_RIGHT_IS_ON}};
-# 82 "SWITCH.c"
+
+
 void swState_update(void) {
-  sw_states[POS] = sw.pos.get();
-  sw_states[DRL] = sw.drl.get();
-  sw_states[LO_BEAM] = sw.loBeam.get();
-  sw_states[HI_BEAM] = sw.hiBeam.get();
-  sw_states[TURN_LEFT] = sw.turnLeft.get();
-  sw_states[TURN_RIGHT] = sw.turnRight.get();
+  sw_states.pos = sw.pos.get();
+  sw_states.drl = sw.drl.get();
+  sw_states.loBeam = sw.loBeam.get();
+  sw_states.hiBeam = sw.hiBeam.get();
+  sw_states.turnLeft = sw.turnLeft.get();
+  sw_states.turnRight = sw.turnRight.get();
 }
