@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="D:\yiming\00work\tundra_TX_CRC8_V07.X\out\tundra_TX_CRC8_V07\default.hex">
+    <memory name="program">
+      <units>words</units>
+      <length>8192</length>
+      <used>1939</used>
+      <free>6253</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>512</length>
+      <used>120</used>
+      <free>392</free>
+    </memory>
+  </executable>
+</project>
