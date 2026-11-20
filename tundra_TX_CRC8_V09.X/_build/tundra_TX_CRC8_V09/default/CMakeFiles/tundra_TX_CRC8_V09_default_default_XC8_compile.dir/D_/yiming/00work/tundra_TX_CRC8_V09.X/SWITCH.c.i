@@ -140,40 +140,6 @@ typedef struct {
 extern const SWITCHs_t sw;
 extern void swState_update(void);
 # 2 "D:\\yiming\\00work\\tundra_TX_CRC8_V09.X\\SWITCH.c" 2
-# 1 "D:\\yiming\\00work\\tundra_TX_CRC8_V09.X/LED.h" 1
-# 12 "D:\\yiming\\00work\\tundra_TX_CRC8_V09.X/LED.h"
-typedef struct {
-  void (*const on)(void);
-  void (*const off)(void);
-  uint8_t (*const is_on)(void);
-} LED_t;
-
-typedef struct {
-  LED_t pos;
-  LED_t drl;
-  LED_t loBeam;
-  LED_t hiBeam;
-  LED_t turnLeft;
-  LED_t turnRight;
-} LEDs_t;
-
-typedef enum {
-  POS = 0,
-  DRL,
-  LO_BEAM,
-  HI_BEAM,
-  TURN_LEFT,
-  TURN_RIGHT,
-  LED_COUNT,
-} Led_t;
-
-
-
-extern const LEDs_t led;
-
-
-void LED_Init(void);
-# 3 "D:\\yiming\\00work\\tundra_TX_CRC8_V09.X\\SWITCH.c" 2
 # 1 "D:\\yiming\\00work\\tundra_TX_CRC8_V09.X/mcc_generated_files/pin_manager.h" 1
 # 54 "D:\\yiming\\00work\\tundra_TX_CRC8_V09.X/mcc_generated_files/pin_manager.h"
 # 1 "c:\\PROGRA~1\\MICROC~1\\xc8\\v3.10\\pic\\include/xc.h" 1 3
@@ -5061,7 +5027,7 @@ extern __bank0 __bit __timeout;
 void PIN_MANAGER_Initialize (void);
 # 281 "D:\\yiming\\00work\\tundra_TX_CRC8_V09.X/mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 4 "D:\\yiming\\00work\\tundra_TX_CRC8_V09.X\\SWITCH.c" 2
+# 3 "D:\\yiming\\00work\\tundra_TX_CRC8_V09.X\\SWITCH.c" 2
 
 
 

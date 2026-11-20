@@ -10,7 +10,6 @@
 #include "mcc_generated_files/pin_manager.h"
 #include "mcc_generated_files/epwm3.h"
 #include "mcc_generated_files/tmr2.h"
-#include "LED.h"
 #include "tundra_PWM.h"
 
 // 消除未呼叫警告 假裝有使用這些函數
@@ -36,13 +35,6 @@ void Clear_No_Call_Warning(void) {
         tundra.crc.get();
         uint8_t tmp[8];
         tundra.data.get(tmp);
-        led.pos.is_on();
-        led.drl.is_on();
-        led.loBeam.is_on();
-        led.hiBeam.is_on();
-        led.turnLeft.is_on();
-        led.turnRight.is_on();
-
     }else{
 
     }

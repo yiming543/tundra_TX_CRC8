@@ -23,46 +23,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 "122 ./mcc_generated_files/epwm3.h
 [; ;./mcc_generated_files/epwm3.h: 122: void EPWM3_LoadDutyValue(uint16_t dutyValue);
 [v _EPWM3_LoadDutyValue `(v ~T0 @X0 0 ef1`us ]
-[v F2837 `(v ~T0 @X0 0 tf1`*uc ]
-[v F2836 `*F2837 ~T0 @X0 1 t ]
-[v F2841 `(v ~T0 @X0 0 tf1`*uc ]
-[v F2840 `*F2841 ~T0 @X0 1 t ]
+[v F2807 `(v ~T0 @X0 0 tf1`*uc ]
+[v F2806 `*F2807 ~T0 @X0 1 t ]
+[v F2811 `(v ~T0 @X0 0 tf1`*uc ]
+[v F2810 `*F2811 ~T0 @X0 1 t ]
 "15 ./tundra_PWM.h
 [; ;./tundra_PWM.h: 15: typedef struct {
-[s S370 `C*F2837 1 `C*F2841 1 ]
-[n S370 . get set ]
-[v F2847 `(uc ~T0 @X0 0 tf ]
-[v F2846 `*F2847 ~T0 @X0 1 t ]
-[v F2850 `(v ~T0 @X0 0 tf1`uc ]
-[v F2849 `*F2850 ~T0 @X0 1 t ]
+[s S368 `C*F2807 1 `C*F2811 1 ]
+[n S368 . get set ]
+[v F2817 `(uc ~T0 @X0 0 tf ]
+[v F2816 `*F2817 ~T0 @X0 1 t ]
+[v F2820 `(v ~T0 @X0 0 tf1`uc ]
+[v F2819 `*F2820 ~T0 @X0 1 t ]
 "20
 [; ;./tundra_PWM.h: 20: typedef struct {
-[s S371 `C*F2847 1 `C*F2850 1 ]
-[n S371 . get set ]
+[s S369 `C*F2817 1 `C*F2820 1 ]
+[n S369 . get set ]
 "26
 [; ;./tundra_PWM.h: 26: typedef struct {
-[s S372 `S370 1 `S371 1 ]
-[n S372 . data crc ]
+[s S370 `S368 1 `S369 1 ]
+[n S370 . data crc ]
 "31
 [; ;./tundra_PWM.h: 31: extern FRAME_t const tundra;
-[v _tundra `CS372 ~T0 @X0 0 e ]
-[v F2807 `(v ~T0 @X0 0 tf ]
-[v F2806 `*F2807 ~T0 @X0 1 t ]
-[v F2810 `(v ~T0 @X0 0 tf ]
-[v F2809 `*F2810 ~T0 @X0 1 t ]
-[v F2813 `(uc ~T0 @X0 0 tf ]
-[v F2812 `*F2813 ~T0 @X0 1 t ]
-"12 ./LED.h
-[; ;./LED.h: 12: typedef struct {
-[s S368 `C*F2807 1 `C*F2810 1 `C*F2813 1 ]
-[n S368 . on off is_on ]
-"18
-[; ;./LED.h: 18: typedef struct {
-[s S369 `S368 1 `S368 1 `S368 1 `S368 1 `S368 1 `S368 1 ]
-[n S369 . pos drl loBeam hiBeam turnLeft turnRight ]
-"39
-[; ;./LED.h: 39: extern const LEDs_t led;
-[v _led `CS369 ~T0 @X0 0 e ]
+[v _tundra `CS370 ~T0 @X0 0 e ]
 "38 C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.9.258/xc8\pic\include\proc/pic16f1936.h
 [; ;C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.9.258/xc8\pic\include\proc/pic16f1936.h: 38: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -558,116 +541,98 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7345
 [; ;C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.9.258/xc8\pic\include\proc/pic16f1936.h: 7345: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"18 Warning_ignored.c
-[; ;Warning_ignored.c: 18: void Clear_No_Call_Warning(void) {
+"17 Warning_ignored.c
+[; ;Warning_ignored.c: 17: void Clear_No_Call_Warning(void) {
 [v _Clear_No_Call_Warning `(v ~T0 @X0 1 ef ]
 {
 [e :U _Clear_No_Call_Warning ]
 [f ]
-"19
-[; ;Warning_ignored.c: 19:     uint8_t i = 0U;
+"18
+[; ;Warning_ignored.c: 18:     uint8_t i = 0U;
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `ui `uc ]
-"20
-[; ;Warning_ignored.c: 20:     if (i == 1U) {
-[e $ ! == -> _i `ui -> 1 `ui 374  ]
+"19
+[; ;Warning_ignored.c: 19:     if (i == 1U) {
+[e $ ! == -> _i `ui -> 1 `ui 372  ]
 {
-"21
-[; ;Warning_ignored.c: 21:         PIN_MANAGER_IOC();
+"20
+[; ;Warning_ignored.c: 20:         PIN_MANAGER_IOC();
 [e ( _PIN_MANAGER_IOC ..  ]
-"22
-[; ;Warning_ignored.c: 22:     } else if (i == 2U) {
+"21
+[; ;Warning_ignored.c: 21:     } else if (i == 2U) {
+}
+[e $U 373  ]
+[e :U 372 ]
+[e $ ! == -> _i `ui -> 2 `ui 374  ]
+{
+"25
+[; ;Warning_ignored.c: 25:     } else if (i == 3U) {
 }
 [e $U 375  ]
 [e :U 374 ]
-[e $ ! == -> _i `ui -> 2 `ui 376  ]
+[e $ ! == -> _i `ui -> 3 `ui 376  ]
 {
 "26
-[; ;Warning_ignored.c: 26:     } else if (i == 3U) {
+[; ;Warning_ignored.c: 26:         TMR2_StartTimer();
+[e ( _TMR2_StartTimer ..  ]
+"27
+[; ;Warning_ignored.c: 27:         TMR2_StopTimer();
+[e ( _TMR2_StopTimer ..  ]
+"28
+[; ;Warning_ignored.c: 28:         uint16_t tmp1 = TMR2_ReadTimer();
+[v _tmp1 `us ~T0 @X0 1 a ]
+[e = _tmp1 -> ( _TMR2_ReadTimer ..  `us ]
+"29
+[; ;Warning_ignored.c: 29:         TMR2_WriteTimer(0U);
+[e ( _TMR2_WriteTimer (1 -> -> 0 `ui `uc ]
+"30
+[; ;Warning_ignored.c: 30:         TMR2_LoadPeriodRegister(0);
+[e ( _TMR2_LoadPeriodRegister (1 -> -> 0 `i `uc ]
+"31
+[; ;Warning_ignored.c: 31:         _Bool tmp_bit1 = TMR2_HasOverflowOccured();
+[v _tmp_bit1 `a ~T0 @X0 1 a ]
+[e = _tmp_bit1 ( _TMR2_HasOverflowOccured ..  ]
+"32
+[; ;Warning_ignored.c: 32:     } else if(i==4U){
 }
 [e $U 377  ]
 [e :U 376 ]
-[e $ ! == -> _i `ui -> 3 `ui 378  ]
+[e $ ! == -> _i `ui -> 4 `ui 378  ]
 {
-"27
-[; ;Warning_ignored.c: 27:         TMR2_StartTimer();
-[e ( _TMR2_StartTimer ..  ]
-"28
-[; ;Warning_ignored.c: 28:         TMR2_StopTimer();
-[e ( _TMR2_StopTimer ..  ]
-"29
-[; ;Warning_ignored.c: 29:         uint16_t tmp1 = TMR2_ReadTimer();
-[v _tmp1 `us ~T0 @X0 1 a ]
-[e = _tmp1 -> ( _TMR2_ReadTimer ..  `us ]
-"30
-[; ;Warning_ignored.c: 30:         TMR2_WriteTimer(0U);
-[e ( _TMR2_WriteTimer (1 -> -> 0 `ui `uc ]
-"31
-[; ;Warning_ignored.c: 31:         TMR2_LoadPeriodRegister(0);
-[e ( _TMR2_LoadPeriodRegister (1 -> -> 0 `i `uc ]
-"32
-[; ;Warning_ignored.c: 32:         _Bool tmp_bit1 = TMR2_HasOverflowOccured();
-[v _tmp_bit1 `a ~T0 @X0 1 a ]
-[e = _tmp_bit1 ( _TMR2_HasOverflowOccured ..  ]
 "33
-[; ;Warning_ignored.c: 33:     } else if(i==4U){
+[; ;Warning_ignored.c: 33:         EPWM3_LoadDutyValue(0);
+[e ( _EPWM3_LoadDutyValue (1 -> -> 0 `i `us ]
+"34
+[; ;Warning_ignored.c: 34:     } else if(i==5U){
 }
 [e $U 379  ]
 [e :U 378 ]
-[e $ ! == -> _i `ui -> 4 `ui 380  ]
+[e $ ! == -> _i `ui -> 5 `ui 380  ]
 {
-"34
-[; ;Warning_ignored.c: 34:         EPWM3_LoadDutyValue(0);
-[e ( _EPWM3_LoadDutyValue (1 -> -> 0 `i `us ]
 "35
-[; ;Warning_ignored.c: 35:     } else if(i==5U){
+[; ;Warning_ignored.c: 35:         tundra.crc.get();
+[e ( *U . . _tundra 1 0 ..  ]
+"36
+[; ;Warning_ignored.c: 36:         uint8_t tmp[8];
+[v _tmp `uc ~T0 @X0 -> 8 `i a ]
+"37
+[; ;Warning_ignored.c: 37:         tundra.data.get(tmp);
+[e ( *U . . _tundra 0 0 (1 &U _tmp ]
+"38
+[; ;Warning_ignored.c: 38:     }else{
 }
 [e $U 381  ]
 [e :U 380 ]
-[e $ ! == -> _i `ui -> 5 `ui 382  ]
 {
-"36
-[; ;Warning_ignored.c: 36:         tundra.crc.get();
-[e ( *U . . _tundra 1 0 ..  ]
-"37
-[; ;Warning_ignored.c: 37:         uint8_t tmp[8];
-[v _tmp `uc ~T0 @X0 -> 8 `i a ]
-"38
-[; ;Warning_ignored.c: 38:         tundra.data.get(tmp);
-[e ( *U . . _tundra 0 0 (1 &U _tmp ]
-"39
-[; ;Warning_ignored.c: 39:         led.pos.is_on();
-[e ( *U . . _led 0 2 ..  ]
 "40
-[; ;Warning_ignored.c: 40:         led.drl.is_on();
-[e ( *U . . _led 1 2 ..  ]
-"41
-[; ;Warning_ignored.c: 41:         led.loBeam.is_on();
-[e ( *U . . _led 2 2 ..  ]
-"42
-[; ;Warning_ignored.c: 42:         led.hiBeam.is_on();
-[e ( *U . . _led 3 2 ..  ]
-"43
-[; ;Warning_ignored.c: 43:         led.turnLeft.is_on();
-[e ( *U . . _led 4 2 ..  ]
-"44
-[; ;Warning_ignored.c: 44:         led.turnRight.is_on();
-[e ( *U . . _led 5 2 ..  ]
-"46
-[; ;Warning_ignored.c: 46:     }else{
+[; ;Warning_ignored.c: 40:     }
 }
-[e $U 383  ]
-[e :U 382 ]
-{
-"48
-[; ;Warning_ignored.c: 48:     }
-}
-[e :U 383 ]
 [e :U 381 ]
 [e :U 379 ]
 [e :U 377 ]
 [e :U 375 ]
-"49
-[; ;Warning_ignored.c: 49: }
-[e :UE 373 ]
+[e :U 373 ]
+"41
+[; ;Warning_ignored.c: 41: }
+[e :UE 371 ]
 }

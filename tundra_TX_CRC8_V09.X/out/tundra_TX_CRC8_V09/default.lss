@@ -38,18 +38,18 @@ Idx Name                       Size     VMA      Type
  32 text31                     00000016 000003d3 TEXT
  33 text32                     00000016 000003c8 TEXT
  34 text33                     00000002 00000349 TEXT
- 35 text34                     0000000a 00000374 TEXT
- 36 text35                     00000006 0000034d TEXT
- 37 text36                     00000006 0000034a TEXT
- 38 text37                     0000000a 0000036f TEXT
- 39 text38                     0000000a 0000036a TEXT
- 40 text39                     00000018 00000421 TEXT
- 41 text40                     00000002 00000348 TEXT
- 42 text41                     00000002 00000347 TEXT
- 43 text42                     00000002 00000346 TEXT
- 44 text43                     00000002 00000345 TEXT
- 45 text44                     00000002 00000344 TEXT
- 46 text45                     00000002 00000343 TEXT
+ 35 text34                     00000002 00000348 TEXT
+ 36 text35                     00000002 00000347 TEXT
+ 37 text36                     00000002 00000346 TEXT
+ 38 text37                     00000002 00000345 TEXT
+ 39 text38                     00000002 00000344 TEXT
+ 40 text39                     00000002 00000343 TEXT
+ 41 text40                     0000000a 00000374 TEXT
+ 42 text41                     00000006 0000034d TEXT
+ 43 text42                     00000006 0000034a TEXT
+ 44 text43                     0000000a 0000036f TEXT
+ 45 text44                     0000000a 0000036a TEXT
+ 46 text45                     00000018 00000421 TEXT
  47 text46                     00000002 00000342 TEXT
  48 text47                     0000002e 00000494 TEXT
  49 text48                     00000034 000004ab TEXT
@@ -79,7 +79,7 @@ Idx Name                       Size     VMA      Type
  73 .symtab                    00001370 00000000 
  74 .debug_abbrev              00000163 00000000 DEBUG
  75 .debug_info                00001da3 00000000 DEBUG
- 76 .debug_line                0000086c 00000000 DEBUG
+ 76 .debug_line                0000086b 00000000 DEBUG
  77 .debug_ranges              000000a4 00000000 DEBUG
  78 .debug_pubnames            000004c1 00000000 DEBUG
  79 .debug_aranges             00000360 00000000 DEBUG
@@ -245,8 +245,8 @@ Disassembly of section text1:
      783: 0a 00        	callw
      784: 87 31        	movlp	0x7
 ; D:\yiming\00work\tundra_TX_CRC8_V09.X/BOARD.c:50
-;   if (sw.loBeam.is_on() == ON) {
-     785: 2e 30        	movlw	0x2e
+;   if (sw.hiBeam.is_on() == ON) {
+     785: 32 30        	movlw	0x32
      786: 84 00        	movwf	0x4
      787: 89 30        	movlw	0x89
      788: 85 00        	movwf	0x5
@@ -811,11 +811,11 @@ Disassembly of section text10:
 
 0000035f <__ptext10>:
 ; _SW_TURN_LEFT_IS_ON():
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:68
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:67
 ;   return sw_states.turnLeft;
      35f: 20 00        	movlb	0x0
      360: 2c 08        	movf	0x2c, w
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:69
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:68
 ; }
      361: 08 00        	return
 
@@ -823,11 +823,11 @@ Disassembly of section text11:
 
 0000035c <__ptext11>:
 ; _SW_HI_BEAM_IS_ON():
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:64
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:63
 ;   return sw_states.hiBeam;
      35c: 20 00        	movlb	0x0
      35d: 2b 08        	movf	0x2b, w
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:65
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:64
 ; }
      35e: 08 00        	return
 
@@ -835,11 +835,11 @@ Disassembly of section text12:
 
 00000359 <__ptext12>:
 ; __ptext12():
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:60
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:59
 ;   return sw_states.loBeam;
      359: 20 00        	movlb	0x0
      35a: 2a 08        	movf	0x2a, w
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:61
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:60
 ; }
      35b: 08 00        	return
 
@@ -847,11 +847,11 @@ Disassembly of section text13:
 
 00000356 <__ptext13>:
 ; _SW_DRL_IS_ON():
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:56
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:55
 ;   return sw_states.drl;
      356: 20 00        	movlb	0x0
      357: 29 08        	movf	0x29, w
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:57
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:56
 ; }
      358: 08 00        	return
 
@@ -859,11 +859,11 @@ Disassembly of section text14:
 
 00000353 <__ptext14>:
 ; _SW_POS_IS_ON():
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:52
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:51
 ;   return sw_states.pos;
      353: 20 00        	movlb	0x0
      354: 28 08        	movf	0x28, w
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:53
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:52
 ; }
      355: 08 00        	return
 
@@ -871,11 +871,11 @@ Disassembly of section text15:
 
 00000350 <__ptext15>:
 ; __ptext15():
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:72
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:71
 ;   return sw_states.turnRight;
      350: 20 00        	movlb	0x0
      351: 2d 08        	movf	0x2d, w
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:73
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:72
 ; }
      352: 08 00        	return
 
@@ -943,7 +943,7 @@ Disassembly of section text18:
 ; D:\yiming\00work\tundra_TX_CRC8_V09.X/BOARD.c:28
 ;   Clear_No_Call_Warning();
      3c1: 83 31        	movlp	0x3
-     3c2: 49 23        	call	0x349
+     3c2: 43 23        	call	0x343
      3c3: 83 31        	movlp	0x3
 ; D:\yiming\00work\tundra_TX_CRC8_V09.X/BOARD.c:29
 ;   swState_update();
@@ -958,7 +958,7 @@ Disassembly of section text19:
 
 000005c6 <_swState_update>:
 ; __ptext19():
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:86
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:85
 ;   sw_states.pos = sw.pos.get();
      5c6: 24 30        	movlw	0x24
      5c7: 84 00        	movwf	0x4
@@ -971,7 +971,7 @@ Disassembly of section text19:
      5ce: 85 31        	movlp	0x5
      5cf: 20 00        	movlb	0x0
      5d0: a8 00        	movwf	0x28
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:87
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:86
 ;   sw_states.drl = sw.drl.get();
      5d1: 28 30        	movlw	0x28
      5d2: 84 00        	movwf	0x4
@@ -984,7 +984,7 @@ Disassembly of section text19:
      5d9: 85 31        	movlp	0x5
      5da: 20 00        	movlb	0x0
      5db: a9 00        	movwf	0x29
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:88
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:87
 ;   sw_states.loBeam = sw.loBeam.get();
      5dc: 2c 30        	movlw	0x2c
      5dd: 84 00        	movwf	0x4
@@ -997,7 +997,7 @@ Disassembly of section text19:
      5e4: 85 31        	movlp	0x5
      5e5: 20 00        	movlb	0x0
      5e6: aa 00        	movwf	0x2a
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:89
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:88
 ;   sw_states.hiBeam = sw.hiBeam.get();
      5e7: 30 30        	movlw	0x30
      5e8: 84 00        	movwf	0x4
@@ -1010,7 +1010,7 @@ Disassembly of section text19:
      5ef: 85 31        	movlp	0x5
      5f0: 20 00        	movlb	0x0
      5f1: ab 00        	movwf	0x2b
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:90
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:89
 ;   sw_states.turnLeft = sw.turnLeft.get();
      5f2: 34 30        	movlw	0x34
      5f3: 84 00        	movwf	0x4
@@ -1023,7 +1023,7 @@ Disassembly of section text19:
      5fa: 85 31        	movlp	0x5
      5fb: 20 00        	movlb	0x0
      5fc: ac 00        	movwf	0x2c
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:91
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:90
 ;   sw_states.turnRight = sw.turnRight.get();
      5fd: 38 30        	movlw	0x38
      5fe: 84 00        	movwf	0x4
@@ -1036,7 +1036,7 @@ Disassembly of section text19:
      605: 86 31        	movlp	0x6
      606: 20 00        	movlb	0x0
      607: ad 00        	movwf	0x2d
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:92
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:91
 ; }
      608: 08 00        	return
 
@@ -1044,7 +1044,7 @@ Disassembly of section text20:
 
 000003af <__ptext20>:
 ; __end_of_SW_HI_BEAM_GET():
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:44
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:43
 ;   return (uint8_t)(!!(SW5_GetValue() == OFF));
      3af: 03 10        	bcf	0x3, 0x0
      3b0: 20 00        	movlb	0x0
@@ -1052,7 +1052,7 @@ Disassembly of section text20:
      3b2: 03 14        	bsf	0x3, 0x0
      3b3: 00 30        	movlw	0x0
      3b4: 09 3d        	addwfc	0x9, w
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:45
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:44
 ; }
      3b5: 08 00        	return
 
@@ -1060,7 +1060,7 @@ Disassembly of section text21:
 
 000003a8 <__ptext21>:
 ; __end_of_SW_LO_BEAM_GET():
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:40
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:39
 ;   return (uint8_t)(!!(SW4_GetValue() == OFF));
      3a8: 03 10        	bcf	0x3, 0x0
      3a9: 20 00        	movlb	0x0
@@ -1068,7 +1068,7 @@ Disassembly of section text21:
      3ab: 03 14        	bsf	0x3, 0x0
      3ac: 00 30        	movlw	0x0
      3ad: 09 3d        	addwfc	0x9, w
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:41
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:40
 ; }
      3ae: 08 00        	return
 
@@ -1076,7 +1076,7 @@ Disassembly of section text22:
 
 000003a1 <__ptext22>:
 ; _SW_LO_BEAM_GET():
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:36
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:35
 ;   return (uint8_t)(!!(SW3_GetValue() == OFF));
      3a1: 03 10        	bcf	0x3, 0x0
      3a2: 20 00        	movlb	0x0
@@ -1084,7 +1084,7 @@ Disassembly of section text22:
      3a4: 03 14        	bsf	0x3, 0x0
      3a5: 00 30        	movlw	0x0
      3a6: 09 3d        	addwfc	0x9, w
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:37
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:36
 ; }
      3a7: 08 00        	return
 
@@ -1092,7 +1092,7 @@ Disassembly of section text23:
 
 0000039a <__ptext23>:
 ; __end_of_SW_POS_GET():
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:32
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:31
 ;   return (uint8_t)(!!(SW2_GetValue() == OFF));
      39a: 03 10        	bcf	0x3, 0x0
      39b: 20 00        	movlb	0x0
@@ -1100,7 +1100,7 @@ Disassembly of section text23:
      39d: 03 14        	bsf	0x3, 0x0
      39e: 00 30        	movlw	0x0
      39f: 09 3d        	addwfc	0x9, w
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:33
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:32
 ; }
      3a0: 08 00        	return
 
@@ -1108,7 +1108,7 @@ Disassembly of section text24:
 
 00000393 <__ptext24>:
 ; _SW_POS_GET():
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:28
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:27
 ;   return (uint8_t)(!!(SW1_GetValue() == OFF));
      393: 03 10        	bcf	0x3, 0x0
      394: 20 00        	movlb	0x0
@@ -1116,7 +1116,7 @@ Disassembly of section text24:
      396: 03 14        	bsf	0x3, 0x0
      397: 00 30        	movlw	0x0
      398: 09 3d        	addwfc	0x9, w
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:29
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:28
 ; }
      399: 08 00        	return
 
@@ -1124,7 +1124,7 @@ Disassembly of section text25:
 
 0000038c <__ptext25>:
 ; __end_of_wait_for_pwm_cycle_complete():
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:48
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:47
 ;   return (uint8_t)(!!(SW6_GetValue() == OFF));
      38c: 03 10        	bcf	0x3, 0x0
      38d: 20 00        	movlb	0x0
@@ -1132,7 +1132,7 @@ Disassembly of section text25:
      38f: 03 14        	bsf	0x3, 0x0
      390: 00 30        	movlw	0x0
      391: 09 3d        	addwfc	0x9, w
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:49
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/SWITCH.c:48
 ; }
      392: 08 00        	return
 
@@ -1423,15 +1423,63 @@ Disassembly of section text32:
 Disassembly of section text33:
 
 00000349 <__ptext33>:
-; _Clear_No_Call_Warning():
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/Warning_ignored.c:49
+; __ptext33():
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/LED.c:115
 ; }
      349: 08 00        	return
 
 Disassembly of section text34:
 
-00000374 <__ptext34>:
+00000348 <__ptext34>:
 ; __ptext34():
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/LED.c:97
+; }
+     348: 08 00        	return
+
+Disassembly of section text35:
+
+00000347 <__ptext35>:
+; __ptext35():
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/LED.c:79
+; }
+     347: 08 00        	return
+
+Disassembly of section text36:
+
+00000346 <__ptext36>:
+; __ptext36():
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/LED.c:61
+; }
+     346: 08 00        	return
+
+Disassembly of section text37:
+
+00000345 <__ptext37>:
+; _LED_POS_IS_ON():
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/LED.c:43
+; }
+     345: 08 00        	return
+
+Disassembly of section text38:
+
+00000344 <__ptext38>:
+; __end_of_Clear_No_Call_Warning():
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/LED.c:133
+; }
+     344: 08 00        	return
+
+Disassembly of section text39:
+
+00000343 <__ptext39>:
+; _Clear_No_Call_Warning():
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/Warning_ignored.c:41
+; }
+     343: 08 00        	return
+
+Disassembly of section text40:
+
+00000374 <__ptext40>:
+; __ptext40():
 ; D:\yiming\00work\tundra_TX_CRC8_V09.X\mcc_generated_files/tmr2.c:100
 ; void TMR2_WriteTimer(uint8_t timerVal)
      374: f0 00        	movwf	0x70
@@ -1444,9 +1492,9 @@ Disassembly of section text34:
 ; }
      378: 08 00        	return
 
-Disassembly of section text35:
+Disassembly of section text41:
 
-0000034d <__ptext35>:
+0000034d <__ptext41>:
 ; __end_of_TMR2_StartTimer():
 ; D:\yiming\00work\tundra_TX_CRC8_V09.X\mcc_generated_files/tmr2.c:88
 ;     T2CONbits.TMR2ON = 0;
@@ -1456,10 +1504,10 @@ Disassembly of section text35:
 ; }
      34f: 08 00        	return
 
-Disassembly of section text36:
+Disassembly of section text42:
 
-0000034a <__ptext36>:
-; __end_of_Clear_No_Call_Warning():
+0000034a <__ptext42>:
+; __ptext42():
 ; D:\yiming\00work\tundra_TX_CRC8_V09.X\mcc_generated_files/tmr2.c:82
 ;     T2CONbits.TMR2ON = 1;
      34a: 20 00        	movlb	0x0
@@ -1468,10 +1516,10 @@ Disassembly of section text36:
 ; }
      34c: 08 00        	return
 
-Disassembly of section text37:
+Disassembly of section text43:
 
-0000036f <__ptext37>:
-; __ptext37():
+0000036f <__ptext43>:
+; __ptext43():
 ; D:\yiming\00work\tundra_TX_CRC8_V09.X\mcc_generated_files/tmr2.c:95
 ;     readVal = TMR2;
      36f: 20 00        	movlb	0x0
@@ -1484,9 +1532,9 @@ Disassembly of section text37:
 ; }
      373: 08 00        	return
 
-Disassembly of section text38:
+Disassembly of section text44:
 
-0000036a <__ptext38>:
+0000036a <__ptext44>:
 ; __end_of_CRC_SET():
 ; D:\yiming\00work\tundra_TX_CRC8_V09.X\mcc_generated_files/tmr2.c:106
 ; void TMR2_LoadPeriodRegister(uint8_t periodVal)
@@ -1500,9 +1548,9 @@ Disassembly of section text38:
 ; }
      36e: 08 00        	return
 
-Disassembly of section text39:
+Disassembly of section text45:
 
-00000421 <__ptext39>:
+00000421 <__ptext45>:
 ; __end_of_OSCILLATOR_Initialize():
 ; D:\yiming\00work\tundra_TX_CRC8_V09.X\mcc_generated_files/tmr2.c:114
 ;     bool status = PIR1bits.TMR2IF;
@@ -1527,59 +1575,11 @@ Disassembly of section text39:
 ; }
      42c: 08 00        	return
 
-Disassembly of section text40:
-
-00000348 <__ptext40>:
-; __ptext40():
-; D:\yiming\00work\tundra_TX_CRC8_V09.X\mcc_generated_files/pin_manager.c:101
-; }
-     348: 08 00        	return
-
-Disassembly of section text41:
-
-00000347 <__ptext41>:
-; __ptext41():
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/LED.c:115
-; }
-     347: 08 00        	return
-
-Disassembly of section text42:
-
-00000346 <__ptext42>:
-; __ptext42():
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/LED.c:97
-; }
-     346: 08 00        	return
-
-Disassembly of section text43:
-
-00000345 <__ptext43>:
-; __ptext43():
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/LED.c:79
-; }
-     345: 08 00        	return
-
-Disassembly of section text44:
-
-00000344 <__ptext44>:
-; __ptext44():
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/LED.c:61
-; }
-     344: 08 00        	return
-
-Disassembly of section text45:
-
-00000343 <__ptext45>:
-; _LED_POS_IS_ON():
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/LED.c:43
-; }
-     343: 08 00        	return
-
 Disassembly of section text46:
 
 00000342 <__ptext46>:
-; _LED_TURN_RIGHT_IS_ON():
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/LED.c:133
+; __end_of_CRC_GET():
+; D:\yiming\00work\tundra_TX_CRC8_V09.X\mcc_generated_files/pin_manager.c:101
 ; }
      342: 08 00        	return
 
@@ -2103,27 +2103,27 @@ Disassembly of section maintext:
 
 00000516 <_main>:
 ; __end_of_calculate_crc8():
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/main.c:54
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/main.c:56
 ;     SYSTEM_Initialize();
      516: 84 31        	movlp	0x4
      517: 84 24        	call	0x484
      518: 85 31        	movlp	0x5
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/main.c:55
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/main.c:57
 ;     board_init();
      519: 83 31        	movlp	0x3
      51a: be 23        	call	0x3be
      51b: 85 31        	movlp	0x5
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/main.c:59
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/main.c:61
 ;         swState_update();
      51c: 85 31        	movlp	0x5
      51d: c6 25        	call	0x5c6
      51e: 85 31        	movlp	0x5
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/main.c:60
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/main.c:62
 ;         swSetLED();
      51f: 87 31        	movlp	0x7
      520: 22 27        	call	0x722
      521: 85 31        	movlp	0x5
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/main.c:61
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/main.c:63
 ;         swSetDATA(&tundra);
      522: 3c 30        	movlw	0x3c
      523: f5 00        	movwf	0x75
@@ -2132,12 +2132,12 @@ Disassembly of section maintext:
      526: 86 31        	movlp	0x6
      527: 76 26        	call	0x676
      528: 85 31        	movlp	0x5
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/main.c:63
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/main.c:65
 ;         Transmit_data();
      529: 85 31        	movlp	0x5
      52a: 5a 25        	call	0x55a
      52b: 85 31        	movlp	0x5
-; D:\yiming\00work\tundra_TX_CRC8_V09.X/main.c:64
+; D:\yiming\00work\tundra_TX_CRC8_V09.X/main.c:66
 ;         __delay_ms(20); // Optional delay between transmissions
      52c: d0 30        	movlw	0xd0
      52d: fc 00        	movwf	0x7c

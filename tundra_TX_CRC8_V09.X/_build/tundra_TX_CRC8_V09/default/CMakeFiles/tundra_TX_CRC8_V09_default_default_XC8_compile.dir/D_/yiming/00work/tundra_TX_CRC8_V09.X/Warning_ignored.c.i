@@ -5034,40 +5034,6 @@ void TMR2_LoadPeriodRegister(uint8_t periodVal);
 # 325 "D:\\yiming\\00work\\tundra_TX_CRC8_V09.X/mcc_generated_files/tmr2.h"
 _Bool TMR2_HasOverflowOccured(void);
 # 13 "D:\\yiming\\00work\\tundra_TX_CRC8_V09.X\\Warning_ignored.c" 2
-# 1 "D:\\yiming\\00work\\tundra_TX_CRC8_V09.X/LED.h" 1
-# 12 "D:\\yiming\\00work\\tundra_TX_CRC8_V09.X/LED.h"
-typedef struct {
-  void (*const on)(void);
-  void (*const off)(void);
-  uint8_t (*const is_on)(void);
-} LED_t;
-
-typedef struct {
-  LED_t pos;
-  LED_t drl;
-  LED_t loBeam;
-  LED_t hiBeam;
-  LED_t turnLeft;
-  LED_t turnRight;
-} LEDs_t;
-
-typedef enum {
-  POS = 0,
-  DRL,
-  LO_BEAM,
-  HI_BEAM,
-  TURN_LEFT,
-  TURN_RIGHT,
-  LED_COUNT,
-} Led_t;
-
-
-
-extern const LEDs_t led;
-
-
-void LED_Init(void);
-# 14 "D:\\yiming\\00work\\tundra_TX_CRC8_V09.X\\Warning_ignored.c" 2
 # 1 "D:\\yiming\\00work\\tundra_TX_CRC8_V09.X/tundra_PWM.h" 1
 # 15 "D:\\yiming\\00work\\tundra_TX_CRC8_V09.X/tundra_PWM.h"
 typedef struct {
@@ -5088,7 +5054,7 @@ typedef struct {
 
 extern FRAME_t const tundra;
 extern void Transmit_data(void);
-# 15 "D:\\yiming\\00work\\tundra_TX_CRC8_V09.X\\Warning_ignored.c" 2
+# 14 "D:\\yiming\\00work\\tundra_TX_CRC8_V09.X\\Warning_ignored.c" 2
 
 
 
@@ -5113,13 +5079,6 @@ void Clear_No_Call_Warning(void) {
         tundra.crc.get();
         uint8_t tmp[8];
         tundra.data.get(tmp);
-        led.pos.is_on();
-        led.drl.is_on();
-        led.loBeam.is_on();
-        led.hiBeam.is_on();
-        led.turnLeft.is_on();
-        led.turnRight.is_on();
-
     }else{
 
     }

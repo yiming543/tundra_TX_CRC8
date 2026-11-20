@@ -47,7 +47,7 @@ void swSetLED(void) {
   } else {
     led.loBeam.off();
   }
-  if (sw.loBeam.is_on() == ON) {
+  if (sw.hiBeam.is_on() == ON) {
     led.hiBeam.on();
   } else {
     led.hiBeam.off();

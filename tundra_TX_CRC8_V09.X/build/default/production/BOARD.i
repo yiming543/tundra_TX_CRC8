@@ -241,7 +241,7 @@ void swSetLED(void) {
   } else {
     led.loBeam.off();
   }
-  if (sw.loBeam.is_on() == (1U)) {
+  if (sw.hiBeam.is_on() == (1U)) {
     led.hiBeam.on();
   } else {
     led.hiBeam.off();

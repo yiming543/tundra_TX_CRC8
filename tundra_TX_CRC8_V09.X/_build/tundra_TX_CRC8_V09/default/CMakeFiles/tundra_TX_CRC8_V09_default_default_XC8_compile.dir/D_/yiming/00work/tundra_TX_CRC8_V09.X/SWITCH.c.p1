@@ -1,30 +1,30 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"8 D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 8: typedef struct {
-[s S372 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S372 . pos drl loBeam hiBeam turnLeft turnRight ]
+"7 D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 7: typedef struct {
+[s S370 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S370 . pos drl loBeam hiBeam turnLeft turnRight ]
 "419 C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.9.258/xc8\pic\include\proc/pic16f1936.h
 [; ;C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.9.258/xc8\pic\include\proc/pic16f1936.h: 419:     struct {
-[s S38 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S38 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+[s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S36 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
 "418
 [; ;C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.9.258/xc8\pic\include\proc/pic16f1936.h: 418: typedef union {
-[u S37 `S38 1 ]
-[n S37 . . ]
+[u S35 `S36 1 ]
+[n S35 . . ]
 "430
 [; ;C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.9.258/xc8\pic\include\proc/pic16f1936.h: 430: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x00C)));
-[v _PORTAbits `VS37 ~T0 @X0 0 e@12 ]
+[v _PORTAbits `VS35 ~T0 @X0 0 e@12 ]
 "543
 [; ;C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.9.258/xc8\pic\include\proc/pic16f1936.h: 543:     struct {
-[s S42 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S42 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+[s S40 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S40 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
 "542
 [; ;C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.9.258/xc8\pic\include\proc/pic16f1936.h: 542: typedef union {
-[u S41 `S42 1 ]
-[n S41 . . ]
+[u S39 `S40 1 ]
+[n S39 . . ]
 "554
 [; ;C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.9.258/xc8\pic\include\proc/pic16f1936.h: 554: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x00E)));
-[v _PORTCbits `VS41 ~T0 @X0 0 e@14 ]
+[v _PORTCbits `VS39 ~T0 @X0 0 e@14 ]
 [v F39 `(uc ~T0 @X0 0 tf ]
 [v F38 `*F39 ~T0 @X0 1 t ]
 [v F42 `(uc ~T0 @X0 0 tf ]
@@ -532,9 +532,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7345
 [; ;C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.9.258/xc8\pic\include\proc/pic16f1936.h: 7345: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"17 D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 17: static swStates_t sw_states = {
-[v _sw_states `S372 ~T0 @X0 1 s ]
+"16 D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 16: static swStates_t sw_states = {
+[v _sw_states `S370 ~T0 @X0 1 s ]
 [i _sw_states
 :U ..
 :U ..
@@ -547,176 +547,176 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-"27
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 27: static uint8_t SW_POS_GET(void) {
+"26
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 26: static uint8_t SW_POS_GET(void) {
 [v _SW_POS_GET `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_POS_GET ]
 [f ]
-"28
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 28:   return (uint8_t)(!!(PORTAbits.RA0 == (0U)));
+"27
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 27:   return (uint8_t)(!!(PORTAbits.RA0 == (0U)));
 [e ) -> -> ! ! == -> . . _PORTAbits 0 0 `ui -> 0 `ui `i `uc ]
-[e $UE 373  ]
-"29
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 29: }
-[e :UE 373 ]
+[e $UE 371  ]
+"28
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 28: }
+[e :UE 371 ]
 }
-"31
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 31: static uint8_t SW_DRL_GET(void) {
+"30
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 30: static uint8_t SW_DRL_GET(void) {
 [v _SW_DRL_GET `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_DRL_GET ]
 [f ]
-"32
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 32:   return (uint8_t)(!!(PORTAbits.RA1 == (0U)));
+"31
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 31:   return (uint8_t)(!!(PORTAbits.RA1 == (0U)));
 [e ) -> -> ! ! == -> . . _PORTAbits 0 1 `ui -> 0 `ui `i `uc ]
-[e $UE 374  ]
-"33
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 33: }
-[e :UE 374 ]
+[e $UE 372  ]
+"32
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 32: }
+[e :UE 372 ]
 }
-"35
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 35: static uint8_t SW_LO_BEAM_GET(void) {
+"34
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 34: static uint8_t SW_LO_BEAM_GET(void) {
 [v _SW_LO_BEAM_GET `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_LO_BEAM_GET ]
 [f ]
-"36
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 36:   return (uint8_t)(!!(PORTAbits.RA2 == (0U)));
+"35
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 35:   return (uint8_t)(!!(PORTAbits.RA2 == (0U)));
 [e ) -> -> ! ! == -> . . _PORTAbits 0 2 `ui -> 0 `ui `i `uc ]
-[e $UE 375  ]
-"37
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 37: }
-[e :UE 375 ]
+[e $UE 373  ]
+"36
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 36: }
+[e :UE 373 ]
 }
-"39
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 39: static uint8_t SW_HI_BEAM_GET(void) {
+"38
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 38: static uint8_t SW_HI_BEAM_GET(void) {
 [v _SW_HI_BEAM_GET `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_HI_BEAM_GET ]
 [f ]
-"40
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 40:   return (uint8_t)(!!(PORTAbits.RA3 == (0U)));
+"39
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 39:   return (uint8_t)(!!(PORTAbits.RA3 == (0U)));
 [e ) -> -> ! ! == -> . . _PORTAbits 0 3 `ui -> 0 `ui `i `uc ]
-[e $UE 376  ]
-"41
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 41: }
-[e :UE 376 ]
+[e $UE 374  ]
+"40
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 40: }
+[e :UE 374 ]
 }
-"43
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 43: static uint8_t SW_TURN_LEFT_GET(void) {
+"42
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 42: static uint8_t SW_TURN_LEFT_GET(void) {
 [v _SW_TURN_LEFT_GET `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_TURN_LEFT_GET ]
 [f ]
-"44
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 44:   return (uint8_t)(!!(PORTAbits.RA4 == (0U)));
+"43
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 43:   return (uint8_t)(!!(PORTAbits.RA4 == (0U)));
 [e ) -> -> ! ! == -> . . _PORTAbits 0 4 `ui -> 0 `ui `i `uc ]
-[e $UE 377  ]
-"45
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 45: }
-[e :UE 377 ]
+[e $UE 375  ]
+"44
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 44: }
+[e :UE 375 ]
 }
-"47
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 47: static uint8_t SW_TURN_RIGHT_GET(void) {
+"46
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 46: static uint8_t SW_TURN_RIGHT_GET(void) {
 [v _SW_TURN_RIGHT_GET `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_TURN_RIGHT_GET ]
 [f ]
-"48
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 48:   return (uint8_t)(!!(PORTCbits.RC3 == (0U)));
+"47
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 47:   return (uint8_t)(!!(PORTCbits.RC3 == (0U)));
 [e ) -> -> ! ! == -> . . _PORTCbits 0 3 `ui -> 0 `ui `i `uc ]
-[e $UE 378  ]
-"49
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 49: }
-[e :UE 378 ]
+[e $UE 376  ]
+"48
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 48: }
+[e :UE 376 ]
 }
-"51
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 51: static uint8_t SW_POS_IS_ON(void) {
+"50
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 50: static uint8_t SW_POS_IS_ON(void) {
 [v _SW_POS_IS_ON `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_POS_IS_ON ]
 [f ]
-"52
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 52:   return sw_states.pos;
+"51
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 51:   return sw_states.pos;
 [e ) . _sw_states 0 ]
-[e $UE 379  ]
-"53
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 53: }
-[e :UE 379 ]
+[e $UE 377  ]
+"52
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 52: }
+[e :UE 377 ]
 }
-"55
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 55: static uint8_t SW_DRL_IS_ON(void) {
+"54
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 54: static uint8_t SW_DRL_IS_ON(void) {
 [v _SW_DRL_IS_ON `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_DRL_IS_ON ]
 [f ]
-"56
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 56:   return sw_states.drl;
+"55
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 55:   return sw_states.drl;
 [e ) . _sw_states 1 ]
-[e $UE 380  ]
-"57
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 57: }
-[e :UE 380 ]
+[e $UE 378  ]
+"56
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 56: }
+[e :UE 378 ]
 }
-"59
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 59: static uint8_t SW_LO_BEAM_IS_ON(void) {
+"58
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 58: static uint8_t SW_LO_BEAM_IS_ON(void) {
 [v _SW_LO_BEAM_IS_ON `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_LO_BEAM_IS_ON ]
 [f ]
-"60
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 60:   return sw_states.loBeam;
+"59
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 59:   return sw_states.loBeam;
 [e ) . _sw_states 2 ]
-[e $UE 381  ]
-"61
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 61: }
-[e :UE 381 ]
+[e $UE 379  ]
+"60
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 60: }
+[e :UE 379 ]
 }
-"63
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 63: static uint8_t SW_HI_BEAM_IS_ON(void) {
+"62
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 62: static uint8_t SW_HI_BEAM_IS_ON(void) {
 [v _SW_HI_BEAM_IS_ON `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_HI_BEAM_IS_ON ]
 [f ]
-"64
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 64:   return sw_states.hiBeam;
+"63
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 63:   return sw_states.hiBeam;
 [e ) . _sw_states 3 ]
-[e $UE 382  ]
-"65
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 65: }
-[e :UE 382 ]
+[e $UE 380  ]
+"64
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 64: }
+[e :UE 380 ]
 }
-"67
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 67: static uint8_t SW_TURN_LEFT_IS_ON(void) {
+"66
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 66: static uint8_t SW_TURN_LEFT_IS_ON(void) {
 [v _SW_TURN_LEFT_IS_ON `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_TURN_LEFT_IS_ON ]
 [f ]
-"68
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 68:   return sw_states.turnLeft;
+"67
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 67:   return sw_states.turnLeft;
 [e ) . _sw_states 4 ]
-[e $UE 383  ]
-"69
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 69: }
-[e :UE 383 ]
+[e $UE 381  ]
+"68
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 68: }
+[e :UE 381 ]
 }
-"71
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 71: static uint8_t SW_TURN_RIGHT_IS_ON(void) {
+"70
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 70: static uint8_t SW_TURN_RIGHT_IS_ON(void) {
 [v _SW_TURN_RIGHT_IS_ON `(uc ~T0 @X0 1 sf ]
 {
 [e :U _SW_TURN_RIGHT_IS_ON ]
 [f ]
-"72
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 72:   return sw_states.turnRight;
+"71
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 71:   return sw_states.turnRight;
 [e ) . _sw_states 5 ]
-[e $UE 384  ]
-"73
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 73: }
-[e :UE 384 ]
+[e $UE 382  ]
+"72
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 72: }
+[e :UE 382 ]
 }
-"76
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 76: const SWITCHs_t sw = {
+"75
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 75: const SWITCHs_t sw = {
 [v _sw `CS2 ~T0 @X0 1 e ]
 [i _sw
 :U ..
@@ -760,31 +760,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-"85
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 85: void swState_update(void) {
+"84
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 84: void swState_update(void) {
 [v _swState_update `(v ~T0 @X0 1 ef ]
 {
 [e :U _swState_update ]
 [f ]
-"86
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 86:   sw_states.pos = sw.pos.get();
+"85
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 85:   sw_states.pos = sw.pos.get();
 [e = . _sw_states 0 ( *U . . _sw 0 0 ..  ]
-"87
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 87:   sw_states.drl = sw.drl.get();
+"86
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 86:   sw_states.drl = sw.drl.get();
 [e = . _sw_states 1 ( *U . . _sw 1 0 ..  ]
-"88
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 88:   sw_states.loBeam = sw.loBeam.get();
+"87
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 87:   sw_states.loBeam = sw.loBeam.get();
 [e = . _sw_states 2 ( *U . . _sw 2 0 ..  ]
-"89
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 89:   sw_states.hiBeam = sw.hiBeam.get();
+"88
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 88:   sw_states.hiBeam = sw.hiBeam.get();
 [e = . _sw_states 3 ( *U . . _sw 3 0 ..  ]
-"90
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 90:   sw_states.turnLeft = sw.turnLeft.get();
+"89
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 89:   sw_states.turnLeft = sw.turnLeft.get();
 [e = . _sw_states 4 ( *U . . _sw 4 0 ..  ]
-"91
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 91:   sw_states.turnRight = sw.turnRight.get();
+"90
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 90:   sw_states.turnRight = sw.turnRight.get();
 [e = . _sw_states 5 ( *U . . _sw 5 0 ..  ]
-"92
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 92: }
-[e :UE 385 ]
+"91
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\SWITCH.c: 91: }
+[e :UE 383 ]
 }

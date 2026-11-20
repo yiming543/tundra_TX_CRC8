@@ -6,10 +6,10 @@ Linker command line:
   --edf=C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.9.258/xc8\pic\dat\20260422061108_en.msgs \
   -cn -h+dist/default/production\tundra_TX_CRC8_V09.X.production.sym \
   --cmf=dist/default/production\tundra_TX_CRC8_V09.X.production.cmf -z \
-  -Q16F1936 -oC:\Users\t00904\AppData\Local\Temp\xcAsjic.0\driver_tmp_3.o \
+  -Q16F1936 -oC:\Users\t00904\AppData\Local\Temp\xcBsmiw.1\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/default/production/tundra_TX_CRC8_V09.X.production.map \
-  --md=C:\Users\t00904\AppData\Local\Temp\xcAsjic.0\driver_tmp_0.dat -E1 \
+  --md=C:\Users\t00904\AppData\Local\Temp\xcBsmiw.1\driver_tmp_0.dat -E1 \
   -ver=XC8 Compiler -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh \
   -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 -AENTRY=00h-0FFhx32 \
   -ACOMMON=070h-07Fh -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh \
@@ -32,7 +32,7 @@ Linker command line:
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
   -DENTRY=2 -preset_vec=00h,intentry,sivt,init,end_init -ppowerup=CODE \
   -pcinit=CODE -pfunctab=ENTRY -k \
-  C:\Users\t00904\AppData\Local\Temp\xcAsjic.0\driver_tmp_15.o \
+  C:\Users\t00904\AppData\Local\Temp\xcBsmiw.1\driver_tmp_15.o \
   dist/default/production\tundra_TX_CRC8_V09.X.production.o 
 
 Object code version is 3.11
@@ -42,7 +42,7 @@ Machine type is 16F1936
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\t00904\AppData\Local\Temp\xcAsjic.0\driver_tmp_15.o
+C:\Users\t00904\AppData\Local\Temp\xcBsmiw.1\driver_tmp_15.o
                 end_init                              2        2        2        0       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        2        0       4
@@ -63,18 +63,18 @@ dist/default/production\tundra_TX_CRC8_V09.X.production.o
                 text48                              4AB      4AB       1A      956       0
                 text47                              494      494       17      928       0
                 text46                              342      342        1      684       0
-                text45                              343      343        1      686       0
-                text44                              344      344        1      688       0
-                text43                              345      345        1      68A       0
-                text42                              346      346        1      68C       0
-                text41                              347      347        1      68E       0
-                text40                              348      348        1      690       0
-                text39                              421      421        C      842       0
-                text38                              36A      36A        5      6D4       0
-                text37                              36F      36F        5      6DE       0
-                text36                              34A      34A        3      694       0
-                text35                              34D      34D        3      69A       0
-                text34                              374      374        5      6E8       0
+                text45                              421      421        C      842       0
+                text44                              36A      36A        5      6D4       0
+                text43                              36F      36F        5      6DE       0
+                text42                              34A      34A        3      694       0
+                text41                              34D      34D        3      69A       0
+                text40                              374      374        5      6E8       0
+                text39                              343      343        1      686       0
+                text38                              344      344        1      688       0
+                text37                              345      345        1      68A       0
+                text36                              346      346        1      68C       0
+                text35                              347      347        1      68E       0
+                text34                              348      348        1      690       0
                 text33                              349      349        1      692       0
                 text32                              3C8      3C8        B      790       0
                 text31                              3D3      3D3        B      7A6       0
@@ -140,18 +140,18 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text48                              4AB      4AB       1A         0
                 text47                              494      494       17         0
                 text46                              342      342        1         0
-                text45                              343      343        1         0
-                text44                              344      344        1         0
-                text43                              345      345        1         0
-                text42                              346      346        1         0
-                text41                              347      347        1         0
-                text40                              348      348        1         0
-                text39                              421      421        C         0
-                text38                              36A      36A        5         0
-                text37                              36F      36F        5         0
-                text36                              34A      34A        3         0
-                text35                              34D      34D        3         0
-                text34                              374      374        5         0
+                text45                              421      421        C         0
+                text44                              36A      36A        5         0
+                text43                              36F      36F        5         0
+                text42                              34A      34A        3         0
+                text41                              34D      34D        3         0
+                text40                              374      374        5         0
+                text39                              343      343        1         0
+                text38                              344      344        1         0
+                text37                              345      345        1         0
+                text36                              346      346        1         0
+                text35                              347      347        1         0
+                text34                              348      348        1         0
                 text33                              349      349        1         0
                 text32                              3C8      3C8        B         0
                 text31                              3D3      3D3        B         0
@@ -363,15 +363,15 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 cstackCOMMON                   000070  00000D  00007D        70       1  COMMON      1
                 text49                         000341  000001  000342       682       0  CODE        2
                 text46                         000342  000001  000343       684       0  CODE        2
-                text45                         000343  000001  000344       686       0  CODE        2
-                text44                         000344  000001  000345       688       0  CODE        2
-                text43                         000345  000001  000346       68A       0  CODE        2
-                text42                         000346  000001  000347       68C       0  CODE        2
-                text41                         000347  000001  000348       68E       0  CODE        2
-                text40                         000348  000001  000349       690       0  CODE        2
+                text39                         000343  000001  000344       686       0  CODE        2
+                text38                         000344  000001  000345       688       0  CODE        2
+                text37                         000345  000001  000346       68A       0  CODE        2
+                text36                         000346  000001  000347       68C       0  CODE        2
+                text35                         000347  000001  000348       68E       0  CODE        2
+                text34                         000348  000001  000349       690       0  CODE        2
                 text33                         000349  000001  00034A       692       0  CODE        2
-                text36                         00034A  000003  00034D       694       0  CODE        2
-                text35                         00034D  000003  000350       69A       0  CODE        2
+                text42                         00034A  000003  00034D       694       0  CODE        2
+                text41                         00034D  000003  000350       69A       0  CODE        2
                 text15                         000350  000003  000353       6A0       0  CODE        2
                 text14                         000353  000003  000356       6A6       0  CODE        2
                 text13                         000356  000003  000359       6AC       0  CODE        2
@@ -380,9 +380,9 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 text10                         00035F  000003  000362       6BE       0  CODE        2
                 text55                         000362  000004  000366       6C4       0  CODE        2
                 text17                         000366  000004  00036A       6CC       0  CODE        2
-                text38                         00036A  000005  00036F       6D4       0  CODE        2
-                text37                         00036F  000005  000374       6DE       0  CODE        2
-                text34                         000374  000005  000379       6E8       0  CODE        2
+                text44                         00036A  000005  00036F       6D4       0  CODE        2
+                text43                         00036F  000005  000374       6DE       0  CODE        2
+                text40                         000374  000005  000379       6E8       0  CODE        2
                 clrtext                        000379  000006  00037F       6F2       0  CODE        2
                 inittext                       00037F  000006  000385       6FE       0  CODE        2
                 text52                         000385  000007  00038C       70A       0  CODE        2
@@ -402,7 +402,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 text27                         0003FF  00000B  00040A       7FE       0  CODE        2
                 idataBANK0                     00040A  00000B  000415       814       0  CODE        2
                 text58                         000415  00000C  000421       82A       0  CODE        2
-                text39                         000421  00000C  00042D       842       0  CODE        2
+                text45                         000421  00000C  00042D       842       0  CODE        2
                 text7                          00042D  00000C  000439       85A       0  CODE        2
                 text6                          000439  00000C  000445       872       0  CODE        2
                 text5                          000445  00000C  000451       88A       0  CODE        2
@@ -510,7 +510,7 @@ TMR2_ReadTimer@readVal               cstackCOMMON 00070
 TMR2_WriteTimer@timerVal             cstackCOMMON 00070
 Transmit_data@buf                    cstackBANK0  00034
 Transmit_data@i                      cstackBANK0  00040
-Transmit_data@i_771                  cstackBANK0  0003F
+Transmit_data@i_753                  cstackBANK0  0003F
 _ANSELA                              (abs)        0018C
 _ANSELB                              (abs)        0018D
 _APFCON                              (abs)        0011D
@@ -522,7 +522,7 @@ _CCPR3L                              (abs)        00311
 _CCPTMRS0bits                        (abs)        0029E
 _CRC_GET                             text49       00341
 _CRC_SET                             text17       00366
-_Clear_No_Call_Warning               text33       00349
+_Clear_No_Call_Warning               text39       00343
 _DATA_GET                            text48       004AB
 _DATA_SET                            text16       004C5
 _DRL_OFF                             text30       003DE
@@ -537,20 +537,20 @@ _LATB                                (abs)        0010D
 _LATBbits                            (abs)        0010D
 _LATC                                (abs)        0010E
 _LATE                                (abs)        00110
-_LED_DRL_IS_ON                       text44       00344
-_LED_HI_BEAM_IS_ON                   text42       00346
+_LED_DRL_IS_ON                       text36       00346
+_LED_HI_BEAM_IS_ON                   text34       00348
 _LED_Init                            text26       00609
-_LED_LO_BEAM_IS_ON                   text43       00345
-_LED_POS_IS_ON                       text45       00343
-_LED_TURN_LEFT_IS_ON                 text41       00347
-_LED_TURN_RIGHT_IS_ON                text46       00342
+_LED_LO_BEAM_IS_ON                   text35       00347
+_LED_POS_IS_ON                       text37       00345
+_LED_TURN_LEFT_IS_ON                 text33       00349
+_LED_TURN_RIGHT_IS_ON                text38       00344
 _LO_BEAM_OFF                         text29       003E9
 _LO_BEAM_ON                          text4        00451
 _OPTION_REGbits                      (abs)        00095
 _OSCCON                              (abs)        00099
 _OSCILLATOR_Initialize               text58       00415
 _OSCTUNE                             (abs)        00098
-_PIN_MANAGER_IOC                     text40       00348
+_PIN_MANAGER_IOC                     text46       00342
 _PIN_MANAGER_Initialize              text57       004DF
 _PIR1bits                            (abs)        00011
 _PLLR                                (abs)        004D6
@@ -579,13 +579,13 @@ _T2CON                               (abs)        0001C
 _T2CONbits                           (abs)        0001C
 _TMR2                                (abs)        0001A
 _TMR2IF                              (abs)        00089
-_TMR2_HasOverflowOccured             text39       00421
+_TMR2_HasOverflowOccured             text45       00421
 _TMR2_Initialize                     text56       003B6
-_TMR2_LoadPeriodRegister             text38       0036A
-_TMR2_ReadTimer                      text37       0036F
-_TMR2_StartTimer                     text36       0034A
-_TMR2_StopTimer                      text35       0034D
-_TMR2_WriteTimer                     text34       00374
+_TMR2_LoadPeriodRegister             text44       0036A
+_TMR2_ReadTimer                      text43       0036F
+_TMR2_StartTimer                     text42       0034A
+_TMR2_StopTimer                      text41       0034D
+_TMR2_WriteTimer                     text40       00374
 _TRISA                               (abs)        0008C
 _TRISB                               (abs)        0008D
 _TRISC                               (abs)        0008E
@@ -817,7 +817,7 @@ ___stackhi                           (abs)        00000
 ___stacklo                           (abs)        00000
 __end_of_CRC_GET                     text49       00342
 __end_of_CRC_SET                     text17       0036A
-__end_of_Clear_No_Call_Warning       text33       0034A
+__end_of_Clear_No_Call_Warning       text39       00344
 __end_of_DATA_GET                    text48       004C5
 __end_of_DATA_SET                    text16       004DF
 __end_of_DRL_OFF                     text30       003E9
@@ -826,17 +826,17 @@ __end_of_EPWM3_Initialize            text59       00484
 __end_of_EPWM3_LoadDutyValue         text47       004AB
 __end_of_HI_BEAM_OFF                 text28       003FF
 __end_of_HI_BEAM_ON                  text3        00469
-__end_of_LED_DRL_IS_ON               text44       00345
-__end_of_LED_HI_BEAM_IS_ON           text42       00347
+__end_of_LED_DRL_IS_ON               text36       00347
+__end_of_LED_HI_BEAM_IS_ON           text34       00349
 __end_of_LED_Init                    text26       00676
-__end_of_LED_LO_BEAM_IS_ON           text43       00346
-__end_of_LED_POS_IS_ON               text45       00344
-__end_of_LED_TURN_LEFT_IS_ON         text41       00348
-__end_of_LED_TURN_RIGHT_IS_ON        text46       00343
+__end_of_LED_LO_BEAM_IS_ON           text35       00348
+__end_of_LED_POS_IS_ON               text37       00346
+__end_of_LED_TURN_LEFT_IS_ON         text33       0034A
+__end_of_LED_TURN_RIGHT_IS_ON        text38       00345
 __end_of_LO_BEAM_OFF                 text29       003F4
 __end_of_LO_BEAM_ON                  text4        0045D
 __end_of_OSCILLATOR_Initialize       text58       00421
-__end_of_PIN_MANAGER_IOC             text40       00349
+__end_of_PIN_MANAGER_IOC             text46       00343
 __end_of_PIN_MANAGER_Initialize      text57       004FA
 __end_of_POS_OFF                     text31       003DE
 __end_of_POS_ON                      text6        00445
@@ -854,13 +854,13 @@ __end_of_SW_TURN_LEFT_IS_ON          text10       00362
 __end_of_SW_TURN_RIGHT_GET           text25       00393
 __end_of_SW_TURN_RIGHT_IS_ON         text15       00353
 __end_of_SYSTEM_Initialize           text54       00494
-__end_of_TMR2_HasOverflowOccured     text39       0042D
+__end_of_TMR2_HasOverflowOccured     text45       0042D
 __end_of_TMR2_Initialize             text56       003BE
-__end_of_TMR2_LoadPeriodRegister     text38       0036F
-__end_of_TMR2_ReadTimer              text37       00374
-__end_of_TMR2_StartTimer             text36       0034D
-__end_of_TMR2_StopTimer              text35       00350
-__end_of_TMR2_WriteTimer             text34       00379
+__end_of_TMR2_LoadPeriodRegister     text44       0036F
+__end_of_TMR2_ReadTimer              text43       00374
+__end_of_TMR2_StartTimer             text42       0034D
+__end_of_TMR2_StopTimer              text41       00350
+__end_of_TMR2_WriteTimer             text40       00379
 __end_of_TURN_LEFT_OFF               text27       0040A
 __end_of_TURN_LEFT_ON                text2        00475
 __end_of_TURN_RIGHT_OFF              text32       003D3
@@ -918,19 +918,19 @@ __ptext30                            text30       003DE
 __ptext31                            text31       003D3
 __ptext32                            text32       003C8
 __ptext33                            text33       00349
-__ptext34                            text34       00374
-__ptext35                            text35       0034D
-__ptext36                            text36       0034A
-__ptext37                            text37       0036F
-__ptext38                            text38       0036A
-__ptext39                            text39       00421
+__ptext34                            text34       00348
+__ptext35                            text35       00347
+__ptext36                            text36       00346
+__ptext37                            text37       00345
+__ptext38                            text38       00344
+__ptext39                            text39       00343
 __ptext4                             text4        00451
-__ptext40                            text40       00348
-__ptext41                            text41       00347
-__ptext42                            text42       00346
-__ptext43                            text43       00345
-__ptext44                            text44       00344
-__ptext45                            text45       00343
+__ptext40                            text40       00374
+__ptext41                            text41       0034D
+__ptext42                            text42       0034A
+__ptext43                            text43       0036F
+__ptext44                            text44       0036A
+__ptext45                            text45       00421
 __ptext46                            text46       00342
 __ptext47                            text47       00494
 __ptext48                            text48       004AB
@@ -1001,21 +1001,21 @@ MODULE INFORMATION
 Module		Function		Class		Link	Load	Size
 LED.c
 		_TURN_LEFT_ON  		CODE           	0469	0000	12
-		_LED_HI_BEAM_IS_ON		CODE           	0346	0000	1
+		_LED_HI_BEAM_IS_ON		CODE           	0348	0000	1
 		_TURN_LEFT_OFF 		CODE           	03FF	0000	11
 		_LED_Init      		CODE           	0609	0000	109
 		_POS_OFF       		CODE           	03D3	0000	11
 		_HI_BEAM_ON    		CODE           	045D	0000	12
 		_HI_BEAM_OFF   		CODE           	03F4	0000	11
 		_DRL_ON        		CODE           	0445	0000	12
-		_LED_TURN_RIGHT_IS_ON		CODE           	0342	0000	1
-		_LED_TURN_LEFT_IS_ON		CODE           	0347	0000	1
+		_LED_TURN_RIGHT_IS_ON		CODE           	0344	0000	1
+		_LED_TURN_LEFT_IS_ON		CODE           	0349	0000	1
 		_LO_BEAM_ON    		CODE           	0451	0000	12
 		_LO_BEAM_OFF   		CODE           	03E9	0000	11
-		_LED_POS_IS_ON 		CODE           	0343	0000	1
-		_LED_DRL_IS_ON 		CODE           	0344	0000	1
+		_LED_POS_IS_ON 		CODE           	0345	0000	1
+		_LED_DRL_IS_ON 		CODE           	0346	0000	1
 		_POS_ON        		CODE           	0439	0000	12
-		_LED_LO_BEAM_IS_ON		CODE           	0345	0000	1
+		_LED_LO_BEAM_IS_ON		CODE           	0347	0000	1
 		_DRL_OFF       		CODE           	03DE	0000	11
 		_TURN_RIGHT_ON 		CODE           	042D	0000	12
 		_TURN_RIGHT_OFF		CODE           	03C8	0000	11
@@ -1035,7 +1035,7 @@ mcc_generated_files/tmr2.c estimated size: 41
 
 mcc_generated_files/pin_manager.c
 		_PIN_MANAGER_Initialize		CODE           	04DF	0000	27
-		_PIN_MANAGER_IOC		CODE           	0348	0000	1
+		_PIN_MANAGER_IOC		CODE           	0342	0000	1
 
 mcc_generated_files/pin_manager.c estimated size: 28
 
@@ -1062,7 +1062,7 @@ tundra_crc8.c
 tundra_crc8.c estimated size: 28
 
 Warning_ignored.c
-		_Clear_No_Call_Warning		CODE           	0349	0000	1
+		_Clear_No_Call_Warning		CODE           	0343	0000	1
 
 Warning_ignored.c estimated size: 1
 

@@ -149,8 +149,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 15 ]
 "50
-[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\BOARD.c: 50:   if (sw.loBeam.is_on() == (1U)) {
-[e $ ! == -> ( *U . . _sw 2 1 ..  `ui -> 1 `ui 16  ]
+[; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\BOARD.c: 50:   if (sw.hiBeam.is_on() == (1U)) {
+[e $ ! == -> ( *U . . _sw 3 1 ..  `ui -> 1 `ui 16  ]
 {
 "51
 [; ;D:\yiming\00work\tundra_TX_CRC8_V09.X\BOARD.c: 51:     led.hiBeam.on();
